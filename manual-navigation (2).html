@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MYARTTE 2026 Navigation</title>
+<style>
+:root{--cyan:#00d5ff;--teal:#00c8b8;--gold:#f8c76c;--border:rgba(255,255,255,0.12);--soft:rgba(255,255,255,0.65);--muted:rgba(255,255,255,0.42);--radius:24px;--shadow:0 22px 64px rgba(0,0,0,0.52);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 14% 10%,rgba(0,213,255,.17),transparent 27%),radial-gradient(circle at 86% 12%,rgba(0,200,184,.11),transparent 25%),linear-gradient(145deg,#030712 0%,#07111f 44%,#020617 100%);color:#fff;min-height:100vh;overflow:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px;opacity:.32;}
+.app{position:relative;z-index:1;height:100vh;display:flex;flex-direction:column;}
+.hdr{flex-shrink:0;height:68px;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;background:rgba(3,10,22,.82);border-bottom:1px solid var(--border);backdrop-filter:blur(18px);}
+.hdr-brand{display:flex;align-items:center;gap:10px;}
+.hdr-logo{width:44px;height:44px;border-radius:12px;object-fit:cover;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 18px rgba(0,213,255,.2);}
+.hdr-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:2px;}
+.hdr-title{font-size:15px;font-weight:900;}
+.hdr-pill{padding:6px 11px;border-radius:999px;background:rgba(0,213,255,.09);border:1px solid rgba(0,213,255,.22);color:rgba(255,255,255,.8);font-size:10px;font-weight:700;}
+.screen{display:none;flex:1;overflow-y:auto;padding:18px 14px 22px;}
+.screen.active{display:block;animation:up .3s ease both;}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.si{width:min(440px,100%);margin:0 auto;}
+.card{position:relative;overflow:hidden;border-radius:var(--radius);background:linear-gradient(145deg,rgba(14,30,54,.95),rgba(5,13,27,.93));border:1px solid var(--border);box-shadow:var(--shadow);}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 20% 0%,rgba(0,213,255,.2),transparent 32%),radial-gradient(circle at 100% 20%,rgba(248,199,108,.12),transparent 24%);}
+.cb{position:relative;z-index:1;padding:22px 18px;}
+.bp{width:100%;border:none;border-radius:16px;min-height:50px;padding:12px 14px;font-size:14px;font-weight:900;cursor:pointer;color:#001018;background:linear-gradient(135deg,#00d5ff,#00c8b8 55%,#f8c76c);box-shadow:0 9px 24px rgba(0,213,255,.25),inset 0 1px 0 rgba(255,255,255,.4);}
+.bs{width:100%;border-radius:16px;min-height:50px;padding:12px 14px;font-size:14px;font-weight:900;cursor:pointer;color:rgba(255,255,255,.82);background:rgba(255,255,255,.08);border:1px solid var(--border);}
+.brow{display:grid;gap:8px;margin-top:14px;}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.22);color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+/* @section: welcome-logo */
+.welcome-logo-wrap{width:min(220px,100%);margin:0 auto 16px;padding:10px 14px;border-radius:18px;background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.5);box-shadow:0 12px 30px rgba(0,213,255,.17);}
+.welcome-logo{display:block;width:100%;height:auto;max-height:82px;object-fit:contain;}
+.h1{font-size:clamp(28px,8vw,44px);line-height:.96;letter-spacing:-.05em;font-weight:950;}
+.h1 span{display:block;color:transparent;background:linear-gradient(135deg,#fff,#9df3ff 48%,#f8c76c);-webkit-background-clip:text;background-clip:text;}
+.sub{margin:12px 0 0;color:var(--soft);font-size:13px;line-height:1.6;}
+.vis{margin:22px 0 18px;height:110px;border-radius:18px;position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);overflow:hidden;}
+.vis::before{content:"";position:absolute;left:16px;right:16px;top:52px;height:5px;border-radius:999px;background:linear-gradient(90deg,transparent,var(--cyan),var(--teal),transparent);box-shadow:0 0 14px rgba(0,213,255,.85);animation:gl 2.4s ease-in-out infinite;}
+.vis::after{content:"\1F697";position:absolute;left:56%;top:34px;font-size:20px;animation:fl 2.6s ease-in-out infinite;}
+@keyframes gl{0%,100%{opacity:.5;transform:scaleX(.8)}50%{opacity:1;transform:scaleX(1)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.feats{display:grid;gap:8px;margin:14px 0;}
+.feat{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.76);font-size:12px;}
+.dot{width:7px;height:7px;border-radius:999px;background:var(--cyan);box-shadow:0 0 9px rgba(0,213,255,.85);flex:0 0 auto;}
+.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.16em;font-size:9px;font-weight:900;margin-bottom:7px;}
+.h2{font-size:26px;line-height:1;letter-spacing:-.04em;font-weight:950;}
+.desc{margin:9px 0 16px;color:var(--soft);font-size:12px;line-height:1.6;}
+.vgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0;}
+.vo{height:58px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.07);font-size:23px;cursor:pointer;transition:transform .18s,border .18s,background .18s,box-shadow .18s;}
+.vo.sel{background:rgba(0,213,255,.12);border-color:rgba(0,213,255,.7);box-shadow:0 0 20px rgba(0,213,255,.2);transform:translateY(-2px);}
+.sprev{margin:12px 0 18px;padding:12px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:11px;}
+.sprev-ico{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(0,213,255,.11);border:1px solid rgba(0,213,255,.22);font-size:24px;}
+.sprev-txt strong{display:block;font-size:12px;margin-bottom:2px;}
+.sprev-txt span{display:block;font-size:10px;color:var(--muted);line-height:1.4;}
+.map-outer{width:min(520px,100%);margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.map-topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.map-back{background:rgba(255,255,255,.07);border:1px solid var(--border);color:rgba(255,255,255,.78);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;}
+.map-hlabel{font-size:11px;font-weight:800;color:var(--cyan);letter-spacing:.06em;}
+.map-vbadge{width:40px;height:40px;border-radius:12px;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.22);display:flex;align-items:center;justify-content:center;font-size:21px;}
+.map-card{border-radius:16px;overflow:hidden;border:2px solid rgba(0,213,255,.22);box-shadow:0 0 30px rgba(0,213,255,.1),0 24px 60px rgba(0,0,0,.5);}
+.map-svg{display:block;width:100%;height:auto;}
+.rbar{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:480px;margin:0 auto;background:rgba(4,14,28,.97);border:1px solid rgba(0,213,255,.38);border-radius:18px;padding:14px;box-shadow:0 14px 36px rgba(0,0,0,.55);backdrop-filter:blur(20px);display:none;}
+.rbar.show{display:block;}
+.rbar-title{font-size:14px;font-weight:900;margin-bottom:3px;}
+.rbar-sub{font-size:11px;color:var(--soft);margin-bottom:10px;line-height:1.5;}
+.rbar-acts{display:flex;gap:7px;}
+.rbar-acts button{flex:1;border:none;border-radius:12px;padding:12px 7px;font-weight:900;font-size:12px;cursor:pointer;}
+.btn-cancel{background:rgba(255,255,255,.09);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.11)!important;}
+.btn-reach{background:linear-gradient(135deg,#00d5ff,#00a89c);color:#001018;}
+/* @section: booth-details */
+.detail-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
+.detail-back-link{justify-self:start;border:1px solid var(--border);border-radius:999px;padding:8px 13px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.82);font-size:11px;font-weight:800;cursor:pointer;}
+.detail-card{border-color:rgba(0,213,255,.24);}
+.detail-card .cb{padding:20px 18px 18px;}
+.demo-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:999px;background:rgba(248,199,108,.12);border:1px solid rgba(248,199,108,.35);color:var(--gold);font-size:9px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;}
+.demo-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(248,199,108,.8);}
+.detail-company{font-size:26px;line-height:1.08;letter-spacing:-.035em;font-weight:950;margin-bottom:8px;overflow-wrap:anywhere;}
+.detail-company-sub{font-size:11px;color:var(--soft);line-height:1.55;margin-bottom:18px;}
+.detail-meta{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px;}
+.detail-meta-card{min-width:0;padding:13px;border-radius:15px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);}
+.detail-meta-label{display:block;color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:6px;}
+.detail-meta-value{display:block;color:#fff;font-size:14px;font-weight:900;overflow-wrap:anywhere;}
+.detail-copy{padding:15px;border-radius:16px;background:rgba(0,213,255,.055);border:1px solid rgba(0,213,255,.14);margin-bottom:12px;}
+.detail-copy-label{color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;}
+.detail-copy p{color:rgba(255,255,255,.72);font-size:12px;line-height:1.68;}
+.demo-notice{display:flex;gap:9px;padding:11px 12px;border-radius:14px;background:rgba(248,199,108,.075);border:1px solid rgba(248,199,108,.18);color:rgba(255,255,255,.62);font-size:10px;line-height:1.55;}
+.demo-notice strong{color:var(--gold);}
+.detail-actions{display:grid;gap:8px;margin-top:16px;}
+.detail-actions .bp,.detail-actions .bs{min-height:54px;}
+/* @section: conference-information */
+.conference-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
+.conference-hero{border-color:rgba(0,213,255,.24);}
+.conference-hero .cb{padding:20px 18px;}
+.conference-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px;}
+.conference-summary-card{padding:13px;border-radius:15px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);}
+.conference-summary-label{display:block;color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:6px;}
+.conference-summary-value{display:block;font-size:13px;font-weight:900;line-height:1.35;}
+.conference-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:5px;border-radius:17px;background:rgba(4,14,28,.86);border:1px solid var(--border);}
+.conference-tab{min-width:0;border:1px solid transparent;border-radius:13px;padding:10px 6px;background:transparent;color:var(--soft);font-size:10px;font-weight:900;line-height:1.25;cursor:pointer;}
+.conference-tab span{display:block;color:var(--muted);font-size:8px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px;}
+.conference-tab.active{color:#001018;background:linear-gradient(135deg,var(--cyan),var(--teal));box-shadow:0 7px 18px rgba(0,213,255,.2);}
+.conference-tab.active span{color:rgba(0,16,24,.68);}
+.conference-day{display:none;gap:9px;}
+.conference-day.active{display:grid;animation:up .25s ease both;}
+.conference-day-heading{padding:4px 2px 2px;}
+.conference-day-heading strong{display:block;font-size:16px;margin-bottom:4px;}
+.conference-day-heading span{font-size:10px;color:var(--soft);}
+.session-card{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:14px;border-radius:17px;background:linear-gradient(145deg,rgba(14,30,54,.9),rgba(5,13,27,.88));border:1px solid rgba(255,255,255,.1);box-shadow:0 10px 28px rgba(0,0,0,.22);}
+.session-time{color:var(--cyan);font-size:11px;font-weight:950;line-height:1.35;}
+.session-info strong{display:block;font-size:13px;line-height:1.35;margin-bottom:5px;}
+.session-info span{display:block;color:var(--soft);font-size:10px;line-height:1.45;}
+.conference-notice{padding:13px 14px;border-radius:16px;background:rgba(248,199,108,.08);border:1px solid rgba(248,199,108,.22);color:rgba(255,255,255,.68);font-size:10px;line-height:1.55;}
+.conference-notice strong{color:var(--gold);}
+/* @section: beta-early-access */
+.beta-notice{display:flex;align-items:flex-start;gap:10px;margin:14px 0 2px;padding:12px 13px;border-radius:15px;background:linear-gradient(135deg,rgba(248,199,108,.11),rgba(0,213,255,.06));border:1px solid rgba(248,199,108,.25);}
+.beta-mark{flex:0 0 auto;padding:5px 8px;border-radius:999px;background:var(--gold);color:#221600;font-size:8px;font-weight:950;letter-spacing:.09em;text-transform:uppercase;}
+.beta-copy strong{display:block;color:#fff;font-size:11px;margin-bottom:3px;}.beta-copy span{display:block;color:var(--soft);font-size:9px;line-height:1.5;}
+/* @section: map-quick-navigation */
+.map-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.map-quick-btn{min-width:0;min-height:44px;border-radius:14px;padding:9px 10px;border:1px solid rgba(0,213,255,.22);background:linear-gradient(145deg,rgba(10,28,48,.94),rgba(5,14,28,.92));color:rgba(255,255,255,.88);font-size:10px;font-weight:900;line-height:1.25;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.2);}
+.map-quick-btn span{display:block;color:var(--cyan);font-size:8px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px;}
+/* @section: visited-booths */
+.visited-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
+.visited-hero{border-color:rgba(0,213,255,.25);}.visited-hero .cb{padding:20px 18px;}
+.visited-summary{display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:stretch;margin-top:17px;}
+.visited-count-card{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:96px;border-radius:18px;background:linear-gradient(145deg,rgba(0,213,255,.16),rgba(0,200,184,.08));border:1px solid rgba(0,213,255,.28);}
+.visited-count{font-size:42px;line-height:1;font-weight:950;color:var(--cyan);text-shadow:0 0 20px rgba(0,213,255,.35);}.visited-count-label{margin-top:6px;color:var(--soft);font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;}
+.visited-summary-copy{display:flex;align-items:center;padding:14px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--soft);font-size:10px;line-height:1.55;}
+.visited-empty{padding:28px 18px;text-align:center;border-radius:20px;background:linear-gradient(145deg,rgba(14,30,54,.88),rgba(5,13,27,.88));border:1px dashed rgba(0,213,255,.28);}
+.visited-empty-icon{width:58px;height:58px;margin:0 auto 13px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:rgba(0,213,255,.09);border:1px solid rgba(0,213,255,.2);font-size:27px;box-shadow:0 0 24px rgba(0,213,255,.09);}
+.visited-empty strong{display:block;font-size:15px;margin-bottom:6px;}.visited-empty p{color:var(--soft);font-size:10px;line-height:1.6;max-width:290px;margin:0 auto;}
+.visited-list{display:grid;gap:9px;}
+.visited-item{display:grid;grid-template-columns:42px 1fr auto;gap:11px;align-items:center;padding:13px;border-radius:18px;background:linear-gradient(145deg,rgba(14,30,54,.92),rgba(5,13,27,.9));border:1px solid rgba(16,185,129,.24);box-shadow:0 10px 28px rgba(0,0,0,.2);}
+.visit-order{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.28);color:#5ee7b0;font-size:13px;font-weight:950;}
+.visit-info{min-width:0;}.visit-info strong{display:block;font-size:13px;line-height:1.3;margin-bottom:4px;overflow-wrap:anywhere;}.visit-meta{display:flex;flex-wrap:wrap;gap:5px;color:var(--soft);font-size:9px;line-height:1.4;}.visit-demo{display:inline-flex;margin-top:6px;padding:3px 6px;border-radius:999px;background:rgba(248,199,108,.1);border:1px solid rgba(248,199,108,.22);color:var(--gold);font-size:7px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;}
+.visit-check{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#10b981;color:#02130e;font-size:14px;font-weight:950;box-shadow:0 0 16px rgba(16,185,129,.32);}
+.visited-actions{display:grid;gap:8px;}
+@media(max-width:360px){.detail-meta,.conference-summary{grid-template-columns:1fr}.detail-company{font-size:23px}.session-card{grid-template-columns:70px 1fr;gap:9px}.visited-summary{grid-template-columns:92px 1fr}.visited-count{font-size:36px}.visited-item{grid-template-columns:38px 1fr auto;gap:8px}.visit-order{width:38px;height:38px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hdr">
+  <div class="hdr-brand">
+    <img class="hdr-logo" src="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-20/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/Logo%20MYARTTE%202026_9ad8e57df1884ea1ae3cac464f03c96a.jpg" onerror="this.onerror=null;this.src='assets/Logo MYARTTE 2026.jpg';" alt="MYARTTE 2026">
+    <div><div class="hdr-kicker">Manual Navigation</div><div class="hdr-title">MYARTTE 2026</div></div>
+  </div>
+  <div class="hdr-pill">Hall 5 &amp; 6</div>
+</header>
+<main class="screen active" id="screen-welcome">
+  <div class="si"><div class="card"><div class="cb">
+    <!-- @section: welcome-logo -->
+    <div class="welcome-logo-wrap"><img class="welcome-logo" src="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-20/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/Logo%20MYARTTE%202026_9ad8e57df1884ea1ae3cac464f03c96a.jpg" onerror="this.onerror=null;this.src='assets/Logo MYARTTE 2026.jpg';" alt="MYARTTE 2026 official logo"></div>
+    <div class="badge">ASEAN Roads &amp; Traffic Tech Expo</div>
+    <h1 class="h1">Smart Route<span>Companion</span></h1>
+    <p class="sub">Explore MYARTTE 2026 with manual navigation. Pick your vehicle, tap a booth, walk the glowing route, then confirm arrival.</p>
+    <div class="vis"></div>
+    <div class="feats">
+      <div class="feat"><span class="dot"></span><span>No indoor GPS &#8212; confirm arrival manually</span></div>
+      <div class="feat"><span class="dot"></span><span>Vehicle parks at your last visited booth</span></div>
+      <div class="feat"><span class="dot"></span><span>Visited booths tracked for your session</span></div>
+    </div>
+    <!-- @section: beta-early-access -->
+    <div class="beta-notice" role="note">
+      <span class="beta-mark">Early Access</span>
+      <div class="beta-copy"><strong>Beta testing in progress</strong><span>This web application is an early-access prototype. Features and information may still be updated before the event.</span></div>
+    </div>
+    <div class="brow">
+      <button class="bp" onclick="goToScreen('screen-vehicle')">Start Navigation</button>
+      <button class="bs" onclick="goToScreen('screen-conference')">Conference Dates &amp; Timings</button>
+      <button class="bs" onclick="openVisitedBooths()">Visited Booths <span id="home-visited-count">(0)</span></button>
+    </div>
+  </div></div></div>
+</main>
+<!-- @section: conference-information-screen -->
+<main class="screen" id="screen-conference">
+  <div class="conference-wrap">
+    <button class="detail-back-link" onclick="goToScreen('screen-welcome')">&#8592; Back to Home</button>
+    <div class="card conference-hero"><div class="cb">
+      <div class="demo-badge">Demo Conference Schedule</div>
+      <div class="kicker">Conference Information</div>
+      <h2 class="h2">Dates &amp; Timings</h2>
+      <p class="desc">Preview the three-day conference programme. Choose a date to see its demo sessions and timing updates.</p>
+      <div class="conference-summary">
+        <div class="conference-summary-card"><span class="conference-summary-label">Event Dates</span><strong class="conference-summary-value">30 Sept &#8211; 2 Oct 2026</strong></div>
+        <div class="conference-summary-card"><span class="conference-summary-label">Location</span><strong class="conference-summary-value">Conference Hall<br>Hall 5 &amp; 6</strong></div>
+      </div>
+    </div></div>
+    <div class="conference-tabs" role="tablist" aria-label="Conference days">
+      <button class="conference-tab active" type="button" role="tab" aria-selected="true" onclick="showConferenceDay(this,'conference-day-1')">30 Sept<span>Day 1</span></button>
+      <button class="conference-tab" type="button" role="tab" aria-selected="false" onclick="showConferenceDay(this,'conference-day-2')">1 Oct<span>Day 2</span></button>
+      <button class="conference-tab" type="button" role="tab" aria-selected="false" onclick="showConferenceDay(this,'conference-day-3')">2 Oct<span>Day 3</span></button>
+    </div>
+    <section class="conference-day active" id="conference-day-1" role="tabpanel">
+      <div class="conference-day-heading"><strong>Wednesday, 30 September</strong><span>Opening day &#183; Demo programme</span></div>
+      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:00 AM</div><div class="session-info"><strong>Registration &amp; Welcome Coffee</strong><span>Conference Hall foyer &#183; Delegate arrival and registration.</span></div></article>
+      <article class="session-card"><div class="session-time">10:00 AM<br>&#8211; 11:00 AM</div><div class="session-info"><strong>Opening Ceremony &amp; Keynote</strong><span>Welcome address and a preview of ASEAN road and traffic technology priorities.</span></div></article>
+      <article class="session-card"><div class="session-time">11:15 AM<br>&#8211; 12:30 PM</div><div class="session-info"><strong>Smart Mobility Leadership Forum</strong><span>Demo panel on connected roads, safer cities and future transport systems.</span></div></article>
+      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:30 PM</div><div class="session-info"><strong>Intelligent Traffic Management</strong><span>Demo industry session covering data-led operations and traffic control.</span></div></article>
+    </section>
+    <section class="conference-day" id="conference-day-2" role="tabpanel">
+      <div class="conference-day-heading"><strong>Thursday, 1 October</strong><span>Technology day &#183; Demo programme</span></div>
+      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:30 AM</div><div class="session-info"><strong>Road Safety Innovation</strong><span>Demo session on safer infrastructure, monitoring and incident response.</span></div></article>
+      <article class="session-card"><div class="session-time">10:45 AM<br>&#8211; 12:00 PM</div><div class="session-info"><strong>EV Infrastructure &amp; Connected Corridors</strong><span>Demo discussion on charging networks and digitally connected road systems.</span></div></article>
+      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:15 PM</div><div class="session-info"><strong>Urban Mobility Technology Showcase</strong><span>Demo presentations from transport technology solution providers.</span></div></article>
+      <article class="session-card"><div class="session-time">3:30 PM<br>&#8211; 4:30 PM</div><div class="session-info"><strong>ASEAN Collaboration Roundtable</strong><span>Demo regional exchange on resilient and interoperable mobility systems.</span></div></article>
+    </section>
+    <section class="conference-day" id="conference-day-3" role="tabpanel">
+      <div class="conference-day-heading"><strong>Friday, 2 October</strong><span>Future outlook &#183; Demo programme</span></div>
+      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:30 AM</div><div class="session-info"><strong>Future Roads &amp; Sustainable Infrastructure</strong><span>Demo session exploring greener materials and climate-resilient roads.</span></div></article>
+      <article class="session-card"><div class="session-time">10:45 AM<br>&#8211; 12:00 PM</div><div class="session-info"><strong>AI, Data &amp; Mobility Operations</strong><span>Demo panel on practical artificial intelligence for transport networks.</span></div></article>
+      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:00 PM</div><div class="session-info"><strong>Industry Outlook &amp; Closing Forum</strong><span>Demo closing conversation on opportunities for the ASEAN mobility ecosystem.</span></div></article>
+    </section>
+    <div class="conference-notice"><strong>Demo information only.</strong> All session titles, dates and timings on this page are placeholders for the prototype and must be replaced when the confirmed conference programme is available.</div>
+    <button class="bs" onclick="goToScreen('screen-welcome')">Back to Home</button>
+  </div>
+</main>
+<main class="screen" id="screen-vehicle">
+  <div class="si"><div class="card"><div class="cb">
+    <div class="kicker">Step 01</div>
+    <h2 class="h2">Choose your vehicle</h2>
+    <p class="desc">Your vehicle appears on the map and moves only after you tap <b>Reached Destination</b>.</p>
+    <div class="vgrid">
+      <button class="vo sel" onclick="selVehicle(this,'🚗')">🚗</button>
+      <button class="vo"     onclick="selVehicle(this,'🚌')">🚌</button>
+      <button class="vo"     onclick="selVehicle(this,'🚛')">🚛</button>
+      <button class="vo"     onclick="selVehicle(this,'🏍️')">🏍️</button>
+      <button class="vo"     onclick="selVehicle(this,'🚑')">🚑</button>
+    </div>
+    <div class="sprev">
+      <div class="sprev-ico" id="prev-ico">🚗</div>
+      <div class="sprev-txt"><strong>Selected vehicle</strong><span>Your navigation marker on the map.</span></div>
+    </div>
+    <div class="brow">
+      <button class="bp" onclick="goToMap()">Continue to Map</button>
+      <button class="bs" onclick="goToScreen('screen-welcome')">Back</button>
+    </div>
+  </div></div></div>
+</main>
+<main class="screen" id="screen-map">
+  <div class="map-outer">
+    <div class="map-topbar">
+      <button class="map-back" onclick="goToScreen('screen-vehicle')">&#8592; Vehicle</button>
+      <span class="map-hlabel">Hall 5 &amp; 6 &middot; MITEC KL</span>
+      <div class="map-vbadge"><span id="mv-icon">🚗</span></div>
+    </div>
+    <!-- @section: map-quick-navigation -->
+    <div class="map-quick-actions" aria-label="Quick navigation destinations">
+      <button class="map-quick-btn" type="button" onclick="navigateToLandmark('entrance')"><span>Quick Route</span>&#8592; Back to Entrance</button>
+      <button class="map-quick-btn" type="button" onclick="navigateToLandmark('conference')"><span>Quick Route</span>Conference Hall &#8594;</button>
+    </div>
+    <div class="map-card">
+    <svg id="map-svg" class="map-svg" viewBox="0 0 880 1395" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow2"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <!-- LAYER 1: Real floor plan — full page, exact render from PDF -->
+      <image href="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-15/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/floorplan_full_6c99d1ee0cc149c9a985aeeed06d97d7.jpg" x="0" y="0" width="1144" height="1395" preserveAspectRatio="xMidYMid meet"/>
+      <!-- LAYER 2: Booth click zones — exact positions from PDF vector data -->
+      <rect class="booth" data-num="1025" data-cat="Standard" data-name="Booth 1025" x="134" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1024" data-cat="Standard" data-name="Booth 1024" x="176" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1023" data-cat="Standard" data-name="Booth 1023" x="254" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1022" data-cat="Standard" data-name="Booth 1022" x="297" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1021" data-cat="Standard" data-name="Booth 1021" x="376" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1020" data-cat="Standard" data-name="Booth 1020" x="419" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1019" data-cat="Standard" data-name="Booth 1019" x="497" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1018" data-cat="Standard" data-name="Booth 1018" x="539" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1026" data-cat="Standard" data-name="Booth 1026" x="55" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1154" data-cat="Standard" data-name="Booth 1154" x="134" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1153" data-cat="Standard" data-name="Booth 1153" x="176" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1127" data-cat="Standard" data-name="Booth 1127" x="254" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1126" data-cat="Standard" data-name="Booth 1126" x="297" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1125" data-cat="Standard" data-name="Booth 1125" x="340" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1077" data-cat="Standard" data-name="Booth 1077" x="460" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1076" data-cat="Standard" data-name="Booth 1076" x="503" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1075" data-cat="Standard" data-name="Booth 1075" x="545" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1017" data-cat="Standard" data-name="Booth 1017" x="652" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027" data-cat="Standard" data-name="Booth 1027" x="55" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1155" data-cat="Standard" data-name="Booth 1155" x="134" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1156" data-cat="Standard" data-name="Booth 1156" x="176" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1128" data-cat="Standard" data-name="Booth 1128" x="254" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1129" data-cat="Standard" data-name="Booth 1129" x="297" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1130" data-cat="Standard" data-name="Booth 1130" x="340" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1078" data-cat="Standard" data-name="Booth 1078" x="460" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1079" data-cat="Standard" data-name="Booth 1079" x="503" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1080" data-cat="Standard" data-name="Booth 1080" x="545" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027A" data-cat="Standard" data-name="Booth 1027A" x="58" y="505" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1157" data-cat="Standard" data-name="Booth 1157" x="134" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1152" data-cat="Standard" data-name="Booth 1152" x="176" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1131" data-cat="Standard" data-name="Booth 1131" x="254" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1124" data-cat="Standard" data-name="Booth 1124" x="297" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1103" data-cat="Standard" data-name="Booth 1103" x="375" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1102" data-cat="Standard" data-name="Booth 1102" x="417" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1081" data-cat="Standard" data-name="Booth 1081" x="531" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1074" data-cat="Standard" data-name="Booth 1074" x="574" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1053" data-cat="Standard" data-name="Booth 1053" x="652" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1052" data-cat="Standard" data-name="Booth 1052" x="695" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1104" data-cat="Standard" data-name="Booth 1104" x="375" y="534" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1101" data-cat="Standard" data-name="Booth 1101" x="418" y="534" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027B" data-cat="Standard" data-name="Booth 1027B" x="58" y="548" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1158" data-cat="Standard" data-name="Booth 1158" x="134" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1151" data-cat="Standard" data-name="Booth 1151" x="176" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1132" data-cat="Standard" data-name="Booth 1132" x="254" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1123" data-cat="Standard" data-name="Booth 1123" x="297" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1104" data-cat="Standard" data-name="Booth 1104" x="375" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1101" data-cat="Standard" data-name="Booth 1101" x="417" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1082" data-cat="Standard" data-name="Booth 1082" x="531" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1073" data-cat="Standard" data-name="Booth 1073" x="574" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1054" data-cat="Standard" data-name="Booth 1054" x="652" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1051" data-cat="Standard" data-name="Booth 1051" x="695" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1105" data-cat="Standard" data-name="Booth 1105" x="375" y="591" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1100" data-cat="Standard" data-name="Booth 1100" x="418" y="591" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1105" data-cat="Standard" data-name="Booth 1105" x="375" y="618" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1100" data-cat="Standard" data-name="Booth 1100" x="417" y="618" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1028" data-cat="Standard" data-name="Booth 1028" x="55" y="632" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1106" data-cat="Standard" data-name="Booth 1106" x="375" y="646" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1099" data-cat="Standard" data-name="Booth 1099" x="418" y="646" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1159" data-cat="Standard" data-name="Booth 1159" x="134" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1150" data-cat="Standard" data-name="Booth 1150" x="176" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1133" data-cat="Standard" data-name="Booth 1133" x="254" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1122" data-cat="Standard" data-name="Booth 1122" x="297" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1083" data-cat="Standard" data-name="Booth 1083" x="531" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1072" data-cat="Standard" data-name="Booth 1072" x="574" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1055" data-cat="Standard" data-name="Booth 1055" x="652" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1050" data-cat="Standard" data-name="Booth 1050" x="695" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1013" data-cat="Standard" data-name="Booth 1013" x="773" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1106" data-cat="Standard" data-name="Booth 1106" x="375" y="660" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1099" data-cat="Standard" data-name="Booth 1099" x="417" y="660" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1029" data-cat="Standard" data-name="Booth 1029" x="55" y="675" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1160" data-cat="Standard" data-name="Booth 1160" x="134" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1149" data-cat="Standard" data-name="Booth 1149" x="176" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1134" data-cat="Standard" data-name="Booth 1134" x="254" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1121" data-cat="Standard" data-name="Booth 1121" x="297" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1084" data-cat="Standard" data-name="Booth 1084" x="531" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1071" data-cat="Standard" data-name="Booth 1071" x="574" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1056" data-cat="Standard" data-name="Booth 1056" x="652" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1049" data-cat="Standard" data-name="Booth 1049" x="695" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1012" data-cat="Standard" data-name="Booth 1012" x="773" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1030" data-cat="Standard" data-name="Booth 1030" x="62" y="753" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1107" data-cat="Standard" data-name="Booth 1107" x="382" y="767" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1098" data-cat="Standard" data-name="Booth 1098" x="424" y="767" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1161" data-cat="Standard" data-name="Booth 1161" x="140" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1148" data-cat="Standard" data-name="Booth 1148" x="183" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1135" data-cat="Standard" data-name="Booth 1135" x="261" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1120" data-cat="Standard" data-name="Booth 1120" x="304" y="788" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1085" data-cat="Standard" data-name="Booth 1085" x="538" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1070" data-cat="Standard" data-name="Booth 1070" x="581" y="788" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1057" data-cat="Standard" data-name="Booth 1057" x="658" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1048" data-cat="Standard" data-name="Booth 1048" x="701" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1011" data-cat="Standard" data-name="Booth 1011" x="779" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1031" data-cat="Standard" data-name="Booth 1031" x="62" y="795" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1108" data-cat="Standard" data-name="Booth 1108" x="382" y="810" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1097" data-cat="Standard" data-name="Booth 1097" x="424" y="810" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1162" data-cat="Standard" data-name="Booth 1162" x="140" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1147" data-cat="Standard" data-name="Booth 1147" x="183" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1136" data-cat="Standard" data-name="Booth 1136" x="261" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1119" data-cat="Standard" data-name="Booth 1119" x="304" y="831" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1086" data-cat="Standard" data-name="Booth 1086" x="538" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1069" data-cat="Standard" data-name="Booth 1069" x="581" y="831" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1058" data-cat="Standard" data-name="Booth 1058" x="658" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1047" data-cat="Standard" data-name="Booth 1047" x="701" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1010" data-cat="Standard" data-name="Booth 1010" x="779" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1032" data-cat="Standard" data-name="Booth 1032" x="62" y="859" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1109" data-cat="Gold" data-name="Booth 1109" x="382" y="895" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1096" data-cat="Gold" data-name="Booth 1096" x="424" y="895" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1033" data-cat="Standard" data-name="Booth 1033" x="62" y="902" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1163" data-cat="Gold" data-name="Booth 1163" x="140" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1146" data-cat="Gold" data-name="Booth 1146" x="183" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1137" data-cat="Gold" data-name="Booth 1137" x="261" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1118" data-cat="Gold" data-name="Booth 1118" x="304" y="909" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1087" data-cat="Gold" data-name="Booth 1087" x="538" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1068" data-cat="Gold" data-name="Booth 1068" x="581" y="909" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1059" data-cat="Gold" data-name="Booth 1059" x="658" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1046" data-cat="Gold" data-name="Booth 1046" x="701" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1009" data-cat="Standard" data-name="Booth 1009" x="779" y="909" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1110" data-cat="Gold" data-name="Booth 1110" x="382" y="938" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1095" data-cat="Gold" data-name="Booth 1095" x="424" y="938" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1164" data-cat="Gold" data-name="Booth 1164" x="140" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1145" data-cat="Gold" data-name="Booth 1145" x="183" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1138" data-cat="Gold" data-name="Booth 1138" x="261" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1117" data-cat="Gold" data-name="Booth 1117" x="304" y="951" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1088" data-cat="Gold" data-name="Booth 1088" x="538" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1067" data-cat="Gold" data-name="Booth 1067" x="581" y="951" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1060" data-cat="Gold" data-name="Booth 1060" x="658" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1045" data-cat="Gold" data-name="Booth 1045" x="701" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1008" data-cat="Standard" data-name="Booth 1008" x="779" y="951" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1034" data-cat="Standard" data-name="Booth 1034" x="62" y="966" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1035" data-cat="Standard" data-name="Booth 1035" x="62" y="1009" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1165" data-cat="Platinum" data-name="Booth 1165" x="140" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1144" data-cat="Platinum" data-name="Booth 1144" x="183" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1139" data-cat="Platinum" data-name="Booth 1139" x="261" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1116" data-cat="Platinum" data-name="Booth 1116" x="304" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1111" data-cat="Platinum" data-name="Booth 1111" x="382" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1094" data-cat="Platinum" data-name="Booth 1094" x="424" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1089" data-cat="Platinum" data-name="Booth 1089" x="538" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1066" data-cat="Platinum" data-name="Booth 1066" x="581" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1061" data-cat="Platinum" data-name="Booth 1061" x="658" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1044" data-cat="Platinum" data-name="Booth 1044" x="701" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1007" data-cat="Standard" data-name="Booth 1007" x="779" y="1030" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1036" data-cat="Standard" data-name="Booth 1036" x="62" y="1072" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1166" data-cat="Platinum" data-name="Booth 1166" x="140" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1143" data-cat="Platinum" data-name="Booth 1143" x="183" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1140" data-cat="Platinum" data-name="Booth 1140" x="261" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1115" data-cat="Platinum" data-name="Booth 1115" x="304" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1112" data-cat="Platinum" data-name="Booth 1112" x="382" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1093" data-cat="Platinum" data-name="Booth 1093" x="424" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1090" data-cat="Platinum" data-name="Booth 1090" x="538" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1065" data-cat="Platinum" data-name="Booth 1065" x="581" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1062" data-cat="Platinum" data-name="Booth 1062" x="658" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1043" data-cat="Platinum" data-name="Booth 1043" x="701" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1006" data-cat="Standard" data-name="Booth 1006" x="779" y="1072" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1037" data-cat="Standard" data-name="Booth 1037" x="62" y="1115" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1167" data-cat="Platinum" data-name="Booth 1167" x="140" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1142" data-cat="Platinum" data-name="Booth 1142" x="183" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1141" data-cat="Platinum" data-name="Booth 1141" x="261" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1114" data-cat="Platinum" data-name="Booth 1114" x="304" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1113" data-cat="Platinum" data-name="Booth 1113" x="382" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1092" data-cat="Platinum" data-name="Booth 1092" x="424" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1091" data-cat="Platinum" data-name="Booth 1091" x="538" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1064" data-cat="Platinum" data-name="Booth 1064" x="581" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1063" data-cat="Platinum" data-name="Booth 1063" x="658" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1042" data-cat="Platinum" data-name="Booth 1042" x="701" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1005" data-cat="Standard" data-name="Booth 1005" x="779" y="1115" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1038" data-cat="Standard" data-name="Booth 1038" x="109" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1039" data-cat="Standard" data-name="Booth 1039" x="152" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1040" data-cat="Standard" data-name="Booth 1040" x="237" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1041" data-cat="Standard" data-name="Booth 1041" x="280" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1001" data-cat="Standard" data-name="Booth 1001" x="559" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1002" data-cat="Standard" data-name="Booth 1002" x="602" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1003" data-cat="Standard" data-name="Booth 1003" x="687" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1004" data-cat="Standard" data-name="Booth 1004" x="730" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <!-- @section: glowing-route -->
+      <!-- LAYER 3: Always-visible route halo + glow + bright core -->
+      <g id="route-layer" style="display:none;pointer-events:none;">
+        <path id="route-halo" fill="none" stroke="rgba(0,8,18,0.82)" stroke-width="21"
+          stroke-linecap="round" stroke-linejoin="round" d=""/>
+        <path id="route-glow" fill="none" stroke="#00d5ff" stroke-width="14" opacity="0.58"
+          stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)" d=""/>
+        <path id="route-line" fill="none" stroke="#bff8ff" stroke-width="6"
+          stroke-linecap="round" stroke-linejoin="round" d=""/>
+        <circle id="route-start" r="9" fill="#050b14" stroke="#00d5ff" stroke-width="4"/>
+        <circle id="route-end" r="12" fill="#00d5ff" stroke="#ffffff" stroke-width="4" filter="url(#glow)"/>
+      </g>
+      <!-- @section: vehicle-marker -->
+      <!-- LAYER 4: Vehicle moves as one group for smooth animation -->
+      <g id="vehicle-marker" transform="translate(572 1360)"
+        style="display:none;pointer-events:none;will-change:transform;">
+        <circle id="vehicle-bg" cx="0" cy="0" r="22"
+          fill="#060e1c" stroke="#00d5ff" stroke-width="3.5" filter="url(#glow2)"/>
+        <text id="vehicle-emoji" x="0" y="1" text-anchor="middle" dominant-baseline="middle"
+          font-size="22">🚗</text>
+      </g>
+    </svg>
+    </div>
+  </div>
+</main>
+<!-- @section: visited-booths-screen -->
+<main class="screen" id="screen-visited">
+  <div class="visited-wrap">
+    <button class="detail-back-link" onclick="goToScreen('screen-welcome')">&#8592; Back to Home</button>
+    <div class="card visited-hero"><div class="cb">
+      <div class="demo-badge">Session Visit History</div>
+      <div class="kicker">Your Exhibition Journey</div>
+      <h2 class="h2">Visited Booths</h2>
+      <p class="desc">Booths appear here only after you complete a route and tap <b>Reached Destination</b>.</p>
+      <div class="visited-summary">
+        <div class="visited-count-card"><strong class="visited-count" id="visited-count">0</strong><span class="visited-count-label">Visited</span></div>
+        <div class="visited-summary-copy">Your visit order is tracked only for this current browser session. Revisited booths are not duplicated.</div>
+      </div>
+    </div></div>
+    <div class="visited-empty" id="visited-empty">
+      <div class="visited-empty-icon" aria-hidden="true">&#10003;</div>
+      <strong>No booths visited yet</strong>
+      <p>Choose a booth on the map, follow its cyan route, and confirm your arrival to add it to this list.</p>
+    </div>
+    <div class="visited-list" id="visited-list" aria-live="polite"></div>
+    <div class="conference-notice"><strong>Demo exhibitor information.</strong> Company names and categories shown in this visit history are prototype content and are not confirmed exhibitor records.</div>
+    <div class="visited-actions">
+      <button class="bp" onclick="continueExploring()">Continue Exploring</button>
+      <button class="bs" onclick="goToScreen('screen-welcome')">Back to Home</button>
+    </div>
+  </div>
+</main>
+<!-- @section: booth-details-screen -->
+<main class="screen" id="screen-booth-details">
+  <div class="detail-wrap">
+    <button class="detail-back-link" onclick="backToMapFromDetails()">&#8592; Back to Map</button>
+    <div class="card detail-card"><div class="cb">
+      <div class="demo-badge">Demo Exhibitor Information</div>
+      <div class="kicker">Booth Details</div>
+      <h2 class="detail-company" id="detail-company">MYARTTE Demo Exhibitor</h2>
+      <p class="detail-company-sub">Preview information for the app prototype. Official exhibitor details will replace this content later.</p>
+      <div class="detail-meta">
+        <div class="detail-meta-card"><span class="detail-meta-label">Booth Number</span><strong class="detail-meta-value" id="detail-booth">&#8212;</strong></div>
+        <div class="detail-meta-card"><span class="detail-meta-label">Demo Category</span><strong class="detail-meta-value" id="detail-category">&#8212;</strong></div>
+      </div>
+      <div class="detail-copy">
+        <div class="detail-copy-label">About this exhibitor</div>
+        <p id="detail-description">This is temporary demo content for the Booth Details page.</p>
+      </div>
+      <div class="demo-notice"><span aria-hidden="true">&#9432;</span><span><strong>Demo only.</strong> The company name, category and description shown here are not confirmed exhibitor information.</span></div>
+      <div class="detail-actions">
+        <button class="bp" onclick="navigateFromDetails()">Navigate to Booth</button>
+        <button class="bs" onclick="backToMapFromDetails()">Back to Map</button>
+      </div>
+    </div></div>
+  </div>
+</main>
+</div>
+<div class="rbar" id="rbar">
+  <div class="rbar-title" id="rbar-title">Route Ready</div>
+  <div class="rbar-sub"   id="rbar-sub">Walk the glowing cyan path.</div>
+  <div class="rbar-acts">
+    <button class="btn-cancel" onclick="cancelRoute()">Cancel</button>
+    <button class="btn-reach" id="btn-reached" onclick="reachedDest()">&#10003; Reached Destination</button>
+  </div>
+</div>
+<script>
+var vehicleEmoji="🚗";
+var parkedNode="entrance";
+var parkedPoint={x:572,y:1360};
+var parkedConnector=[];
+var curRoute=[];var curPathPoints=[];var curConnector=[];
+var curNum="";var curEl=null;var curEndPoint=null;var curDestNode="";
+var pendingBooth=null;var detailsReturnBarVisible=false;
+/* @section: visited-booths-state */
+var visitedBooths=[];
+/* @section: landmark-navigation-state */
+var curDestinationType="booth";var curDestinationLabel="";
+var LANDMARKS={
+  entrance:{label:"Hall 6 Entrance",node:"entrance",point:{x:572,y:1360}},
+  conference:{label:"Conference Hall",node:"h2_vR",point:{x:842,y:585}}
+};
+var SPEED=285;
+var motionFrame=0;var isMoving=false;var routeFlowAnimation=null;
+var N={
+  "entrance":{"x":572,"y":1360},
+  "btm_vL":{"x":110,"y":1240},
+  "btm_c1":{"x":233,"y":1240},
+  "btm_c2":{"x":370,"y":1240},
+  "btm_c3":{"x":483,"y":1240},
+  "btm_c4":{"x":602,"y":1240},
+  "btm_c5":{"x":723,"y":1240},
+  "btm_vR":{"x":858,"y":1240},
+  "h6_vL":{"x":110,"y":1090},
+  "h6_c1":{"x":233,"y":1090},
+  "h6_c2":{"x":370,"y":1090},
+  "h6_c3":{"x":483,"y":1090},
+  "h6_c4":{"x":602,"y":1090},
+  "h6_c5":{"x":723,"y":1090},
+  "h6_vR":{"x":858,"y":1090},
+  "h5_vL":{"x":110,"y":962},
+  "h5_c1":{"x":233,"y":962},
+  "h5_c2":{"x":370,"y":962},
+  "h5_c3":{"x":483,"y":962},
+  "h5_c4":{"x":602,"y":962},
+  "h5_c5":{"x":723,"y":962},
+  "h5_vR":{"x":858,"y":962},
+  "h4_vL":{"x":110,"y":834},
+  "h4_c1":{"x":233,"y":834},
+  "h4_c2":{"x":370,"y":834},
+  "h4_c3":{"x":483,"y":834},
+  "h4_c4":{"x":602,"y":834},
+  "h4_c5":{"x":723,"y":834},
+  "h4_vR":{"x":858,"y":834},
+  "h3_vL":{"x":110,"y":708},
+  "h3_c1":{"x":233,"y":708},
+  "h3_c2":{"x":370,"y":708},
+  "h3_c3":{"x":483,"y":708},
+  "h3_c4":{"x":602,"y":708},
+  "h3_c5":{"x":723,"y":708},
+  "h3_vR":{"x":858,"y":708},
+  "h2_vL":{"x":110,"y":530},
+  "h2_c1":{"x":233,"y":530},
+  "h2_c2":{"x":370,"y":530},
+  "h2_c3":{"x":483,"y":530},
+  "h2_c4":{"x":602,"y":530},
+  "h2_c5":{"x":723,"y":530},
+  "h2_vR":{"x":858,"y":530},
+  "h1_vL":{"x":110,"y":385},
+  "h1_c1":{"x":233,"y":385},
+  "h1_c2":{"x":370,"y":385},
+  "h1_c3":{"x":483,"y":385},
+  "h1_c4":{"x":602,"y":385},
+  "h1_c5":{"x":723,"y":385},
+  "h1_vR":{"x":858,"y":385},
+  "top_vL":{"x":110,"y":280},
+  "top_c1":{"x":233,"y":280},
+  "top_c2":{"x":370,"y":280},
+  "top_c3":{"x":483,"y":280},
+  "top_c4":{"x":602,"y":280},
+  "top_c5":{"x":723,"y":280},
+  "top_vR":{"x":858,"y":280}
+};
+var EDGES=[
+  ["entrance","btm_c2"],
+  ["btm_vL","btm_c1"],["btm_c1","btm_c2"],["btm_c2","btm_c3"],["btm_c3","btm_c4"],["btm_c4","btm_c5"],["btm_c5","btm_vR"],
+  ["btm_vL","h6_vL"],["btm_c1","h6_c1"],["btm_c2","h6_c2"],["btm_c3","h6_c3"],["btm_c4","h6_c4"],["btm_c5","h6_c5"],["btm_vR","h6_vR"],
+  ["h6_vL","h6_c1"],["h6_c1","h6_c2"],["h6_c2","h6_c3"],["h6_c3","h6_c4"],["h6_c4","h6_c5"],["h6_c5","h6_vR"],
+  ["h6_vL","h5_vL"],["h6_c1","h5_c1"],["h6_c2","h5_c2"],["h6_c3","h5_c3"],["h6_c4","h5_c4"],["h6_c5","h5_c5"],["h6_vR","h5_vR"],
+  ["h5_vL","h5_c1"],["h5_c1","h5_c2"],["h5_c2","h5_c3"],["h5_c3","h5_c4"],["h5_c4","h5_c5"],["h5_c5","h5_vR"],
+  ["h5_vL","h4_vL"],["h5_c1","h4_c1"],["h5_c2","h4_c2"],["h5_c3","h4_c3"],["h5_c4","h4_c4"],["h5_c5","h4_c5"],["h5_vR","h4_vR"],
+  ["h4_vL","h4_c1"],["h4_c1","h4_c2"],["h4_c2","h4_c3"],["h4_c3","h4_c4"],["h4_c4","h4_c5"],["h4_c5","h4_vR"],
+  ["h4_vL","h3_vL"],["h4_c1","h3_c1"],["h4_c2","h3_c2"],["h4_c3","h3_c3"],["h4_c4","h3_c4"],["h4_c5","h3_c5"],["h4_vR","h3_vR"],
+  ["h3_vL","h3_c1"],["h3_c1","h3_c2"],["h3_c2","h3_c3"],["h3_c3","h3_c4"],["h3_c4","h3_c5"],["h3_c5","h3_vR"],
+  ["h3_vL","h2_vL"],["h3_c1","h2_c1"],["h3_c2","h2_c2"],["h3_c3","h2_c3"],["h3_c4","h2_c4"],["h3_c5","h2_c5"],["h3_vR","h2_vR"],
+  ["h2_vL","h2_c1"],["h2_c1","h2_c2"],["h2_c2","h2_c3"],["h2_c3","h2_c4"],["h2_c4","h2_c5"],["h2_c5","h2_vR"],
+  ["h2_vL","h1_vL"],["h2_c1","h1_c1"],["h2_c2","h1_c2"],["h2_c3","h1_c3"],["h2_c4","h1_c4"],["h2_c5","h1_c5"],["h2_vR","h1_vR"],
+  ["h1_vL","h1_c1"],["h1_c1","h1_c2"],["h1_c2","h1_c3"],["h1_c3","h1_c4"],["h1_c4","h1_c5"],["h1_c5","h1_vR"],
+  ["h1_vL","top_vL"],["h1_c1","top_c1"],["h1_c2","top_c2"],["h1_c3","top_c3"],["h1_c4","top_c4"],["h1_c5","top_c5"],["h1_vR","top_vR"],
+  ["top_vL","top_c1"],["top_c1","top_c2"],["top_c2","top_c3"],["top_c3","top_c4"],["top_c4","top_c5"],["top_c5","top_vR"]
+];
+var BNODE={
+  "1025":"top_vL",
+  "1024":"top_c1",
+  "1023":"top_c1",
+  "1022":"top_c2",
+  "1021":"top_c2",
+  "1020":"top_c3",
+  "1019":"top_c3",
+  "1018":"top_c4",
+  "1026":"h1_vL",
+  "1154":"h1_vL",
+  "1153":"h1_c1",
+  "1127":"h1_c1",
+  "1126":"h1_c2",
+  "1125":"h1_c2",
+  "1077":"h1_c3",
+  "1076":"h1_c3",
+  "1075":"h1_c4",
+  "1017":"h1_c5",
+  "1027":"h1_vL",
+  "1155":"h1_vL",
+  "1156":"h1_c1",
+  "1128":"h1_c1",
+  "1129":"h1_c2",
+  "1130":"h1_c2",
+  "1078":"h1_c3",
+  "1079":"h1_c3",
+  "1080":"h1_c4",
+  "1027A":"h2_vL",
+  "1157":"h2_vL",
+  "1152":"h2_c1",
+  "1131":"h2_c1",
+  "1124":"h2_c2",
+  "1103":"h2_c2",
+  "1102":"h2_c3",
+  "1081":"h2_c4",
+  "1074":"h2_c4",
+  "1053":"h2_c5",
+  "1052":"h2_c5",
+  "1104":"h2_c2",
+  "1101":"h2_c3",
+  "1027B":"h2_vL",
+  "1158":"h2_vL",
+  "1151":"h2_c1",
+  "1132":"h2_c1",
+  "1123":"h2_c2",
+  "1082":"h2_c4",
+  "1073":"h2_c4",
+  "1054":"h2_c5",
+  "1051":"h2_c5",
+  "1105":"h3_c2",
+  "1100":"h3_c3",
+  "1028":"h3_vL",
+  "1106":"h3_c2",
+  "1099":"h3_c3",
+  "1159":"h3_vL",
+  "1150":"h3_c1",
+  "1133":"h3_c1",
+  "1122":"h3_c2",
+  "1083":"h3_c4",
+  "1072":"h3_c4",
+  "1055":"h3_c5",
+  "1050":"h3_c5",
+  "1013":"h3_vR",
+  "1029":"h3_vL",
+  "1160":"h3_vL",
+  "1149":"h3_c1",
+  "1134":"h3_c1",
+  "1121":"h3_c2",
+  "1084":"h3_c4",
+  "1071":"h3_c4",
+  "1056":"h3_c5",
+  "1049":"h3_c5",
+  "1012":"h3_vR",
+  "1030":"h4_vL",
+  "1107":"h4_c2",
+  "1098":"h4_c3",
+  "1161":"h4_vL",
+  "1148":"h4_c1",
+  "1135":"h4_c1",
+  "1120":"h4_c2",
+  "1085":"h4_c4",
+  "1070":"h4_c4",
+  "1057":"h4_c5",
+  "1048":"h4_c5",
+  "1011":"h4_vR",
+  "1031":"h4_vL",
+  "1108":"h4_c2",
+  "1097":"h4_c3",
+  "1162":"h4_vL",
+  "1147":"h4_c1",
+  "1136":"h4_c1",
+  "1119":"h4_c2",
+  "1086":"h4_c4",
+  "1069":"h4_c4",
+  "1058":"h4_c5",
+  "1047":"h4_c5",
+  "1010":"h4_vR",
+  "1032":"h4_vL",
+  "1109":"h5_c2",
+  "1096":"h5_c3",
+  "1033":"h5_vL",
+  "1163":"h5_vL",
+  "1146":"h5_c1",
+  "1137":"h5_c1",
+  "1118":"h5_c2",
+  "1087":"h5_c4",
+  "1068":"h5_c4",
+  "1059":"h5_c5",
+  "1046":"h5_c5",
+  "1009":"h5_vR",
+  "1110":"h5_c2",
+  "1095":"h5_c3",
+  "1164":"h5_vL",
+  "1145":"h5_c1",
+  "1138":"h5_c1",
+  "1117":"h5_c2",
+  "1088":"h5_c4",
+  "1067":"h5_c4",
+  "1060":"h5_c5",
+  "1045":"h5_c5",
+  "1008":"h5_vR",
+  "1034":"h5_vL",
+  "1035":"h6_vL",
+  "1165":"h6_vL",
+  "1144":"h6_c1",
+  "1139":"h6_c1",
+  "1116":"h6_c2",
+  "1111":"h6_c2",
+  "1094":"h6_c3",
+  "1089":"h6_c4",
+  "1066":"h6_c4",
+  "1061":"h6_c5",
+  "1044":"h6_c5",
+  "1007":"h6_vR",
+  "1036":"h6_vL",
+  "1166":"h6_vL",
+  "1143":"h6_c1",
+  "1140":"h6_c1",
+  "1115":"h6_c2",
+  "1112":"h6_c2",
+  "1093":"h6_c3",
+  "1090":"h6_c4",
+  "1065":"h6_c4",
+  "1062":"h6_c5",
+  "1043":"h6_c5",
+  "1006":"h6_vR",
+  "1037":"h6_vL",
+  "1167":"h6_vL",
+  "1142":"h6_c1",
+  "1141":"h6_c1",
+  "1114":"h6_c2",
+  "1113":"h6_c2",
+  "1092":"h6_c3",
+  "1091":"h6_c4",
+  "1064":"h6_c4",
+  "1063":"h6_c5",
+  "1042":"h6_c5",
+  "1005":"h6_vR",
+  "1038":"btm_vL",
+  "1039":"btm_c1",
+  "1040":"btm_c1",
+  "1041":"btm_c1",
+  "1001":"btm_c4",
+  "1002":"btm_c4",
+  "1003":"btm_c5",
+  "1004":"btm_c5"
+};
+var ADJ={};
+function buildAdj(){Object.keys(N).forEach(function(k){ADJ[k]=[];});EDGES.forEach(function(e){var a=e[0],b=e[1];if(!ADJ[a]||!ADJ[b])return;if(ADJ[a].indexOf(b)===-1)ADJ[a].push(b);if(ADJ[b].indexOf(a)===-1)ADJ[b].push(a);});}
+function dijkstra(start,end){if(start===end)return[start];if(!ADJ[start]||!ADJ[end])return[];var dist={},prev={},open=Object.keys(N);open.forEach(function(k){dist[k]=Infinity;prev[k]=null;});dist[start]=0;while(open.length){open.sort(function(a,b){return dist[a]-dist[b];});var cur=open.shift();if(cur===end)break;if(dist[cur]===Infinity)break;(ADJ[cur]||[]).forEach(function(nb){var pa=N[cur],pb=N[nb];if(!pa||!pb)return;var d=Math.sqrt(Math.pow(pb.x-pa.x,2)+Math.pow(pb.y-pa.y,2));var alt=dist[cur]+d;if(alt<dist[nb]){dist[nb]=alt;prev[nb]=cur;}});}var path=[],step=end;while(step){path.unshift(step);step=prev[step];if(path.length>200)break;}return(path[0]===start)?path:[];}
+/* @section: route-rendering */
+function samePoint(a,b){return a&&b&&Math.abs(a.x-b.x)<0.5&&Math.abs(a.y-b.y)<0.5;}
+function addPoint(list,p){if(!p)return;if(!list.length||!samePoint(list[list.length-1],p))list.push({x:p.x,y:p.y});}
+function routePathData(points){
+  if(!points.length)return"";
+  if(points.length===1)return"M "+points[0].x.toFixed(1)+" "+points[0].y.toFixed(1);
+  var d="M "+points[0].x.toFixed(1)+" "+points[0].y.toFixed(1);
+  for(var i=1;i<points.length-1;i++){
+    var prev=points[i-1],cur=points[i],next=points[i+1];
+    var inDx=cur.x-prev.x,inDy=cur.y-prev.y,outDx=next.x-cur.x,outDy=next.y-cur.y;
+    var inLen=Math.hypot(inDx,inDy),outLen=Math.hypot(outDx,outDy);
+    if(inLen<1||outLen<1){d+=" L "+cur.x.toFixed(1)+" "+cur.y.toFixed(1);continue;}
+    var radius=Math.min(14,inLen*.28,outLen*.28);
+    var before={x:cur.x-inDx/inLen*radius,y:cur.y-inDy/inLen*radius};
+    var after={x:cur.x+outDx/outLen*radius,y:cur.y+outDy/outLen*radius};
+    d+=" L "+before.x.toFixed(1)+" "+before.y.toFixed(1);
+    d+=" Q "+cur.x.toFixed(1)+" "+cur.y.toFixed(1)+" "+after.x.toFixed(1)+" "+after.y.toFixed(1);
+  }
+  var last=points[points.length-1];
+  return d+" L "+last.x.toFixed(1)+" "+last.y.toFixed(1);
+}
+function boothConnector(el,nodeKey){
+  var node=N[nodeKey];if(!el||!node)return[];
+  var x=parseFloat(el.getAttribute("x")),y=parseFloat(el.getAttribute("y"));
+  var w=parseFloat(el.getAttribute("width")),h=parseFloat(el.getAttribute("height"));
+  var cx=x+w/2,cy=y+h/2,dx=node.x-cx,dy=node.y-cy,margin=9;
+  var end,bend;
+  if(Math.abs(dx)>Math.abs(dy)){
+    end={x:cx+(dx>=0?w/2+margin:-(w/2+margin)),y:cy};
+    bend={x:node.x,y:end.y};
+  }else{
+    end={x:cx,y:cy+(dy>=0?h/2+margin:-(h/2+margin))};
+    bend={x:end.x,y:node.y};
+  }
+  var connector=[];addPoint(connector,node);addPoint(connector,bend);addPoint(connector,end);
+  return connector;
+}
+function buildTravelPoints(route,connector){
+  var points=[];
+  if(parkedConnector.length>1){parkedConnector.slice().reverse().forEach(function(p){addPoint(points,p);});}
+  else{addPoint(points,parkedPoint);}
+  route.forEach(function(k){addPoint(points,N[k]);});
+  connector.slice(1).forEach(function(p){addPoint(points,p);});
+  return points;
+}
+function drawRoute(points){
+  var layer=document.getElementById("route-layer");
+  var halo=document.getElementById("route-halo");
+  var glow=document.getElementById("route-glow");
+  var line=document.getElementById("route-line");
+  var start=document.getElementById("route-start"),end=document.getElementById("route-end");
+  if(!layer||!halo||!glow||!line||points.length<2)return false;
+  var d=routePathData(points);halo.setAttribute("d",d);glow.setAttribute("d",d);line.setAttribute("d",d);
+  start.setAttribute("cx",points[0].x);start.setAttribute("cy",points[0].y);
+  end.setAttribute("cx",points[points.length-1].x);end.setAttribute("cy",points[points.length-1].y);
+  line.style.strokeDasharray="none";line.style.strokeDashoffset="0";
+  glow.style.strokeDasharray="18 18";glow.style.strokeDashoffset="0";
+  layer.style.display="inline";
+  if(routeFlowAnimation)routeFlowAnimation.cancel();
+  if(glow.animate){routeFlowAnimation=glow.animate([{strokeDashoffset:"0"},{strokeDashoffset:"-72"}],{duration:1400,iterations:Infinity,easing:"linear"});}
+  return true;
+}
+function clearRoute(){
+  if(routeFlowAnimation){routeFlowAnimation.cancel();routeFlowAnimation=null;}
+  var layer=document.getElementById("route-layer");if(layer)layer.style.display="none";
+  ["route-halo","route-glow","route-line"].forEach(function(id){var p=document.getElementById(id);if(p)p.setAttribute("d","");});
+}
+function setVehiclePoint(p){var marker=document.getElementById("vehicle-marker");if(!marker||!p)return;marker.setAttribute("transform","translate("+p.x.toFixed(2)+" "+p.y.toFixed(2)+")");marker.style.display="inline";}
+function placeVehicle(k){var p=N[k];if(!p)return;parkedPoint={x:p.x,y:p.y};parkedConnector=[];setVehiclePoint(parkedPoint);}
+/* @section: smooth-vehicle-motion */
+function animateVehicle(points,done){
+  var marker=document.getElementById("vehicle-marker"),path=document.getElementById("route-line");
+  if(!marker||!path||points.length<2){if(points.length)setVehiclePoint(points[points.length-1]);if(done)done();return;}
+  cancelAnimationFrame(motionFrame);isMoving=true;marker.style.display="inline";
+  var total=0;try{total=path.getTotalLength();}catch(e){}
+  if(total<1){setVehiclePoint(points[points.length-1]);isMoving=false;if(done)done();return;}
+  var duration=Math.max(700,Math.min(8500,total/SPEED*1000));var started=0;
+  function frame(now){
+    if(!started)started=now;
+    var raw=Math.min(1,(now-started)/duration);
+    var eased=raw<0.5?4*raw*raw*raw:1-Math.pow(-2*raw+2,3)/2;
+    var p=path.getPointAtLength(total*eased);setVehiclePoint(p);
+    if(raw<1){motionFrame=requestAnimationFrame(frame);}
+    else{setVehiclePoint(points[points.length-1]);isMoving=false;if(done)done();}
+  }
+  motionFrame=requestAnimationFrame(frame);
+}
+/* @section: booth-details-flow */
+function demoBoothData(num,cat){
+  var boothNum=String(num||"");
+  var demoCategory=(cat||"Standard")+" (Demo)";
+  return{
+    company:"MYARTTE Demo Exhibitor "+boothNum,
+    category:demoCategory,
+    description:"This temporary profile demonstrates how exhibitor information will appear for Booth "+boothNum+". The official company overview, products and verified booth category will be added when the confirmed exhibitor list is available."
+  };
+}
+/* @section: visited-booths-rendering */
+function addVisitedBooth(num,el){
+  var boothNum=String(num||"");if(!boothNum)return;
+  if(visitedBooths.some(function(item){return item.num===boothNum;}))return;
+  var cat=el&&el.getAttribute("data-cat")?el.getAttribute("data-cat"):"Standard";
+  var demo=demoBoothData(boothNum,cat);
+  visitedBooths.push({num:boothNum,company:demo.company,category:demo.category,order:visitedBooths.length+1});
+  renderVisitedBooths();
+}
+function renderVisitedBooths(){
+  var count=document.getElementById("visited-count"),homeCount=document.getElementById("home-visited-count");
+  var empty=document.getElementById("visited-empty"),list=document.getElementById("visited-list");
+  if(count)count.textContent=visitedBooths.length;if(homeCount)homeCount.textContent="("+visitedBooths.length+")";
+  if(empty)empty.style.display=visitedBooths.length?"none":"block";
+  if(!list)return;list.innerHTML="";
+  visitedBooths.forEach(function(item){
+    var card=document.createElement("article");card.className="visited-item";
+    var order=document.createElement("div");order.className="visit-order";order.textContent="#"+item.order;
+    var info=document.createElement("div");info.className="visit-info";
+    var company=document.createElement("strong");company.textContent=item.company;
+    var meta=document.createElement("div");meta.className="visit-meta";
+    var booth=document.createElement("span");booth.textContent="Booth "+item.num;
+    var divider=document.createElement("span");divider.textContent="·";
+    var category=document.createElement("span");category.textContent=item.category;
+    var demo=document.createElement("span");demo.className="visit-demo";demo.textContent="Demo Exhibitor Data";
+    var check=document.createElement("div");check.className="visit-check";check.setAttribute("aria-label","Visited");check.textContent="✓";
+    meta.appendChild(booth);meta.appendChild(divider);meta.appendChild(category);
+    info.appendChild(company);info.appendChild(meta);info.appendChild(demo);
+    card.appendChild(order);card.appendChild(info);card.appendChild(check);list.appendChild(card);
+  });
+}
+function openVisitedBooths(){renderVisitedBooths();goToScreen("screen-visited");}
+function continueExploring(){goToMap();}
+function openBoothDetails(el,num,name,cat){
+  if(isMoving)return;
+  var bar=document.getElementById("rbar");
+  detailsReturnBarVisible=!!(bar&&bar.classList.contains("show"));
+  if(bar)bar.classList.remove("show");
+  pendingBooth={el:el,num:num,name:name||"Booth "+num,cat:cat||"Standard"};
+  var demo=demoBoothData(num,cat);
+  var company=document.getElementById("detail-company"),booth=document.getElementById("detail-booth"),category=document.getElementById("detail-category"),description=document.getElementById("detail-description");
+  if(company)company.textContent=demo.company;if(booth)booth.textContent=num;if(category)category.textContent=demo.category;if(description)description.textContent=demo.description;
+  goToScreen("screen-booth-details");
+}
+function backToMapFromDetails(){
+  goToScreen("screen-map");
+  var bar=document.getElementById("rbar");if(bar&&detailsReturnBarVisible)bar.classList.add("show");
+  pendingBooth=null;detailsReturnBarVisible=false;
+}
+function navigateFromDetails(){
+  if(!pendingBooth)return;
+  var chosen=pendingBooth;pendingBooth=null;detailsReturnBarVisible=false;
+  goToScreen("screen-map");
+  selectBooth(chosen.el,chosen.num,chosen.name,chosen.cat);
+}
+function initBoothClicks(){document.querySelectorAll(".booth").forEach(function(el){if(el.getAttribute("data-click-bound")==="1")return;el.setAttribute("data-click-bound","1");el.style.cursor="pointer";el.addEventListener("click",function(){openBoothDetails(el,el.getAttribute("data-num"),el.getAttribute("data-name")||"Booth "+el.getAttribute("data-num"),el.getAttribute("data-cat"));});});}
+function clearHighlights(){document.querySelectorAll(".booth-hl").forEach(function(el){el.classList.remove("booth-hl");if(!el.classList.contains("booth-visited")){el.setAttribute("opacity","0.01");el.setAttribute("stroke-width","1");}});}
+function setReachedButton(visible){var btn=document.getElementById("btn-reached");if(btn)btn.style.display=visible?"block":"none";}
+/* @section: landmark-navigation */
+function navigateToLandmark(key){
+  if(isMoving)return;if(Object.keys(ADJ).length===0)buildAdj();
+  var destination=LANDMARKS[key];if(!destination)return;
+  clearHighlights();clearRoute();
+  curDestinationType="landmark";curDestinationLabel=destination.label;curEl=null;curNum="";
+  curDestNode=destination.node;curRoute=dijkstra(parkedNode,curDestNode);
+  curConnector=[N[curDestNode]];addPoint(curConnector,destination.point);
+  curEndPoint={x:destination.point.x,y:destination.point.y};
+  curPathPoints=buildTravelPoints(curRoute,curConnector);
+  var t=document.getElementById("rbar-title"),s=document.getElementById("rbar-sub"),bar=document.getElementById("rbar");
+  if(curPathPoints.length<2||samePoint(curPathPoints[0],curPathPoints[curPathPoints.length-1])){
+    curRoute=[];curPathPoints=[];curConnector=[];
+    if(t)t.textContent="You are at "+destination.label;if(s)s.textContent="Choose another destination whenever you are ready.";
+    setReachedButton(false);if(bar)bar.classList.add("show");return;
+  }
+  drawRoute(curPathPoints);
+  if(t)t.textContent="Route to "+destination.label;if(s)s.textContent="Walk the glowing path, then tap Reached Destination.";
+  setReachedButton(true);if(bar)bar.classList.add("show");
+}
+function selectBooth(el,num,name,cat){
+  if(isMoving)return;if(Object.keys(ADJ).length===0)buildAdj();clearHighlights();
+  curDestinationType="booth";curDestinationLabel=name;setReachedButton(true);
+  el.setAttribute("opacity","0.65");el.setAttribute("stroke","#00d5ff");el.setAttribute("stroke-width","5");el.classList.add("booth-hl");
+  curEl=el;curNum=num;curDestNode=BNODE[num]||"btm_c2";curRoute=dijkstra(parkedNode,curDestNode);
+  curConnector=boothConnector(el,curDestNode);curEndPoint=curConnector[curConnector.length-1]||N[curDestNode];
+  if(!curRoute.length){clearRoute();var err=document.getElementById("rbar-sub");if(err)err.textContent="A connected walkway route could not be calculated. Please choose another booth.";return;}
+  curPathPoints=buildTravelPoints(curRoute,curConnector);drawRoute(curPathPoints);
+  var t=document.getElementById("rbar-title"),s=document.getElementById("rbar-sub"),bar=document.getElementById("rbar");
+  if(t)t.textContent="Route to "+name;if(s)s.textContent=cat+" · Walk the glowing path, then tap Reached Destination.";if(bar)bar.classList.add("show");
+}
+function cancelRoute(){if(isMoving)return;document.getElementById("rbar").classList.remove("show");clearRoute();clearHighlights();setReachedButton(true);curRoute=[];curPathPoints=[];curConnector=[];curNum="";curEl=null;curEndPoint=null;curDestNode="";curDestinationType="booth";curDestinationLabel="";}
+function reachedDest(){
+  if(isMoving)return;if(!curPathPoints||curPathPoints.length<2){alert("Select a destination first.");return;}
+  document.getElementById("rbar").classList.remove("show");
+  var arrivedNum=curNum,arrivedEl=curEl,destinationNode=curDestNode,destinationPoint=curEndPoint,destinationConnector=curConnector.slice();
+  var destinationType=curDestinationType,destinationLabel=curDestinationLabel;
+  animateVehicle(curPathPoints,function(){
+    parkedNode=destinationNode;parkedPoint={x:destinationPoint.x,y:destinationPoint.y};parkedConnector=destinationConnector;
+    if(destinationType==="booth"&&arrivedEl){
+      arrivedEl.setAttribute("stroke","#10b981");arrivedEl.setAttribute("stroke-width","3");arrivedEl.setAttribute("opacity","0.45");arrivedEl.classList.add("booth-visited");
+      addVisitedBooth(arrivedNum,arrivedEl);
+    }
+    clearRoute();var t=document.getElementById("rbar-title"),s=document.getElementById("rbar-sub"),bar=document.getElementById("rbar");
+    if(destinationType==="booth"){
+      if(t)t.textContent="Arrived at Booth "+arrivedNum;if(s)s.textContent="Marked as visited. Tap another booth to continue.";
+    }else{
+      if(t)t.textContent="Arrived at "+destinationLabel;if(s)s.textContent="Destination reached. Choose a booth or another quick route to continue.";
+    }
+    setReachedButton(false);if(bar)bar.classList.add("show");
+    curRoute=[];curPathPoints=[];curConnector=[];curNum="";curEl=null;curEndPoint=null;curDestNode="";curDestinationType="booth";curDestinationLabel="";
+  });
+}
+function goToScreen(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});var t=document.getElementById(id);if(t){t.classList.add("active");t.scrollTop=0;}}
+/* @section: conference-day-switching */
+function showConferenceDay(btn,id){
+  document.querySelectorAll(".conference-tab").forEach(function(tab){tab.classList.remove("active");tab.setAttribute("aria-selected","false");});
+  document.querySelectorAll(".conference-day").forEach(function(day){day.classList.remove("active");});
+  if(btn){btn.classList.add("active");btn.setAttribute("aria-selected","true");}
+  var day=document.getElementById(id);if(day)day.classList.add("active");
+}
+function selVehicle(btn,em){vehicleEmoji=em;document.querySelectorAll(".vo").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");var p=document.getElementById("prev-ico");if(p)p.textContent=em;}
+function goToMap(){var mi=document.getElementById("mv-icon");var ve=document.getElementById("vehicle-emoji");if(mi)mi.textContent=vehicleEmoji;if(ve)ve.textContent=vehicleEmoji;goToScreen("screen-map");setTimeout(function(){buildAdj();initBoothClicks();setVehiclePoint(parkedPoint);},200);}
+</script>
+</body>
+</html>
