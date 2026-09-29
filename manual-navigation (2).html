@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>MYARTTE 2026 Navigation</title>
+<title>MYARTTE 2026 | Exhibition Navigation</title>
+<meta name="description" content="Official-event information and manual exhibition navigation for MyASEAN Roads &amp; Traffic Tech Expo 2026, 30 September to 2 October 2026 at Hall 5 &amp; 6, MITEC Kuala Lumpur.">
+<meta name="author" content="MYARTTE">
+<meta name="app-version" content="13">
+<meta property="og:title" content="MYARTTE 2026 | Exhibition Navigation">
+<meta property="og:description" content="Learn about MYARTTE 2026 and use the manual route companion at Hall 5 &amp; 6, MITEC Kuala Lumpur.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MYARTTE 2026 | Exhibition Navigation">
+<meta name="twitter:description" content="Learn about MYARTTE 2026 and use the manual route companion at Hall 5 &amp; 6, MITEC Kuala Lumpur.">
+<script id="structured-data-jsonld" type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MYARTTE 2026 Exhibition Navigation","description":"Official-event information and manual exhibition navigation for MyASEAN Roads & Traffic Tech Expo 2026.","url":"__SITE_URL__"}</script>
 <style>
 :root{--cyan:#00d5ff;--teal:#00c8b8;--gold:#f8c76c;--border:rgba(255,255,255,0.12);--soft:rgba(255,255,255,0.65);--muted:rgba(255,255,255,0.42);--radius:24px;--shadow:0 22px 64px rgba(0,0,0,0.52);}
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -16,7 +26,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .hdr-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:800;margin-bottom:2px;}
 .hdr-title{font-size:15px;font-weight:900;}
 .hdr-pill{padding:6px 11px;border-radius:999px;background:rgba(0,213,255,.09);border:1px solid rgba(0,213,255,.22);color:rgba(255,255,255,.8);font-size:10px;font-weight:700;}
-.screen{display:none;flex:1;overflow-y:auto;padding:18px 14px 22px;}
+.screen{display:none;flex:1;overflow-y:auto;padding:18px 14px 22px;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;}
 .screen.active{display:block;animation:up .3s ease both;}
 @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .si{width:min(440px,100%);margin:0 auto;}
@@ -27,6 +37,46 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .bs{width:100%;border-radius:16px;min-height:50px;padding:12px 14px;font-size:14px;font-weight:900;cursor:pointer;color:rgba(255,255,255,.82);background:rgba(255,255,255,.08);border:1px solid var(--border);}
 .brow{display:grid;gap:8px;margin-top:14px;}
 .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.22);color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+/* @section: about-myartte-opening */
+.about-wrap{width:min(470px,100%);margin:0 auto;display:grid;gap:12px;}
+.about-hero{border-color:rgba(0,213,255,.28);}
+.about-hero .cb{padding:22px 18px 18px;}
+.about-logo-wrap{width:min(235px,82%);margin:0 auto 15px;padding:9px 14px;border-radius:18px;background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.54);box-shadow:0 13px 32px rgba(0,213,255,.18);}
+.about-logo{display:block;width:100%;height:auto;max-height:86px;object-fit:contain;}
+.about-eyebrow{display:flex;align-items:center;justify-content:center;gap:7px;color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;}
+.about-eyebrow::before,.about-eyebrow::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan));opacity:.8;}.about-eyebrow::after{transform:scaleX(-1);}
+.about-title{text-align:center;font-size:clamp(26px,7.4vw,38px);line-height:1.03;letter-spacing:-.045em;font-weight:950;}
+.about-title span{display:block;margin-top:5px;color:transparent;background:linear-gradient(135deg,#fff,#9df3ff 45%,var(--gold));-webkit-background-clip:text;background-clip:text;}
+.about-intro{max-width:390px;margin:13px auto 0;text-align:center;color:var(--soft);font-size:12px;line-height:1.65;}
+.event-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:17px;}
+.event-fact{padding:12px 11px;border-radius:15px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);}
+.event-fact-wide{grid-column:1/-1;}
+.event-fact span{display:block;color:var(--muted);font-size:8px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;}
+.event-fact strong{display:block;font-size:12px;line-height:1.4;}
+.about-focus{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;}
+.about-focus span{padding:6px 9px;border-radius:999px;background:rgba(0,213,255,.075);border:1px solid rgba(0,213,255,.18);color:rgba(255,255,255,.73);font-size:8px;font-weight:800;}
+/* @section: promotional-video-showcase */
+.media-card{position:relative;padding:16px;border-radius:22px;overflow:hidden;background:radial-gradient(circle at 50% 0%,rgba(0,213,255,.15),transparent 35%),linear-gradient(145deg,rgba(8,25,45,.97),rgba(3,12,25,.98));border:1px solid rgba(0,213,255,.27);box-shadow:0 17px 45px rgba(0,0,0,.35);}
+.media-card::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(to bottom,#000,transparent);}
+.media-showcase{position:relative;z-index:1;display:grid;gap:12px;}
+.media-showcase-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.media-showcase-head strong{display:block;font-size:17px;line-height:1.25;margin-bottom:5px;}.media-showcase-head p{color:var(--soft);font-size:10px;line-height:1.55;max-width:320px;}
+.media-count{flex:0 0 auto;padding:6px 9px;border-radius:999px;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.25);color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;}
+.media-stage{position:relative;width:100%;aspect-ratio:1/1;border-radius:18px;overflow:hidden;background:#020711;border:1px solid rgba(0,213,255,.25);box-shadow:0 12px 28px rgba(0,0,0,.36),0 0 24px rgba(0,213,255,.08);}
+.media-stage iframe{display:block;width:100%;height:100%;border:0;background:#020711;}
+.media-now{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 2px;}
+.media-now strong{min-width:0;font-size:11px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.media-now a{flex:0 0 auto;color:var(--cyan);font-size:9px;font-weight:900;text-decoration:none;}.media-now a:hover,.media-now a:focus-visible{text-decoration:underline;outline:none;}
+.media-clips{display:flex;gap:8px;overflow-x:auto;padding:1px 1px 6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;}.media-clips::-webkit-scrollbar{display:none;}
+.media-clip{flex:0 0 126px;min-height:54px;padding:9px 10px;text-align:left;border-radius:14px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.055);color:#fff;cursor:pointer;scroll-snap-align:start;transition:border-color .18s,background .18s,transform .18s;}
+.media-clip span{display:block;color:var(--muted);font-size:7px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;margin-bottom:4px;}.media-clip strong{display:block;font-size:10px;line-height:1.25;}.media-clip.active{border-color:rgba(0,213,255,.64);background:linear-gradient(135deg,rgba(0,213,255,.18),rgba(0,200,184,.08));box-shadow:0 0 18px rgba(0,213,255,.1);}.media-clip:active{transform:scale(.98);}.media-note{color:var(--muted);font-size:8px;line-height:1.5;padding:0 2px;}
+/* @section: official-myartte-links */
+.channels-card .cb{padding:18px;}.channels-head{margin-bottom:12px;}.channels-head strong{display:block;font-size:15px;margin-bottom:4px;}.channels-head span{display:block;color:var(--soft);font-size:10px;line-height:1.5;}
+.channel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.channel-link{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border-radius:15px;text-decoration:none;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.11);color:#fff;font-size:11px;font-weight:900;transition:transform .18s,border-color .18s,background .18s;}
+.channel-link span:last-child{color:var(--cyan);font-size:15px;}.channel-link:hover,.channel-link:focus-visible{transform:translateY(-1px);border-color:rgba(0,213,255,.48);background:rgba(0,213,255,.1);outline:none;}
+.about-enter{min-height:56px;font-size:14px;}.about-note{text-align:center;color:var(--muted);font-size:8px;line-height:1.5;padding:0 10px 3px;}
+@media(max-width:350px){.event-facts,.channel-grid{grid-template-columns:1fr}.event-fact-wide{grid-column:auto}.about-title{font-size:25px}.media-card{min-height:205px}}
+@media(prefers-reduced-motion:reduce){.media-card::after{animation:none}}
 /* @section: welcome-logo */
 .welcome-logo-wrap{width:min(220px,100%);margin:0 auto 16px;padding:10px 14px;border-radius:18px;background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.5);box-shadow:0 12px 30px rgba(0,213,255,.17);}
 .welcome-logo{display:block;width:100%;height:auto;max-height:82px;object-fit:contain;}
@@ -56,16 +106,28 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .map-back{background:rgba(255,255,255,.07);border:1px solid var(--border);color:rgba(255,255,255,.78);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700;cursor:pointer;}
 .map-hlabel{font-size:11px;font-weight:800;color:var(--cyan);letter-spacing:.06em;}
 .map-vbadge{width:40px;height:40px;border-radius:12px;background:rgba(0,213,255,.1);border:1px solid rgba(0,213,255,.22);display:flex;align-items:center;justify-content:center;font-size:21px;}
-.map-card{border-radius:16px;overflow:hidden;border:2px solid rgba(0,213,255,.22);box-shadow:0 0 30px rgba(0,213,255,.1),0 24px 60px rgba(0,0,0,.5);}
-.map-svg{display:block;width:100%;height:auto;}
-.rbar{position:fixed;left:10px;right:10px;bottom:10px;z-index:60;max-width:480px;margin:0 auto;background:rgba(4,14,28,.97);border:1px solid rgba(0,213,255,.38);border-radius:18px;padding:14px;box-shadow:0 14px 36px rgba(0,0,0,.55);backdrop-filter:blur(20px);display:none;}
-.rbar.show{display:block;}
-.rbar-title{font-size:14px;font-weight:900;margin-bottom:3px;}
-.rbar-sub{font-size:11px;color:var(--soft);margin-bottom:10px;line-height:1.5;}
-.rbar-acts{display:flex;gap:7px;}
-.rbar-acts button{flex:1;border:none;border-radius:12px;padding:12px 7px;font-weight:900;font-size:12px;cursor:pointer;}
+/* @section: mobile-map-touch-scrolling */
+.map-card{border-radius:16px;overflow:hidden;border:2px solid rgba(0,213,255,.22);box-shadow:0 0 30px rgba(0,213,255,.1),0 24px 60px rgba(0,0,0,.5);touch-action:pan-y;}
+.map-svg{display:block;width:100%;height:auto;touch-action:pan-y;}
+.map-svg .booth{touch-action:pan-y;}
+/* @section: map-tap-guidance */
+.map-guide{position:fixed;inset:68px 0 0;z-index:75;display:none;align-items:center;justify-content:center;padding:24px;pointer-events:none;background:rgba(2,8,18,.34);backdrop-filter:blur(2px);}
+.map-guide.show{display:flex;animation:guideIn .28s ease both;pointer-events:auto;}
+.map-guide-card{width:min(320px,100%);padding:22px 20px 18px;text-align:center;border-radius:24px;background:linear-gradient(145deg,rgba(13,32,57,.97),rgba(4,13,27,.97));border:1px solid rgba(0,213,255,.44);box-shadow:0 22px 58px rgba(0,0,0,.54),0 0 30px rgba(0,213,255,.13);}
+.map-guide-icon{width:52px;height:52px;margin:0 auto 13px;display:flex;align-items:center;justify-content:center;border-radius:17px;background:rgba(0,213,255,.13);border:1px solid rgba(0,213,255,.3);color:var(--cyan);font-size:25px;box-shadow:0 0 20px rgba(0,213,255,.16);}
+.map-guide strong{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:8px;}.map-guide p{color:var(--soft);font-size:12px;line-height:1.55;}.map-guide small{display:block;margin-top:14px;color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;}
+@keyframes guideIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+/* @section: compact-active-route-bar */
+.rbar{position:relative;width:100%;margin:0;background:linear-gradient(145deg,rgba(8,24,43,.97),rgba(4,14,28,.97));border:1px solid rgba(0,213,255,.38);border-radius:15px;padding:9px 10px;box-shadow:0 8px 22px rgba(0,0,0,.32),0 0 18px rgba(0,213,255,.08);display:none;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;}
+.rbar.show{display:grid;}
+.rbar-copy{min-width:0;}
+.rbar-title{font-size:12px;font-weight:900;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rbar-sub{font-size:9px;color:var(--soft);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rbar-acts{display:flex;gap:6px;flex:0 0 auto;}
+.rbar-acts button{border:none;border-radius:10px;min-height:36px;padding:8px 10px;font-weight:900;font-size:10px;line-height:1.05;cursor:pointer;}
 .btn-cancel{background:rgba(255,255,255,.09);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.11)!important;}
-.btn-reach{background:linear-gradient(135deg,#00d5ff,#00a89c);color:#001018;}
+.btn-reach{min-width:100px;background:linear-gradient(135deg,#00d5ff,#00a89c);color:#001018;}
+@media(max-width:350px){.rbar{grid-template-columns:1fr}.rbar-acts{width:100%}.rbar-acts button{flex:1}.btn-reach{min-width:0}}
 /* @section: booth-details */
 .detail-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
 .detail-back-link{justify-self:start;border:1px solid var(--border);border-radius:999px;padding:8px 13px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.82);font-size:11px;font-weight:800;cursor:pointer;}
@@ -82,6 +144,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .detail-copy{padding:15px;border-radius:16px;background:rgba(0,213,255,.055);border:1px solid rgba(0,213,255,.14);margin-bottom:12px;}
 .detail-copy-label{color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;}
 .detail-copy p{color:rgba(255,255,255,.72);font-size:12px;line-height:1.68;}
+.detail-links{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px;}
+.detail-link{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border-radius:999px;background:rgba(0,213,255,.08);border:1px solid rgba(0,213,255,.2);color:var(--cyan);font-size:9px;font-weight:900;text-decoration:none;}
+.detail-link:hover,.detail-link:focus-visible{background:rgba(0,213,255,.16);border-color:rgba(0,213,255,.5);outline:none;}
+.detail-research-note{margin:-4px 0 12px;color:var(--muted);font-size:9px;line-height:1.5;}
 .demo-notice{display:flex;gap:9px;padding:11px 12px;border-radius:14px;background:rgba(248,199,108,.075);border:1px solid rgba(248,199,108,.18);color:rgba(255,255,255,.62);font-size:10px;line-height:1.55;}
 .demo-notice strong{color:var(--gold);}
 .detail-actions{display:grid;gap:8px;margin-top:16px;}
@@ -115,9 +181,28 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
 .beta-mark{flex:0 0 auto;padding:5px 8px;border-radius:999px;background:var(--gold);color:#221600;font-size:8px;font-weight:950;letter-spacing:.09em;text-transform:uppercase;}
 .beta-copy strong{display:block;color:#fff;font-size:11px;margin-bottom:3px;}.beta-copy span{display:block;color:var(--soft);font-size:9px;line-height:1.5;}
 /* @section: map-quick-navigation */
+.map-search-entry{width:100%;min-height:48px;border-radius:15px;padding:10px 13px;border:1px solid rgba(0,213,255,.34);background:linear-gradient(135deg,rgba(0,213,255,.14),rgba(0,200,184,.07));color:#fff;font-size:11px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 8px 22px rgba(0,0,0,.22),0 0 18px rgba(0,213,255,.07);}
+.map-search-entry span{color:var(--cyan);font-size:17px;line-height:1;}
 .map-quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .map-quick-btn{min-width:0;min-height:44px;border-radius:14px;padding:9px 10px;border:1px solid rgba(0,213,255,.22);background:linear-gradient(145deg,rgba(10,28,48,.94),rgba(5,14,28,.92));color:rgba(255,255,255,.88);font-size:10px;font-weight:900;line-height:1.25;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.2);}
 .map-quick-btn span{display:block;color:var(--cyan);font-size:8px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px;}
+/* @section: exhibitor-search */
+.search-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
+.search-hero{border-color:rgba(0,213,255,.25);}.search-hero .cb{padding:20px 18px;}
+.search-field{position:relative;margin-top:16px;}
+.search-field input{width:100%;height:54px;border-radius:16px;border:1px solid rgba(0,213,255,.28);background:rgba(2,10,22,.76);color:#fff;padding:0 46px 0 15px;font:inherit;font-size:14px;font-weight:700;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.04);}
+.search-field input:focus{border-color:rgba(0,213,255,.75);box-shadow:0 0 0 3px rgba(0,213,255,.1),0 0 22px rgba(0,213,255,.08);}
+.search-field input::placeholder{color:rgba(255,255,255,.38);font-weight:600;}
+.search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--cyan);font-size:18px;pointer-events:none;}
+.search-status{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 2px 0;color:var(--soft);font-size:10px;line-height:1.4;}
+.search-status strong{color:var(--cyan);font-size:11px;}
+.search-results{display:grid;gap:9px;}
+.search-result{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;padding:14px;border-radius:18px;background:linear-gradient(145deg,rgba(14,30,54,.94),rgba(5,13,27,.92));border:1px solid rgba(255,255,255,.11);color:#fff;cursor:pointer;box-shadow:0 9px 25px rgba(0,0,0,.22);}
+.search-result:active{transform:scale(.99);}
+.search-result-copy{min-width:0;}.search-result-copy strong{display:block;font-size:13px;line-height:1.35;margin-bottom:5px;overflow-wrap:anywhere;}.search-result-meta{display:flex;flex-wrap:wrap;gap:5px;color:var(--soft);font-size:9px;line-height:1.4;}.search-result-demo{display:inline-flex;margin-top:7px;padding:3px 7px;border-radius:999px;background:rgba(248,199,108,.1);border:1px solid rgba(248,199,108,.22);color:var(--gold);font-size:7px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;}
+.search-result-go{min-width:72px;padding:9px 10px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--teal));color:#001018;text-align:center;font-size:9px;font-weight:950;line-height:1.2;}
+.search-empty{display:none;padding:28px 18px;text-align:center;border-radius:20px;background:rgba(255,255,255,.045);border:1px dashed rgba(0,213,255,.28);color:var(--soft);font-size:11px;line-height:1.6;}
+.search-empty strong{display:block;color:#fff;font-size:14px;margin-bottom:5px;}
 /* @section: visited-booths */
 .visited-wrap{width:min(440px,100%);margin:0 auto;display:grid;gap:12px;}
 .visited-hero{border-color:rgba(0,213,255,.25);}.visited-hero .cb{padding:20px 18px;}
@@ -146,7 +231,60 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
   </div>
   <div class="hdr-pill">Hall 5 &amp; 6</div>
 </header>
-<main class="screen active" id="screen-welcome">
+<!-- @section: about-myartte-opening-screen -->
+<main class="screen active" id="screen-about">
+  <div class="about-wrap">
+    <section class="card about-hero"><div class="cb">
+      <div class="about-logo-wrap"><img class="about-logo" src="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-20/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/Logo%20MYARTTE%202026_9ad8e57df1884ea1ae3cac464f03c96a.jpg" onerror="this.onerror=null;this.src='assets/Logo MYARTTE 2026.jpg';" alt="MYARTTE 2026 official logo"></div>
+      <div class="about-eyebrow">Welcome to MYARTTE 2026</div>
+      <h1 class="about-title">Where Roads Meet<span>Future Mobility</span></h1>
+      <p class="about-intro">MyASEAN Roads &amp; Traffic Tech Expo 2026 brings together road infrastructure, traffic technology, intelligent transport, smart mobility and road-safety innovation in one industry exhibition.</p>
+      <div class="event-facts" aria-label="Confirmed MYARTTE 2026 event details">
+        <div class="event-fact"><span>Event Dates</span><strong>30 September &#8211;<br>2 October 2026</strong></div>
+        <div class="event-fact"><span>Venue</span><strong>Hall 5 &amp; 6<br>MITEC Kuala Lumpur</strong></div>
+        <div class="event-fact event-fact-wide"><span>Exhibition Focus</span><strong>Roads, traffic systems, transport technology and connected mobility</strong></div>
+      </div>
+      <div class="about-focus" aria-label="MYARTTE exhibition themes">
+        <span>Road Infrastructure</span><span>Traffic Technology</span><span>Smart Mobility</span><span>Road Safety</span>
+      </div>
+    </div></section>
+    <!-- @section: promotional-video-showcase -->
+    <section class="media-card" aria-label="MYARTTE 2026 promotional video showcase">
+      <div class="media-showcase">
+        <div class="media-showcase-head">
+          <div><div class="kicker">MYARTTE Media Showcase</div><strong>Explore MYARTTE 2026</strong><p>Tap a short official promotional clip below, then press play. Videos load only when selected to keep the page lightweight.</p></div>
+          <span class="media-count">6 Short Videos</span>
+        </div>
+        <div class="media-stage">
+          <iframe id="promo-video-frame" src="https://drive.google.com/file/d/1aHq51Tiqo6OA6ULM0dMFgMxWJAtnNl0c/preview" title="MYARTTE promotional video: World’s Largest Roundabout" loading="lazy" allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="media-now"><strong id="promo-video-title">World’s Largest Roundabout</strong><a id="promo-video-open" href="https://drive.google.com/file/d/1aHq51Tiqo6OA6ULM0dMFgMxWJAtnNl0c/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open video &#8599;</a></div>
+        <div class="media-clips" role="list" aria-label="Choose a promotional video">
+          <button class="media-clip active" type="button" role="listitem" data-id="1aHq51Tiqo6OA6ULM0dMFgMxWJAtnNl0c" data-title="World’s Largest Roundabout" onclick="selectPromoVideo(this)"><span>Video 1</span><strong>World’s Largest Roundabout</strong></button>
+          <button class="media-clip" type="button" role="listitem" data-id="1jibPhJ0PIKtec6jBJQdg1UWnHIBscM1t" data-title="Breakthrough Technologies" onclick="selectPromoVideo(this)"><span>Video 2</span><strong>Breakthrough Technologies</strong></button>
+          <button class="media-clip" type="button" role="listitem" data-id="1WccLfuGa1uqhrcnMf6fdgCCmDgVe5LcU" data-title="Smart Traffic &amp; Mobility" onclick="selectPromoVideo(this)"><span>Video 3</span><strong>Smart Traffic &amp; Mobility</strong></button>
+          <button class="media-clip" type="button" role="listitem" data-id="1FJWefPHQZbaZu5SuC1RfkZsccDNR5rNC" data-title="Meet. Connect. Collaborate." onclick="selectPromoVideo(this)"><span>Video 4</span><strong>Meet. Connect. Collaborate.</strong></button>
+          <button class="media-clip" type="button" role="listitem" data-id="1QscWhcrXElLU3OszQ4w1PxC2U6OfEf5m" data-title="Malaysia’s Spaghetti Junction" onclick="selectPromoVideo(this)"><span>Video 5</span><strong>Malaysia’s Spaghetti Junction</strong></button>
+          <button class="media-clip" type="button" role="listitem" data-id="195kIGQ70kmXlum3qlbSGt2l2_qCdoKir" data-title="Future Roads &amp; Traffic" onclick="selectPromoVideo(this)"><span>Video 6</span><strong>Future Roads &amp; Traffic</strong></button>
+        </div>
+        <p class="media-note">Playback is hosted through the supplied Google Drive files. If a video does not open, its Drive sharing permission must allow anyone with the link to view it.</p>
+      </div>
+    </section>
+    <!-- @section: official-myartte-links -->
+    <section class="card channels-card"><div class="cb">
+      <div class="channels-head"><strong>Connect with MYARTTE</strong><span>Visit the official website and social channels for event news and future updates.</span></div>
+      <div class="channel-grid">
+        <a class="channel-link" href="https://www.artte.com.my/" target="_blank" rel="noopener noreferrer" aria-label="Open the official MYARTTE website in a new tab"><span>Official Website</span><span aria-hidden="true">&#8599;</span></a>
+        <a class="channel-link" href="https://www.instagram.com/myarttekl/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Open MYARTTE Instagram in a new tab"><span>Instagram</span><span aria-hidden="true">&#8599;</span></a>
+        <a class="channel-link" href="https://www.tiktok.com/@myarttekl?_r=1&amp;_t=ZS-98CwSQd3eM9" target="_blank" rel="noopener noreferrer" aria-label="Open MYARTTE TikTok in a new tab"><span>TikTok</span><span aria-hidden="true">&#8599;</span></a>
+        <a class="channel-link" href="https://www.youtube.com/@myarttekl" target="_blank" rel="noopener noreferrer" aria-label="Open MYARTTE YouTube in a new tab"><span>YouTube</span><span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </div></section>
+    <button class="bp about-enter" type="button" onclick="goToScreen('screen-welcome')">Enter Navigation App</button>
+    <p class="about-note">The navigation application is an early-access visitor prototype.</p>
+  </div>
+</main>
+<main class="screen" id="screen-welcome">
   <div class="si"><div class="card"><div class="cb">
     <!-- @section: welcome-logo -->
     <div class="welcome-logo-wrap"><img class="welcome-logo" src="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-20/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/Logo%20MYARTTE%202026_9ad8e57df1884ea1ae3cac464f03c96a.jpg" onerror="this.onerror=null;this.src='assets/Logo MYARTTE 2026.jpg';" alt="MYARTTE 2026 official logo"></div>
@@ -176,13 +314,13 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
   <div class="conference-wrap">
     <button class="detail-back-link" onclick="goToScreen('screen-welcome')">&#8592; Back to Home</button>
     <div class="card conference-hero"><div class="cb">
-      <div class="demo-badge">Demo Conference Schedule</div>
+      <div class="demo-badge">Official Programme</div>
       <div class="kicker">Conference Information</div>
       <h2 class="h2">Dates &amp; Timings</h2>
-      <p class="desc">Preview the three-day conference programme. Choose a date to see its demo sessions and timing updates.</p>
+      <p class="desc">Explore the confirmed three-day conference programme. Choose a date to view session timings, speakers and programme highlights.</p>
       <div class="conference-summary">
         <div class="conference-summary-card"><span class="conference-summary-label">Event Dates</span><strong class="conference-summary-value">30 Sept &#8211; 2 Oct 2026</strong></div>
-        <div class="conference-summary-card"><span class="conference-summary-label">Location</span><strong class="conference-summary-value">Conference Hall<br>Hall 5 &amp; 6</strong></div>
+        <div class="conference-summary-card"><span class="conference-summary-label">Location</span><strong class="conference-summary-value">MITEC<br>Kuala Lumpur</strong></div>
       </div>
     </div></div>
     <div class="conference-tabs" role="tablist" aria-label="Conference days">
@@ -191,26 +329,64 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
       <button class="conference-tab" type="button" role="tab" aria-selected="false" onclick="showConferenceDay(this,'conference-day-3')">2 Oct<span>Day 3</span></button>
     </div>
     <section class="conference-day active" id="conference-day-1" role="tabpanel">
-      <div class="conference-day-heading"><strong>Wednesday, 30 September</strong><span>Opening day &#183; Demo programme</span></div>
-      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:00 AM</div><div class="session-info"><strong>Registration &amp; Welcome Coffee</strong><span>Conference Hall foyer &#183; Delegate arrival and registration.</span></div></article>
-      <article class="session-card"><div class="session-time">10:00 AM<br>&#8211; 11:00 AM</div><div class="session-info"><strong>Opening Ceremony &amp; Keynote</strong><span>Welcome address and a preview of ASEAN road and traffic technology priorities.</span></div></article>
-      <article class="session-card"><div class="session-time">11:15 AM<br>&#8211; 12:30 PM</div><div class="session-info"><strong>Smart Mobility Leadership Forum</strong><span>Demo panel on connected roads, safer cities and future transport systems.</span></div></article>
-      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:30 PM</div><div class="session-info"><strong>Intelligent Traffic Management</strong><span>Demo industry session covering data-led operations and traffic control.</span></div></article>
+      <div class="conference-day-heading"><strong>Wednesday, 30 September 2026</strong><span>Opening day &#183; Conference programme</span></div>
+      <article class="session-card"><div class="session-time">9:00 &#8211; 9:30 AM</div><div class="session-info"><strong>Securing our Shared Ecosystem</strong><span>Speaker: Dunstan Gerald Maurice, Chief Risk, Compliance &amp; Governance Officer, Touch &#39;n Go.</span></div></article>
+      <article class="session-card"><div class="session-time">9:30 &#8211; 10:00 AM</div><div class="session-info"><strong>Revenue Innovation: New Business Models</strong><span>Focus: Business model diversification, asset monetisation and future concessions. Moderator: Muhamad Fariz Mustafa, Big Tree. Guest: Dionnald Beh, Digile.</span></div></article>
+      <article class="session-card"><div class="session-time">10:00 &#8211; 10:15 AM</div><div class="session-info"><strong>Morning Refreshments &amp; Networking</strong><span>Refreshments and delegate networking.</span></div></article>
+      <article class="session-card"><div class="session-time">10:15 &#8211; 11:15 AM</div><div class="session-info"><strong>The Future of Smart Mobility Governance: Transforming the Public Transport Ecosystem Through Digital Licensing, Telematics, AI &amp; PMHS 2.0</strong><span>Moderator and panellists from APAD, the Ministry of Transport and Land Transport Management.</span></div></article>
+      <article class="session-card"><div class="session-time">11:15 &#8211; 11:45 AM</div><div class="session-info"><strong>Scaling RFID for Barrier-Free Malaysian Highways</strong><span>Focus: Titan Flow Technology, real-world impact at AKLEH and bad-weather/high-speed edge cases. Speaker: Desmond Chin, Touch &#39;n Go.</span></div></article>
+      <article class="session-card"><div class="session-time">11:45 AM<br>&#8211; 12:15 PM</div><div class="session-info"><strong>Drones in Traffic Monitoring &amp; Reconstruction</strong><span>Focus: Surveillance, incident response and 3D reconstruction. Speaker: Dr Kwon Alex Al Hakeem, Korea Cognitive Science Industry Association.</span></div></article>
+      <article class="session-card"><div class="session-time">12:15 &#8211; 12:45 PM</div><div class="session-info"><strong>Transforming Malaysian Expressways Through ANPR &amp; Digital Toll Technology</strong><span>Focus: Toll bottlenecks, digital payment platforms and smart expressways. Presented by JustGo.</span></div></article>
+      <article class="session-card"><div class="session-time">12:45 &#8211; 2:00 PM</div><div class="session-info"><strong>Lunch &amp; Networking</strong><span>Lunch break and networking.</span></div></article>
+      <article class="session-card"><div class="session-time">2:00 &#8211; 2:30 PM</div><div class="session-info"><strong>Cybersecurity for Smart Infrastructure</strong><span>Focus: Cyber threats, toll-hacking risk, AI security and data protection. Moderator: Simon Wong Hung Tiang. Guest: Dr Ahmad Shahrafidz, UniKL.</span></div></article>
+      <article class="session-card"><div class="session-time">2:30 &#8211; 3:00 PM</div><div class="session-info"><strong>Cyber Resilience on the Digital Highway: Safeguarding Malaysia&#39;s Smart Infrastructure</strong><span>Focus: Expanding attack surfaces, IT/OT convergence, network security and cyber-incident resilience. Speaker: Alex Cheong, OSPIT Mobility.</span></div></article>
+      <article class="session-card"><div class="session-time">3:00 &#8211; 3:30 PM</div><div class="session-info"><strong>Engineering Governance for Safer Malaysian Road Networks</strong><span>Focus: Inter-agency collaboration, future-proof engineering guidelines and digital infrastructure governance. Speaker: Ir Dr Mohammed Ridzuan bin Jahidin, LLM.</span></div></article>
+      <article class="session-card"><div class="session-time">3:30 &#8211; 3:50 PM</div><div class="session-info"><strong>Tea Break</strong><span>Refreshments.</span></div></article>
+      <article class="session-card"><div class="session-time">4:00 &#8211; 4:10 PM</div><div class="session-info"><strong>Official Opening Ceremonies</strong><span>Official opening programme.</span></div></article>
+      <article class="session-card"><div class="session-time">4:10 &#8211; 4:20 PM</div><div class="session-info"><strong>Welcoming Address by PSKLM President</strong><span>Welcome address.</span></div></article>
+      <article class="session-card"><div class="session-time">4:20 &#8211; 4:30 PM</div><div class="session-info"><strong>Official Opening Address by YB Minister of Works Malaysia</strong><span>Ministerial opening address.</span></div></article>
+      <article class="session-card"><div class="session-time">4:30 &#8211; 4:35 PM</div><div class="session-info"><strong>Official Launch of MyARTTE 2026 &#183; Launch Gimmick Activation</strong><span>Official launch activation.</span></div></article>
+      <article class="session-card"><div class="session-time">4:35 &#8211; 5:00 PM</div><div class="session-info"><strong>Presentation of Appreciation Memento &amp; Group Photograph with VVIPs</strong><span>Presentation and official group photograph.</span></div></article>
+      <article class="session-card"><div class="session-time">5:00 PM</div><div class="session-info"><strong>Press Conference &#183; Ministerial Exhibition &amp; Booth Visitation</strong><span>End of Day 1 &#183; Booth Visit &amp; Networking.</span></div></article>
     </section>
     <section class="conference-day" id="conference-day-2" role="tabpanel">
-      <div class="conference-day-heading"><strong>Thursday, 1 October</strong><span>Technology day &#183; Demo programme</span></div>
-      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:30 AM</div><div class="session-info"><strong>Road Safety Innovation</strong><span>Demo session on safer infrastructure, monitoring and incident response.</span></div></article>
-      <article class="session-card"><div class="session-time">10:45 AM<br>&#8211; 12:00 PM</div><div class="session-info"><strong>EV Infrastructure &amp; Connected Corridors</strong><span>Demo discussion on charging networks and digitally connected road systems.</span></div></article>
-      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:15 PM</div><div class="session-info"><strong>Urban Mobility Technology Showcase</strong><span>Demo presentations from transport technology solution providers.</span></div></article>
-      <article class="session-card"><div class="session-time">3:30 PM<br>&#8211; 4:30 PM</div><div class="session-info"><strong>ASEAN Collaboration Roundtable</strong><span>Demo regional exchange on resilient and interoperable mobility systems.</span></div></article>
+      <div class="conference-day-heading"><strong>Thursday, 1 October 2026</strong><span>Selangor Infrastructure &amp; Smart City Forum 2026 &#183; HPTN 2026</span></div>
+      <article class="session-card"><div class="session-time">9:00 &#8211; 9:20 AM</div><div class="session-info"><strong>Developing Digital Underground &#8212; SELGIS for Smarter Infrastructure Planning in Selangor</strong><span>Speaker: Gs. Edie Suradi, Koridor Utiliti Selangor (KUSEL).</span></div></article>
+      <article class="session-card"><div class="session-time">9:20 &#8211; 9:40 AM</div><div class="session-info"><strong>Moving People, Not Just Vehicles</strong><span>Speaker: Ir. Ts. Dr. Ashita S. Pereira, JA Project Consultant Sdn Bhd.</span></div></article>
+      <article class="session-card"><div class="session-time">9:40 &#8211; 10:00 AM</div><div class="session-info"><strong>Smart City Technology: Outlook and Challenges in the AI Era</strong><span>Speaker: Dato Paduka Ts Dr Hj Aminuddin bin Dato Paduka Hj Ahmad Kayani, PPK Technology Sdn Bhd.</span></div></article>
+      <article class="session-card"><div class="session-time">10:00 &#8211; 10:20 AM</div><div class="session-info"><strong>Road Maintenance Under Heavy Traffic Loading: Lessons Learnt from Port Klang and the Application of Specialty Mix</strong><span>Speaker: Ir. Hj. Shukri bin Ishak, JKR Selangor.</span></div></article>
+      <article class="session-card"><div class="session-time">10:20 &#8211; 10:50 AM</div><div class="session-info"><strong>Morning Refreshments &amp; Networking</strong><span>Refreshments and delegate networking.</span></div></article>
+      <article class="session-card"><div class="session-time">10:50 &#8211; 11:00 AM</div><div class="session-info"><strong>Arrival of YB Dato&#39; Ir. Izham bin Hashim at MITEC</strong><span>Official arrival.</span></div></article>
+      <article class="session-card"><div class="session-time">11:00 &#8211; 11:05 AM</div><div class="session-info"><strong>Official Opening Ceremony of the Selangor Infrastructure &amp; Smart City Forum 2026</strong><span>Official opening ceremony.</span></div></article>
+      <article class="session-card"><div class="session-time">11:05 &#8211; 11:15 AM</div><div class="session-info"><strong>Welcoming Address by the President of PSKLM</strong><span>Welcome address.</span></div></article>
+      <article class="session-card"><div class="session-time">11:15 &#8211; 11:40 AM</div><div class="session-info"><strong>Official Opening Address by YB Dato&#39; Ir. Izham bin Hashim</strong><span>Official opening address.</span></div></article>
+      <article class="session-card"><div class="session-time">11:40 &#8211; 11:45 AM</div><div class="session-info"><strong>Official Launch &amp; Group Photograph</strong><span>Launch and official photograph.</span></div></article>
+      <article class="session-card"><div class="session-time">11:45 &#8211; 11:50 AM</div><div class="session-info"><strong>Presentation of Mementos to YB Dato&#39; Ir. Izham bin Hashim by PSKLM</strong><span>Memento presentation.</span></div></article>
+      <article class="session-card"><div class="session-time">11:50 AM<br>&#8211; 12:20 PM</div><div class="session-info"><strong>Repair, Don&#39;t Replace: Extending the Life of the Roads</strong><span>Focus: Cost of replacing vs repair, early intervention and Malaysian heat and rainfall. Speaker: Mr Adam Lilley, Roadtechs Group Ltd, UK / AKSB Global Sdn Bhd.</span></div></article>
+      <article class="session-card"><div class="session-time">12:20 &#8211; 1:30 PM</div><div class="session-info"><strong>Lunch &amp; Networking</strong><span>Lunch break and networking.</span></div></article>
+      <article class="session-card"><div class="session-time">1:45 &#8211; 1:50 PM</div><div class="session-info"><strong>Arrival of JKR Sarawak Representatives &amp; Invited Dignitaries</strong><span>Official launch of HPTN 2026.</span></div></article>
+      <article class="session-card"><div class="session-time">1:50 &#8211; 2:00 PM</div><div class="session-info"><strong>Arrival of the Deputy Premier of Sarawak</strong><span>Guest of Honour arrival.</span></div></article>
+      <article class="session-card"><div class="session-time">2:00 &#8211; 2:05 PM</div><div class="session-info"><strong>Launch of Hari Profesion Teknikal Negara 2026 (HPTN 2026) by JKR Sarawak</strong><span>Official launch.</span></div></article>
+      <article class="session-card"><div class="session-time">2:05 &#8211; 2:10 PM</div><div class="session-info"><strong>Welcoming Remarks by Pengarah JKR Sarawak</strong><span>Welcoming remarks.</span></div></article>
+      <article class="session-card"><div class="session-time">2:10 &#8211; 2:20 PM</div><div class="session-info"><strong>Keynote Address by the Deputy Premier of Sarawak</strong><span>Keynote address.</span></div></article>
+      <article class="session-card"><div class="session-time">2:20 &#8211; 2:30 PM</div><div class="session-info"><strong>Official Launch Activation &amp; Photography</strong><span>Launch activation and photography.</span></div></article>
+      <article class="session-card"><div class="session-time">2:30 &#8211; 3:15 PM</div><div class="session-info"><strong>Next-Gen Pavement Technologies</strong><span>Focus: Pavement rejuvenation, graphene-enhanced pavement, recycled plastic and smart sensors. Moderator: Dr Md Yunus bin Ab Wahab, PLUS Malaysia Berhad. Panellists include AHN Vertex, Kemakmuran 2000, Roadtechs Group and Danasafe Traffic.</span></div></article>
+      <article class="session-card"><div class="session-time">3:15 &#8211; 3:35 PM</div><div class="session-info"><strong>Mega Bridge &amp; Tunnel Engineering</strong><span>Focus: Long-span bridges, undersea and mountain tunnels, and structural-health monitoring. Speaker: Ir Jason, Dura Technology Sdn Bhd.</span></div></article>
+      <article class="session-card"><div class="session-time">3:35 &#8211; 4:00 PM</div><div class="session-info"><strong>Tea Break</strong><span>Refreshments.</span></div></article>
+      <article class="session-card"><div class="session-time">4:00 &#8211; 4:30 PM</div><div class="session-info"><strong>Building Resilient Road Networks: Engineering Through Sarawak&#39;s Terrain &amp; Climate</strong><span>Focus: Challenging geography, climate-resilient design and long-term asset performance. Speaker: Ir. Ts. Gs. Br. Dr. Cassidy Morris.</span></div></article>
+      <article class="session-card"><div class="session-time">4:30 &#8211; 4:50 PM</div><div class="session-info"><strong>Renewable Energy Along Highways</strong><span>Focus: Solar roads, solar lighting and barriers, and energy harvesting. Speaker: Prof Dr Kushsairy Abdul Kadir, Universiti Kuala Lumpur.</span></div></article>
+      <article class="session-card"><div class="session-time">4:50 PM</div><div class="session-info"><strong>End of Day 2 &#8212; Booth Visit &amp; Networking</strong><span>Programme close.</span></div></article>
     </section>
     <section class="conference-day" id="conference-day-3" role="tabpanel">
-      <div class="conference-day-heading"><strong>Friday, 2 October</strong><span>Future outlook &#183; Demo programme</span></div>
-      <article class="session-card"><div class="session-time">9:30 AM<br>&#8211; 10:30 AM</div><div class="session-info"><strong>Future Roads &amp; Sustainable Infrastructure</strong><span>Demo session exploring greener materials and climate-resilient roads.</span></div></article>
-      <article class="session-card"><div class="session-time">10:45 AM<br>&#8211; 12:00 PM</div><div class="session-info"><strong>AI, Data &amp; Mobility Operations</strong><span>Demo panel on practical artificial intelligence for transport networks.</span></div></article>
-      <article class="session-card"><div class="session-time">2:00 PM<br>&#8211; 3:00 PM</div><div class="session-info"><strong>Industry Outlook &amp; Closing Forum</strong><span>Demo closing conversation on opportunities for the ASEAN mobility ecosystem.</span></div></article>
+      <div class="conference-day-heading"><strong>Friday, 2 October 2026</strong><span>Future outlook &#183; Closing programme</span></div>
+      <article class="session-card"><div class="session-time">9:00 &#8211; 9:30 AM</div><div class="session-info"><strong>Mega-Project Management</strong><span>Focus: Cost and schedule control, risk and claims avoidance. Speaker: Nik Hasbi, Quantum QS.</span></div></article>
+      <article class="session-card"><div class="session-time">9:30 &#8211; 10:15 AM</div><div class="session-info"><strong>The AI Highway Revolution</strong><span>Focus: AI prediction, incident detection, maintenance planning and Gen-AI for operations. Moderator: Dato Ir. Zakaria Ahmad Zabidi, PLUS Berhad. Panellists from ITS Malaysia, GlobalComm Solutions, Asia Mobiliti and Teras Teknologi.</span></div></article>
+      <article class="session-card"><div class="session-time">10:15 &#8211; 10:45 AM</div><div class="session-info"><strong>From Payments to Financial Ecosystems</strong><span>Speaker: Chew Wei Wing, Chief Product &amp; Growth Officer, TNG Digital.</span></div></article>
+      <article class="session-card"><div class="session-time">10:45 &#8211; 11:05 AM</div><div class="session-info"><strong>Morning Refreshments &amp; Networking</strong><span>Refreshments and delegate networking.</span></div></article>
+      <article class="session-card"><div class="session-time">11:05 &#8211; 11:35 AM</div><div class="session-info"><strong>Decarbonising the Highway: Building Carbon-Neutral Road Corridors</strong><span>Focus: ESG, carbon accounting and green construction. Speaker: Sreedhar Sivasambu, Yinson GreenTech.</span></div></article>
+      <article class="session-card"><div class="session-time">11:35 AM<br>&#8211; 12:00 PM</div><div class="session-info"><strong>Closing Ceremony</strong><span>End of Day 3.</span></div></article>
     </section>
-    <div class="conference-notice"><strong>Demo information only.</strong> All session titles, dates and timings on this page are placeholders for the prototype and must be replaced when the confirmed conference programme is available.</div>
+    <div class="conference-notice"><strong>Programme source:</strong> MyARTTE 2026 Conference Programme V9. Timings and session titles are displayed as provided in the supplied programme PDF.</div>
     <button class="bs" onclick="goToScreen('screen-welcome')">Back to Home</button>
   </div>
 </main>
@@ -243,192 +419,197 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
       <span class="map-hlabel">Hall 5 &amp; 6 &middot; MITEC KL</span>
       <div class="map-vbadge"><span id="mv-icon">🚗</span></div>
     </div>
+    <!-- @section: exhibitor-search-entry -->
+    <button class="map-search-entry" type="button" onclick="openExhibitorSearch()">Search exhibitors or booth number <span aria-hidden="true">&#128269;</span></button>
     <!-- @section: map-quick-navigation -->
     <div class="map-quick-actions" aria-label="Quick navigation destinations">
       <button class="map-quick-btn" type="button" onclick="navigateToLandmark('entrance')"><span>Quick Route</span>&#8592; Back to Entrance</button>
       <button class="map-quick-btn" type="button" onclick="navigateToLandmark('conference')"><span>Quick Route</span>Conference Hall &#8594;</button>
     </div>
+    <!-- @section: compact-active-route-bar -->
+    <div class="rbar" id="rbar" aria-live="polite">
+      <div class="rbar-copy">
+        <div class="rbar-title" id="rbar-title">Route Ready</div>
+        <div class="rbar-sub" id="rbar-sub">Walk the glowing cyan path.</div>
+      </div>
+      <div class="rbar-acts">
+        <button class="btn-cancel" onclick="cancelRoute()">Cancel</button>
+        <button class="btn-reach" id="btn-reached" onclick="reachedDest()">&#10003; Reached</button>
+      </div>
+    </div>
     <div class="map-card">
-    <svg id="map-svg" class="map-svg" viewBox="0 0 880 1395" xmlns="http://www.w3.org/2000/svg">
+    <svg id="map-svg" class="map-svg" viewBox="0 0 985 1280" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         <filter id="glow2"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
-      <!-- LAYER 1: Real floor plan — full page, exact render from PDF -->
-      <image href="https://skyagent-artifacts.skywork.ai/router/agent/2026-07-15/prod_agent_019f4a49-ac00-74c2-a075-775df70bb120/floorplan_full_6c99d1ee0cc149c9a985aeeed06d97d7.jpg" x="0" y="0" width="1144" height="1395" preserveAspectRatio="xMidYMid meet"/>
-      <!-- LAYER 2: Booth click zones — exact positions from PDF vector data -->
-      <rect class="booth" data-num="1025" data-cat="Standard" data-name="Booth 1025" x="134" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1024" data-cat="Standard" data-name="Booth 1024" x="176" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1023" data-cat="Standard" data-name="Booth 1023" x="254" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1022" data-cat="Standard" data-name="Booth 1022" x="297" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1021" data-cat="Standard" data-name="Booth 1021" x="376" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1020" data-cat="Standard" data-name="Booth 1020" x="419" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1019" data-cat="Standard" data-name="Booth 1019" x="497" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1018" data-cat="Standard" data-name="Booth 1018" x="539" y="298" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1026" data-cat="Standard" data-name="Booth 1026" x="55" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1154" data-cat="Standard" data-name="Booth 1154" x="134" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1153" data-cat="Standard" data-name="Booth 1153" x="176" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1127" data-cat="Standard" data-name="Booth 1127" x="254" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1126" data-cat="Standard" data-name="Booth 1126" x="297" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1125" data-cat="Standard" data-name="Booth 1125" x="340" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1077" data-cat="Standard" data-name="Booth 1077" x="460" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1076" data-cat="Standard" data-name="Booth 1076" x="503" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1075" data-cat="Standard" data-name="Booth 1075" x="545" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1017" data-cat="Standard" data-name="Booth 1017" x="652" y="377" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1027" data-cat="Standard" data-name="Booth 1027" x="55" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1155" data-cat="Standard" data-name="Booth 1155" x="134" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1156" data-cat="Standard" data-name="Booth 1156" x="176" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1128" data-cat="Standard" data-name="Booth 1128" x="254" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1129" data-cat="Standard" data-name="Booth 1129" x="297" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1130" data-cat="Standard" data-name="Booth 1130" x="340" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1078" data-cat="Standard" data-name="Booth 1078" x="460" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1079" data-cat="Standard" data-name="Booth 1079" x="503" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1080" data-cat="Standard" data-name="Booth 1080" x="545" y="419" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1027A" data-cat="Standard" data-name="Booth 1027A" x="58" y="505" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1157" data-cat="Standard" data-name="Booth 1157" x="134" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1152" data-cat="Standard" data-name="Booth 1152" x="176" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1131" data-cat="Standard" data-name="Booth 1131" x="254" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1124" data-cat="Standard" data-name="Booth 1124" x="297" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1103" data-cat="Standard" data-name="Booth 1103" x="375" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1102" data-cat="Standard" data-name="Booth 1102" x="417" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1081" data-cat="Standard" data-name="Booth 1081" x="531" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1074" data-cat="Standard" data-name="Booth 1074" x="574" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1053" data-cat="Standard" data-name="Booth 1053" x="652" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1052" data-cat="Standard" data-name="Booth 1052" x="695" y="533" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1104" data-cat="Standard" data-name="Booth 1104" x="375" y="534" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1101" data-cat="Standard" data-name="Booth 1101" x="418" y="534" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1027B" data-cat="Standard" data-name="Booth 1027B" x="58" y="548" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1158" data-cat="Standard" data-name="Booth 1158" x="134" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1151" data-cat="Standard" data-name="Booth 1151" x="176" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1132" data-cat="Standard" data-name="Booth 1132" x="254" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1123" data-cat="Standard" data-name="Booth 1123" x="297" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1104" data-cat="Standard" data-name="Booth 1104" x="375" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1101" data-cat="Standard" data-name="Booth 1101" x="417" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1082" data-cat="Standard" data-name="Booth 1082" x="531" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1073" data-cat="Standard" data-name="Booth 1073" x="574" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1054" data-cat="Standard" data-name="Booth 1054" x="652" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1051" data-cat="Standard" data-name="Booth 1051" x="695" y="575" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1105" data-cat="Standard" data-name="Booth 1105" x="375" y="591" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1100" data-cat="Standard" data-name="Booth 1100" x="418" y="591" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1105" data-cat="Standard" data-name="Booth 1105" x="375" y="618" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1100" data-cat="Standard" data-name="Booth 1100" x="417" y="618" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1028" data-cat="Standard" data-name="Booth 1028" x="55" y="632" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1106" data-cat="Standard" data-name="Booth 1106" x="375" y="646" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1099" data-cat="Standard" data-name="Booth 1099" x="418" y="646" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1159" data-cat="Standard" data-name="Booth 1159" x="134" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1150" data-cat="Standard" data-name="Booth 1150" x="176" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1133" data-cat="Standard" data-name="Booth 1133" x="254" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1122" data-cat="Standard" data-name="Booth 1122" x="297" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1083" data-cat="Standard" data-name="Booth 1083" x="531" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1072" data-cat="Standard" data-name="Booth 1072" x="574" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1055" data-cat="Standard" data-name="Booth 1055" x="652" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1050" data-cat="Standard" data-name="Booth 1050" x="695" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1013" data-cat="Standard" data-name="Booth 1013" x="773" y="654" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1106" data-cat="Standard" data-name="Booth 1106" x="375" y="660" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1099" data-cat="Standard" data-name="Booth 1099" x="417" y="660" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1029" data-cat="Standard" data-name="Booth 1029" x="55" y="675" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1160" data-cat="Standard" data-name="Booth 1160" x="134" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1149" data-cat="Standard" data-name="Booth 1149" x="176" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1134" data-cat="Standard" data-name="Booth 1134" x="254" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1121" data-cat="Standard" data-name="Booth 1121" x="297" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1084" data-cat="Standard" data-name="Booth 1084" x="531" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1071" data-cat="Standard" data-name="Booth 1071" x="574" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1056" data-cat="Standard" data-name="Booth 1056" x="652" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1049" data-cat="Standard" data-name="Booth 1049" x="695" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1012" data-cat="Standard" data-name="Booth 1012" x="773" y="696" width="44" height="44" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1030" data-cat="Standard" data-name="Booth 1030" x="62" y="753" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1107" data-cat="Standard" data-name="Booth 1107" x="382" y="767" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1098" data-cat="Standard" data-name="Booth 1098" x="424" y="767" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1161" data-cat="Standard" data-name="Booth 1161" x="140" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1148" data-cat="Standard" data-name="Booth 1148" x="183" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1135" data-cat="Standard" data-name="Booth 1135" x="261" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1120" data-cat="Standard" data-name="Booth 1120" x="304" y="788" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1085" data-cat="Standard" data-name="Booth 1085" x="538" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1070" data-cat="Standard" data-name="Booth 1070" x="581" y="788" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1057" data-cat="Standard" data-name="Booth 1057" x="658" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1048" data-cat="Standard" data-name="Booth 1048" x="701" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1011" data-cat="Standard" data-name="Booth 1011" x="779" y="788" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1031" data-cat="Standard" data-name="Booth 1031" x="62" y="795" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1108" data-cat="Standard" data-name="Booth 1108" x="382" y="810" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1097" data-cat="Standard" data-name="Booth 1097" x="424" y="810" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1162" data-cat="Standard" data-name="Booth 1162" x="140" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1147" data-cat="Standard" data-name="Booth 1147" x="183" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1136" data-cat="Standard" data-name="Booth 1136" x="261" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1119" data-cat="Standard" data-name="Booth 1119" x="304" y="831" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1086" data-cat="Standard" data-name="Booth 1086" x="538" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1069" data-cat="Standard" data-name="Booth 1069" x="581" y="831" width="42" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1058" data-cat="Standard" data-name="Booth 1058" x="658" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1047" data-cat="Standard" data-name="Booth 1047" x="701" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1010" data-cat="Standard" data-name="Booth 1010" x="779" y="831" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1032" data-cat="Standard" data-name="Booth 1032" x="62" y="859" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1109" data-cat="Gold" data-name="Booth 1109" x="382" y="895" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1096" data-cat="Gold" data-name="Booth 1096" x="424" y="895" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1033" data-cat="Standard" data-name="Booth 1033" x="62" y="902" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1163" data-cat="Gold" data-name="Booth 1163" x="140" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1146" data-cat="Gold" data-name="Booth 1146" x="183" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1137" data-cat="Gold" data-name="Booth 1137" x="261" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1118" data-cat="Gold" data-name="Booth 1118" x="304" y="909" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1087" data-cat="Gold" data-name="Booth 1087" x="538" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1068" data-cat="Gold" data-name="Booth 1068" x="581" y="909" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1059" data-cat="Gold" data-name="Booth 1059" x="658" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1046" data-cat="Gold" data-name="Booth 1046" x="701" y="909" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1009" data-cat="Standard" data-name="Booth 1009" x="779" y="909" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1110" data-cat="Gold" data-name="Booth 1110" x="382" y="938" width="42" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1095" data-cat="Gold" data-name="Booth 1095" x="424" y="938" width="43" height="42" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1164" data-cat="Gold" data-name="Booth 1164" x="140" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1145" data-cat="Gold" data-name="Booth 1145" x="183" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1138" data-cat="Gold" data-name="Booth 1138" x="261" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1117" data-cat="Gold" data-name="Booth 1117" x="304" y="951" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1088" data-cat="Gold" data-name="Booth 1088" x="538" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1067" data-cat="Gold" data-name="Booth 1067" x="581" y="951" width="42" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1060" data-cat="Gold" data-name="Booth 1060" x="658" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1045" data-cat="Gold" data-name="Booth 1045" x="701" y="951" width="43" height="43" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1008" data-cat="Standard" data-name="Booth 1008" x="779" y="951" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1034" data-cat="Standard" data-name="Booth 1034" x="62" y="966" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1035" data-cat="Standard" data-name="Booth 1035" x="62" y="1009" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1165" data-cat="Platinum" data-name="Booth 1165" x="140" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1144" data-cat="Platinum" data-name="Booth 1144" x="183" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1139" data-cat="Platinum" data-name="Booth 1139" x="261" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1116" data-cat="Platinum" data-name="Booth 1116" x="304" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1111" data-cat="Platinum" data-name="Booth 1111" x="382" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1094" data-cat="Platinum" data-name="Booth 1094" x="424" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1089" data-cat="Platinum" data-name="Booth 1089" x="538" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1066" data-cat="Platinum" data-name="Booth 1066" x="581" y="1030" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1061" data-cat="Platinum" data-name="Booth 1061" x="658" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1044" data-cat="Platinum" data-name="Booth 1044" x="701" y="1030" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1007" data-cat="Standard" data-name="Booth 1007" x="779" y="1030" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1036" data-cat="Standard" data-name="Booth 1036" x="62" y="1072" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1166" data-cat="Platinum" data-name="Booth 1166" x="140" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1143" data-cat="Platinum" data-name="Booth 1143" x="183" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1140" data-cat="Platinum" data-name="Booth 1140" x="261" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1115" data-cat="Platinum" data-name="Booth 1115" x="304" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1112" data-cat="Platinum" data-name="Booth 1112" x="382" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1093" data-cat="Platinum" data-name="Booth 1093" x="424" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1090" data-cat="Platinum" data-name="Booth 1090" x="538" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1065" data-cat="Platinum" data-name="Booth 1065" x="581" y="1072" width="42" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1062" data-cat="Platinum" data-name="Booth 1062" x="658" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1043" data-cat="Platinum" data-name="Booth 1043" x="701" y="1072" width="43" height="43" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1006" data-cat="Standard" data-name="Booth 1006" x="779" y="1072" width="43" height="43" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1037" data-cat="Standard" data-name="Booth 1037" x="62" y="1115" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1167" data-cat="Platinum" data-name="Booth 1167" x="140" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1142" data-cat="Platinum" data-name="Booth 1142" x="183" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1141" data-cat="Platinum" data-name="Booth 1141" x="261" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1114" data-cat="Platinum" data-name="Booth 1114" x="304" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1113" data-cat="Platinum" data-name="Booth 1113" x="382" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1092" data-cat="Platinum" data-name="Booth 1092" x="424" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1091" data-cat="Platinum" data-name="Booth 1091" x="538" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1064" data-cat="Platinum" data-name="Booth 1064" x="581" y="1115" width="42" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1063" data-cat="Platinum" data-name="Booth 1063" x="658" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1042" data-cat="Platinum" data-name="Booth 1042" x="701" y="1115" width="43" height="42" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1005" data-cat="Standard" data-name="Booth 1005" x="779" y="1115" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1038" data-cat="Standard" data-name="Booth 1038" x="109" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1039" data-cat="Standard" data-name="Booth 1039" x="152" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1040" data-cat="Standard" data-name="Booth 1040" x="237" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1041" data-cat="Standard" data-name="Booth 1041" x="280" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1001" data-cat="Standard" data-name="Booth 1001" x="559" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1002" data-cat="Standard" data-name="Booth 1002" x="602" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1003" data-cat="Standard" data-name="Booth 1003" x="687" y="1200" width="43" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
-      <rect class="booth" data-num="1004" data-cat="Standard" data-name="Booth 1004" x="730" y="1200" width="42" height="42" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <!-- LAYER 1: stylized exhibition map supplied by the user -->
+      <image id="floorplan-image" href="assets/myartte-map-final.png" x="0" y="0" width="985" height="1280" preserveAspectRatio="none"/>
+      <!-- LAYER 2: 164 PDF-verified booth click zones -->
+      <rect class="booth" data-num="1025" data-cat="Standard" data-name="Booth 1025" data-position-id="P001" data-status="verified_pdf" x="150.0" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1024" data-cat="Standard" data-name="Booth 1024" data-position-id="P002" data-status="verified_pdf" x="197.0" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1023" data-cat="Standard" data-name="Booth 1023" data-position-id="P003" data-status="verified_pdf" x="284.3" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1022" data-cat="Standard" data-name="Booth 1022" data-position-id="P004" data-status="verified_pdf" x="332.4" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1021" data-cat="Standard" data-name="Booth 1021" data-position-id="P005" data-status="verified_pdf" x="420.9" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1020" data-cat="Standard" data-name="Booth 1020" data-position-id="P006" data-status="verified_pdf" x="469.0" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1019" data-cat="Standard" data-name="Booth 1019" data-position-id="P007" data-status="verified_pdf" x="556.3" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1018" data-cat="Standard" data-name="Booth 1018" data-position-id="P008" data-status="verified_pdf" x="603.3" y="406.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1026" data-cat="Standard" data-name="Booth 1026" data-position-id="P009" data-status="verified_pdf" x="61.6" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1154" data-cat="Standard" data-name="Booth 1154" data-position-id="P010" data-status="verified_pdf" x="150.0" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1153" data-cat="Standard" data-name="Booth 1153" data-position-id="P011" data-status="verified_pdf" x="197.0" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1127" data-cat="Standard" data-name="Booth 1127" data-position-id="P012" data-status="verified_pdf" x="284.3" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1126" data-cat="Standard" data-name="Booth 1126" data-position-id="P013" data-status="verified_pdf" x="332.4" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1125" data-cat="Standard" data-name="Booth 1125" data-position-id="P014" data-status="verified_pdf" x="380.6" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1077" data-cat="Standard" data-name="Booth 1077" data-position-id="P015" data-status="verified_pdf" x="514.9" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1076" data-cat="Standard" data-name="Booth 1076" data-position-id="P016" data-status="verified_pdf" x="563.0" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1075" data-cat="Standard" data-name="Booth 1075" data-position-id="P017" data-status="verified_pdf" x="610.0" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1017" data-cat="Standard" data-name="Booth 1017" data-position-id="P018" data-status="verified_pdf" x="729.8" y="473.4" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027" data-cat="Standard" data-name="Booth 1027" data-position-id="P019" data-status="verified_pdf" x="61.6" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1155" data-cat="Standard" data-name="Booth 1155" data-position-id="P020" data-status="verified_pdf" x="150.0" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1156" data-cat="Standard" data-name="Booth 1156" data-position-id="P021" data-status="verified_pdf" x="197.0" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1128" data-cat="Standard" data-name="Booth 1128" data-position-id="P022" data-status="verified_pdf" x="284.3" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1129" data-cat="Standard" data-name="Booth 1129" data-position-id="P023" data-status="verified_pdf" x="332.4" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1130" data-cat="Standard" data-name="Booth 1130" data-position-id="P024" data-status="verified_pdf" x="380.6" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1078" data-cat="Standard" data-name="Booth 1078" data-position-id="P025" data-status="verified_pdf" x="514.9" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1079" data-cat="Standard" data-name="Booth 1079" data-position-id="P026" data-status="verified_pdf" x="563.0" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1080" data-cat="Standard" data-name="Booth 1080" data-position-id="P027" data-status="verified_pdf" x="610.0" y="509.1" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027A" data-cat="Standard" data-name="Booth 1027A" data-position-id="P028" data-status="verified_pdf" x="64.9" y="582.2" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1157" data-cat="Standard" data-name="Booth 1157" data-position-id="P029" data-status="verified_pdf" x="150.0" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1152" data-cat="Standard" data-name="Booth 1152" data-position-id="P030" data-status="verified_pdf" x="197.0" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1131" data-cat="Standard" data-name="Booth 1131" data-position-id="P031" data-status="verified_pdf" x="284.3" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1124" data-cat="Standard" data-name="Booth 1124" data-position-id="P032" data-status="verified_pdf" x="332.4" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1104" data-cat="Standard" data-name="Booth 1104" data-position-id="P033" data-status="verified_pdf" x="419.7" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1101" data-cat="Standard" data-name="Booth 1101" data-position-id="P034" data-status="verified_pdf" x="466.8" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1081" data-cat="Standard" data-name="Booth 1081" data-position-id="P035" data-status="verified_pdf" x="594.4" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1074" data-cat="Standard" data-name="Booth 1074" data-position-id="P036" data-status="verified_pdf" x="642.5" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1053" data-cat="Standard" data-name="Booth 1053" data-position-id="P037" data-status="verified_pdf" x="729.8" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1052" data-cat="Standard" data-name="Booth 1052" data-position-id="P038" data-status="verified_pdf" x="777.9" y="606.0" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1027B" data-cat="Standard" data-name="Booth 1027B" data-position-id="P039" data-status="verified_pdf" x="64.9" y="618.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1158" data-cat="Standard" data-name="Booth 1158" data-position-id="P040" data-status="verified_pdf" x="150.0" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1151" data-cat="Standard" data-name="Booth 1151" data-position-id="P041" data-status="verified_pdf" x="197.0" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1132" data-cat="Standard" data-name="Booth 1132" data-position-id="P042" data-status="verified_pdf" x="284.3" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1123" data-cat="Standard" data-name="Booth 1123" data-position-id="P043" data-status="verified_pdf" x="332.4" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1105" data-cat="Standard" data-name="Booth 1105" data-position-id="P044" data-status="verified_pdf" x="419.7" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1100" data-cat="Standard" data-name="Booth 1100" data-position-id="P045" data-status="verified_pdf" x="466.8" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1082" data-cat="Standard" data-name="Booth 1082" data-position-id="P046" data-status="verified_pdf" x="594.4" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1073" data-cat="Standard" data-name="Booth 1073" data-position-id="P047" data-status="verified_pdf" x="642.5" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1054" data-cat="Standard" data-name="Booth 1054" data-position-id="P048" data-status="verified_pdf" x="729.8" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1051" data-cat="Standard" data-name="Booth 1051" data-position-id="P049" data-status="verified_pdf" x="777.9" y="641.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1106" data-cat="Standard" data-name="Booth 1106" data-position-id="P050" data-status="verified_pdf" x="419.7" y="678.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1099" data-cat="Standard" data-name="Booth 1099" data-position-id="P051" data-status="verified_pdf" x="466.8" y="678.3" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1028" data-cat="Standard" data-name="Booth 1028" data-position-id="P052" data-status="verified_pdf" x="61.6" y="690.2" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1159" data-cat="Standard" data-name="Booth 1159" data-position-id="P053" data-status="verified_pdf" x="150.0" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1150" data-cat="Standard" data-name="Booth 1150" data-position-id="P054" data-status="verified_pdf" x="197.0" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1133" data-cat="Standard" data-name="Booth 1133" data-position-id="P055" data-status="verified_pdf" x="284.3" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1122" data-cat="Standard" data-name="Booth 1122" data-position-id="P056" data-status="verified_pdf" x="332.4" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1083" data-cat="Standard" data-name="Booth 1083" data-position-id="P057" data-status="verified_pdf" x="594.4" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1072" data-cat="Standard" data-name="Booth 1072" data-position-id="P058" data-status="verified_pdf" x="642.5" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1055" data-cat="Standard" data-name="Booth 1055" data-position-id="P059" data-status="verified_pdf" x="729.8" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1050" data-cat="Standard" data-name="Booth 1050" data-position-id="P060" data-status="verified_pdf" x="777.9" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1013" data-cat="Standard" data-name="Booth 1013" data-position-id="P061" data-status="verified_pdf" x="865.2" y="708.9" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1029" data-cat="Standard" data-name="Booth 1029" data-position-id="P062" data-status="verified_pdf" x="61.6" y="726.8" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1160" data-cat="Standard" data-name="Booth 1160" data-position-id="P063" data-status="verified_pdf" x="150.0" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1149" data-cat="Standard" data-name="Booth 1149" data-position-id="P064" data-status="verified_pdf" x="197.0" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1134" data-cat="Standard" data-name="Booth 1134" data-position-id="P065" data-status="verified_pdf" x="284.3" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1121" data-cat="Standard" data-name="Booth 1121" data-position-id="P066" data-status="verified_pdf" x="332.4" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1084" data-cat="Standard" data-name="Booth 1084" data-position-id="P067" data-status="verified_pdf" x="594.4" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1071" data-cat="Standard" data-name="Booth 1071" data-position-id="P068" data-status="verified_pdf" x="642.5" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1056" data-cat="Standard" data-name="Booth 1056" data-position-id="P069" data-status="verified_pdf" x="729.8" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1049" data-cat="Standard" data-name="Booth 1049" data-position-id="P070" data-status="verified_pdf" x="777.9" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1012" data-cat="Standard" data-name="Booth 1012" data-position-id="P071" data-status="verified_pdf" x="865.2" y="744.6" width="44.9" height="37.4" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1030" data-cat="Standard" data-name="Booth 1030" data-position-id="P072" data-status="verified_pdf" x="69.4" y="793.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1107" data-cat="Standard" data-name="Booth 1107" data-position-id="P073" data-status="verified_pdf" x="427.6" y="804.9" width="42.8" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1098" data-cat="Standard" data-name="Booth 1098" data-position-id="P074" data-status="verified_pdf" x="474.6" y="804.9" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1161" data-cat="Standard" data-name="Booth 1161" data-position-id="P075" data-status="verified_pdf" x="156.7" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1148" data-cat="Standard" data-name="Booth 1148" data-position-id="P076" data-status="verified_pdf" x="204.8" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1135" data-cat="Standard" data-name="Booth 1135" data-position-id="P077" data-status="verified_pdf" x="292.1" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1120" data-cat="Standard" data-name="Booth 1120" data-position-id="P078" data-status="verified_pdf" x="340.3" y="822.8" width="42.8" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1085" data-cat="Standard" data-name="Booth 1085" data-position-id="P079" data-status="verified_pdf" x="602.2" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1070" data-cat="Standard" data-name="Booth 1070" data-position-id="P080" data-status="verified_pdf" x="650.3" y="822.8" width="42.8" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1057" data-cat="Standard" data-name="Booth 1057" data-position-id="P081" data-status="verified_pdf" x="736.5" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1048" data-cat="Standard" data-name="Booth 1048" data-position-id="P082" data-status="verified_pdf" x="784.6" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1011" data-cat="Standard" data-name="Booth 1011" data-position-id="P083" data-status="verified_pdf" x="871.9" y="822.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1031" data-cat="Standard" data-name="Booth 1031" data-position-id="P084" data-status="verified_pdf" x="69.4" y="828.8" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1108" data-cat="Standard" data-name="Booth 1108" data-position-id="P085" data-status="verified_pdf" x="427.6" y="841.5" width="42.8" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1097" data-cat="Standard" data-name="Booth 1097" data-position-id="P086" data-status="verified_pdf" x="474.6" y="841.5" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1162" data-cat="Standard" data-name="Booth 1162" data-position-id="P087" data-status="verified_pdf" x="156.7" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1147" data-cat="Standard" data-name="Booth 1147" data-position-id="P088" data-status="verified_pdf" x="204.8" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1136" data-cat="Standard" data-name="Booth 1136" data-position-id="P089" data-status="verified_pdf" x="292.1" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1119" data-cat="Standard" data-name="Booth 1119" data-position-id="P090" data-status="verified_pdf" x="340.3" y="859.4" width="42.8" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1086" data-cat="Standard" data-name="Booth 1086" data-position-id="P091" data-status="verified_pdf" x="602.2" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1069" data-cat="Standard" data-name="Booth 1069" data-position-id="P092" data-status="verified_pdf" x="650.3" y="859.4" width="42.8" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1058" data-cat="Standard" data-name="Booth 1058" data-position-id="P093" data-status="verified_pdf" x="736.5" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1047" data-cat="Standard" data-name="Booth 1047" data-position-id="P094" data-status="verified_pdf" x="784.6" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1010" data-cat="Standard" data-name="Booth 1010" data-position-id="P095" data-status="verified_pdf" x="871.9" y="859.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1032" data-cat="Standard" data-name="Booth 1032" data-position-id="P096" data-status="verified_pdf" x="69.4" y="883.1" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1109" data-cat="Gold" data-name="Booth 1109" data-position-id="P097" data-status="verified_pdf" x="427.6" y="913.8" width="42.8" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1096" data-cat="Gold" data-name="Booth 1096" data-position-id="P098" data-status="verified_pdf" x="474.6" y="913.8" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1033" data-cat="Standard" data-name="Booth 1033" data-position-id="P099" data-status="verified_pdf" x="69.4" y="919.7" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1163" data-cat="Gold" data-name="Booth 1163" data-position-id="P100" data-status="verified_pdf" x="156.7" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1146" data-cat="Gold" data-name="Booth 1146" data-position-id="P101" data-status="verified_pdf" x="204.8" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1137" data-cat="Gold" data-name="Booth 1137" data-position-id="P102" data-status="verified_pdf" x="292.1" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1118" data-cat="Gold" data-name="Booth 1118" data-position-id="P103" data-status="verified_pdf" x="340.3" y="925.6" width="42.8" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1087" data-cat="Gold" data-name="Booth 1087" data-position-id="P104" data-status="verified_pdf" x="602.2" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1068" data-cat="Gold" data-name="Booth 1068" data-position-id="P105" data-status="verified_pdf" x="650.3" y="925.6" width="42.8" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1059" data-cat="Gold" data-name="Booth 1059" data-position-id="P106" data-status="verified_pdf" x="736.5" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1046" data-cat="Gold" data-name="Booth 1046" data-position-id="P107" data-status="verified_pdf" x="784.6" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1009" data-cat="Standard" data-name="Booth 1009" data-position-id="P108" data-status="verified_pdf" x="871.9" y="925.6" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1110" data-cat="Gold" data-name="Booth 1110" data-position-id="P109" data-status="verified_pdf" x="427.6" y="950.3" width="42.8" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1095" data-cat="Gold" data-name="Booth 1095" data-position-id="P110" data-status="verified_pdf" x="474.6" y="950.3" width="43.9" height="35.7" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1164" data-cat="Gold" data-name="Booth 1164" data-position-id="P111" data-status="verified_pdf" x="156.7" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1145" data-cat="Gold" data-name="Booth 1145" data-position-id="P112" data-status="verified_pdf" x="204.8" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1138" data-cat="Gold" data-name="Booth 1138" data-position-id="P113" data-status="verified_pdf" x="292.1" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1117" data-cat="Gold" data-name="Booth 1117" data-position-id="P114" data-status="verified_pdf" x="340.3" y="961.4" width="42.8" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1088" data-cat="Gold" data-name="Booth 1088" data-position-id="P115" data-status="verified_pdf" x="602.2" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1067" data-cat="Gold" data-name="Booth 1067" data-position-id="P116" data-status="verified_pdf" x="650.3" y="961.4" width="42.8" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1060" data-cat="Gold" data-name="Booth 1060" data-position-id="P117" data-status="verified_pdf" x="736.5" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1045" data-cat="Gold" data-name="Booth 1045" data-position-id="P118" data-status="verified_pdf" x="784.6" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(253,224,100,0.45)" stroke="#f59e0b" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1008" data-cat="Standard" data-name="Booth 1008" data-position-id="P119" data-status="verified_pdf" x="871.9" y="961.4" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1034" data-cat="Standard" data-name="Booth 1034" data-position-id="P120" data-status="verified_pdf" x="69.4" y="974.1" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1035" data-cat="Standard" data-name="Booth 1035" data-position-id="P121" data-status="verified_pdf" x="69.4" y="1010.6" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1165" data-cat="Platinum" data-name="Booth 1165" data-position-id="P122" data-status="verified_pdf" x="156.7" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1144" data-cat="Platinum" data-name="Booth 1144" data-position-id="P123" data-status="verified_pdf" x="204.8" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1139" data-cat="Platinum" data-name="Booth 1139" data-position-id="P124" data-status="verified_pdf" x="292.1" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1116" data-cat="Platinum" data-name="Booth 1116" data-position-id="P125" data-status="verified_pdf" x="340.3" y="1028.5" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1111" data-cat="Platinum" data-name="Booth 1111" data-position-id="P126" data-status="verified_pdf" x="427.6" y="1028.5" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1094" data-cat="Platinum" data-name="Booth 1094" data-position-id="P127" data-status="verified_pdf" x="474.6" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1089" data-cat="Platinum" data-name="Booth 1089" data-position-id="P128" data-status="verified_pdf" x="602.2" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1066" data-cat="Platinum" data-name="Booth 1066" data-position-id="P129" data-status="verified_pdf" x="650.3" y="1028.5" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1061" data-cat="Platinum" data-name="Booth 1061" data-position-id="P130" data-status="verified_pdf" x="736.5" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1044" data-cat="Platinum" data-name="Booth 1044" data-position-id="P131" data-status="verified_pdf" x="784.6" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1007" data-cat="Standard" data-name="Booth 1007" data-position-id="P132" data-status="verified_pdf" x="871.9" y="1028.5" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1036" data-cat="Standard" data-name="Booth 1036" data-position-id="P133" data-status="verified_pdf" x="69.4" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1166" data-cat="Platinum" data-name="Booth 1166" data-position-id="P134" data-status="verified_pdf" x="156.7" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1143" data-cat="Platinum" data-name="Booth 1143" data-position-id="P135" data-status="verified_pdf" x="204.8" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1140" data-cat="Platinum" data-name="Booth 1140" data-position-id="P136" data-status="verified_pdf" x="292.1" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1115" data-cat="Platinum" data-name="Booth 1115" data-position-id="P137" data-status="verified_pdf" x="340.3" y="1064.2" width="42.8" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1112" data-cat="Platinum" data-name="Booth 1112" data-position-id="P138" data-status="verified_pdf" x="427.6" y="1064.2" width="42.8" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1093" data-cat="Platinum" data-name="Booth 1093" data-position-id="P139" data-status="verified_pdf" x="474.6" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1090" data-cat="Platinum" data-name="Booth 1090" data-position-id="P140" data-status="verified_pdf" x="602.2" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1065" data-cat="Platinum" data-name="Booth 1065" data-position-id="P141" data-status="verified_pdf" x="650.3" y="1064.2" width="42.8" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1062" data-cat="Platinum" data-name="Booth 1062" data-position-id="P142" data-status="verified_pdf" x="736.5" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1043" data-cat="Platinum" data-name="Booth 1043" data-position-id="P143" data-status="verified_pdf" x="784.6" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1006" data-cat="Standard" data-name="Booth 1006" data-position-id="P144" data-status="verified_pdf" x="871.9" y="1064.2" width="43.9" height="36.5" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1037" data-cat="Standard" data-name="Booth 1037" data-position-id="P145" data-status="verified_pdf" x="69.4" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1167" data-cat="Platinum" data-name="Booth 1167" data-position-id="P146" data-status="verified_pdf" x="156.7" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1142" data-cat="Platinum" data-name="Booth 1142" data-position-id="P147" data-status="verified_pdf" x="204.8" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1141" data-cat="Platinum" data-name="Booth 1141" data-position-id="P148" data-status="verified_pdf" x="292.1" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1114" data-cat="Platinum" data-name="Booth 1114" data-position-id="P149" data-status="verified_pdf" x="340.3" y="1100.8" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1113" data-cat="Platinum" data-name="Booth 1113" data-position-id="P150" data-status="verified_pdf" x="427.6" y="1100.8" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1092" data-cat="Platinum" data-name="Booth 1092" data-position-id="P151" data-status="verified_pdf" x="474.6" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1091" data-cat="Platinum" data-name="Booth 1091" data-position-id="P152" data-status="verified_pdf" x="602.2" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1064" data-cat="Platinum" data-name="Booth 1064" data-position-id="P153" data-status="verified_pdf" x="650.3" y="1100.8" width="42.8" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1063" data-cat="Platinum" data-name="Booth 1063" data-position-id="P154" data-status="verified_pdf" x="736.5" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1042" data-cat="Platinum" data-name="Booth 1042" data-position-id="P155" data-status="verified_pdf" x="784.6" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(147,197,253,0.45)" stroke="#3b82f6" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1005" data-cat="Standard" data-name="Booth 1005" data-position-id="P156" data-status="verified_pdf" x="871.9" y="1100.8" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1038" data-cat="Standard" data-name="Booth 1038" data-position-id="P157" data-status="verified_pdf" x="122.0" y="1173.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1039" data-cat="Standard" data-name="Booth 1039" data-position-id="P158" data-status="verified_pdf" x="170.1" y="1173.0" width="42.8" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1040" data-cat="Standard" data-name="Booth 1040" data-position-id="P159" data-status="verified_pdf" x="265.3" y="1173.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1041" data-cat="Standard" data-name="Booth 1041" data-position-id="P160" data-status="verified_pdf" x="313.4" y="1173.0" width="42.8" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1001" data-cat="Standard" data-name="Booth 1001" data-position-id="P161" data-status="verified_pdf" x="625.7" y="1173.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1002" data-cat="Standard" data-name="Booth 1002" data-position-id="P162" data-status="verified_pdf" x="673.8" y="1173.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1003" data-cat="Standard" data-name="Booth 1003" data-position-id="P163" data-status="verified_pdf" x="769.0" y="1173.0" width="43.9" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
+      <rect class="booth" data-num="1004" data-cat="Standard" data-name="Booth 1004" data-position-id="P164" data-status="verified_pdf" x="817.1" y="1173.0" width="42.8" height="35.7" rx="2" fill="rgba(200,220,255,0.30)" stroke="#90a4ae" stroke-width="1" opacity="0.01"/>
       <!-- @section: glowing-route -->
       <!-- LAYER 3: Always-visible route halo + glow + bright core -->
       <g id="route-layer" style="display:none;pointer-events:none;">
@@ -443,7 +624,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
       </g>
       <!-- @section: vehicle-marker -->
       <!-- LAYER 4: Vehicle moves as one group for smooth animation -->
-      <g id="vehicle-marker" transform="translate(572 1360)"
+      <g id="vehicle-marker" transform="translate(470 1248)"
         style="display:none;pointer-events:none;will-change:transform;">
         <circle id="vehicle-bg" cx="0" cy="0" r="22"
           fill="#060e1c" stroke="#00d5ff" stroke-width="3.5" filter="url(#glow2)"/>
@@ -452,6 +633,26 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
       </g>
     </svg>
     </div>
+  </div>
+</main>
+<!-- @section: exhibitor-search-screen -->
+<main class="screen" id="screen-search">
+  <div class="search-wrap">
+    <button class="detail-back-link" onclick="returnToMapFromSearch()">&#8592; Back to Map</button>
+    <div class="card search-hero"><div class="cb">
+      <div class="demo-badge">Floor Plan Exhibitor Directory</div>
+      <div class="kicker">Find Your Destination</div>
+      <h2 class="h2">Search Exhibitors</h2>
+      <p class="desc">Search by demo company name, booth number or category. Tap a result to return to the floor plan and start its route.</p>
+      <div class="search-field">
+        <input id="exhibitor-search-input" type="search" inputmode="search" autocomplete="off" placeholder="Try a company name or booth number" aria-label="Search floor plan exhibitors" oninput="filterExhibitors(this.value)">
+        <span class="search-icon" aria-hidden="true">&#128269;</span>
+      </div>
+    </div></div>
+      <div class="search-status"><span>Directory from the supplied MYARTTE floor plan</span><strong id="search-result-count">0 results</strong></div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-empty" id="search-empty"><strong>No matching floor plan exhibitors</strong>Try another company keyword, category or booth number.</div>
+    <div class="conference-notice"><strong>Floor plan source.</strong> Company names and booth assignments on this directory follow the supplied MYARTTE 2026 floor plan.</div>
   </div>
 </main>
 <!-- @section: visited-booths-screen -->
@@ -474,7 +675,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
       <p>Choose a booth on the map, follow its cyan route, and confirm your arrival to add it to this list.</p>
     </div>
     <div class="visited-list" id="visited-list" aria-live="polite"></div>
-    <div class="conference-notice"><strong>Demo exhibitor information.</strong> Company names and categories shown in this visit history are prototype content and are not confirmed exhibitor records.</div>
+    <div class="conference-notice"><strong>Floor plan source.</strong> Company names and assignments shown in this visit history follow the supplied MYARTTE 2026 floor plan.</div>
     <div class="visited-actions">
       <button class="bp" onclick="continueExploring()">Continue Exploring</button>
       <button class="bs" onclick="goToScreen('screen-welcome')">Back to Home</button>
@@ -486,19 +687,21 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
   <div class="detail-wrap">
     <button class="detail-back-link" onclick="backToMapFromDetails()">&#8592; Back to Map</button>
     <div class="card detail-card"><div class="cb">
-      <div class="demo-badge">Demo Exhibitor Information</div>
+      <div class="demo-badge">Exhibitor Information</div>
       <div class="kicker">Booth Details</div>
-      <h2 class="detail-company" id="detail-company">MYARTTE Demo Exhibitor</h2>
-      <p class="detail-company-sub">Preview information for the app prototype. Official exhibitor details will replace this content later.</p>
+      <h2 class="detail-company" id="detail-company">Floor Plan Exhibitor</h2>
+      <p class="detail-company-sub">Company name and booth assignment taken from the supplied MYARTTE 2026 floor plan.</p>
       <div class="detail-meta">
         <div class="detail-meta-card"><span class="detail-meta-label">Booth Number</span><strong class="detail-meta-value" id="detail-booth">&#8212;</strong></div>
-        <div class="detail-meta-card"><span class="detail-meta-label">Demo Category</span><strong class="detail-meta-value" id="detail-category">&#8212;</strong></div>
+        <div class="detail-meta-card"><span class="detail-meta-label">Category</span><strong class="detail-meta-value" id="detail-category">&#8212;</strong></div>
       </div>
       <div class="detail-copy">
         <div class="detail-copy-label">About this exhibitor</div>
-        <p id="detail-description">This is temporary demo content for the Booth Details page.</p>
+        <p id="detail-description">Select a booth on the map to view its floor plan entry.</p>
       </div>
-      <div class="demo-notice"><span aria-hidden="true">&#9432;</span><span><strong>Demo only.</strong> The company name, category and description shown here are not confirmed exhibitor information.</span></div>
+      <div class="detail-links" id="detail-links" aria-label="Company links"></div>
+      <p class="detail-research-note" id="detail-research-note"></p>
+      <div class="demo-notice"><span aria-hidden="true">&#9432;</span><span><strong>Research note.</strong> Company summaries and links are based on publicly available information. Please confirm final exhibitor copy and official social handles before the event.</span></div>
       <div class="detail-actions">
         <button class="bp" onclick="navigateFromDetails()">Navigate to Booth</button>
         <button class="bs" onclick="backToMapFromDetails()">Back to Map</button>
@@ -507,18 +710,29 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;background-im
   </div>
 </main>
 </div>
-<div class="rbar" id="rbar">
-  <div class="rbar-title" id="rbar-title">Route Ready</div>
-  <div class="rbar-sub"   id="rbar-sub">Walk the glowing cyan path.</div>
-  <div class="rbar-acts">
-    <button class="btn-cancel" onclick="cancelRoute()">Cancel</button>
-    <button class="btn-reach" id="btn-reached" onclick="reachedDest()">&#10003; Reached Destination</button>
+<!-- @section: map-tap-guidance -->
+<div class="map-guide" id="map-guide" role="status" aria-live="polite" onclick="hideMapGuide()">
+  <div class="map-guide-card">
+    <div class="map-guide-icon" aria-hidden="true">&#9757;</div>
+    <strong>Choose a booth to begin</strong>
+    <p>Tap any booth on the floor plan to view its details, then select <b>Navigate to Booth</b> to see your route.</p>
+    <small>Tap anywhere to continue</small>
   </div>
 </div>
 <script>
 var vehicleEmoji="🚗";
+var mapGuideTimer=0;
+function showMapGuide(){
+  var guide=document.getElementById("map-guide");if(!guide)return;
+  clearTimeout(mapGuideTimer);guide.classList.add("show");
+  mapGuideTimer=setTimeout(hideMapGuide,5000);
+}
+function hideMapGuide(){
+  var guide=document.getElementById("map-guide");if(guide)guide.classList.remove("show");
+  clearTimeout(mapGuideTimer);
+}
 var parkedNode="entrance";
-var parkedPoint={x:572,y:1360};
+var parkedPoint={x:470,y:1248};
 var parkedConnector=[];
 var curRoute=[];var curPathPoints=[];var curConnector=[];
 var curNum="";var curEl=null;var curEndPoint=null;var curDestNode="";
@@ -528,70 +742,84 @@ var visitedBooths=[];
 /* @section: landmark-navigation-state */
 var curDestinationType="booth";var curDestinationLabel="";
 var LANDMARKS={
-  entrance:{label:"Hall 6 Entrance",node:"entrance",point:{x:572,y:1360}},
-  conference:{label:"Conference Hall",node:"h2_vR",point:{x:842,y:585}}
+  entrance:{label:"Hall 6 Entrance",node:"entrance",point:{x:470,y:1248}},
+  conference:{label:"Conference Hall",node:"h1_vR",point:{x:932,y:465}}
 };
 var SPEED=285;
 var motionFrame=0;var isMoving=false;var routeFlowAnimation=null;
 var N={
-  "entrance":{"x":572,"y":1360},
-  "btm_vL":{"x":110,"y":1240},
-  "btm_c1":{"x":233,"y":1240},
-  "btm_c2":{"x":370,"y":1240},
-  "btm_c3":{"x":483,"y":1240},
-  "btm_c4":{"x":602,"y":1240},
-  "btm_c5":{"x":723,"y":1240},
-  "btm_vR":{"x":858,"y":1240},
-  "h6_vL":{"x":110,"y":1090},
-  "h6_c1":{"x":233,"y":1090},
-  "h6_c2":{"x":370,"y":1090},
-  "h6_c3":{"x":483,"y":1090},
-  "h6_c4":{"x":602,"y":1090},
-  "h6_c5":{"x":723,"y":1090},
-  "h6_vR":{"x":858,"y":1090},
-  "h5_vL":{"x":110,"y":962},
-  "h5_c1":{"x":233,"y":962},
-  "h5_c2":{"x":370,"y":962},
-  "h5_c3":{"x":483,"y":962},
-  "h5_c4":{"x":602,"y":962},
-  "h5_c5":{"x":723,"y":962},
-  "h5_vR":{"x":858,"y":962},
-  "h4_vL":{"x":110,"y":834},
-  "h4_c1":{"x":233,"y":834},
-  "h4_c2":{"x":370,"y":834},
-  "h4_c3":{"x":483,"y":834},
-  "h4_c4":{"x":602,"y":834},
-  "h4_c5":{"x":723,"y":834},
-  "h4_vR":{"x":858,"y":834},
-  "h3_vL":{"x":110,"y":708},
-  "h3_c1":{"x":233,"y":708},
-  "h3_c2":{"x":370,"y":708},
-  "h3_c3":{"x":483,"y":708},
-  "h3_c4":{"x":602,"y":708},
-  "h3_c5":{"x":723,"y":708},
-  "h3_vR":{"x":858,"y":708},
-  "h2_vL":{"x":110,"y":530},
-  "h2_c1":{"x":233,"y":530},
-  "h2_c2":{"x":370,"y":530},
-  "h2_c3":{"x":483,"y":530},
-  "h2_c4":{"x":602,"y":530},
-  "h2_c5":{"x":723,"y":530},
-  "h2_vR":{"x":858,"y":530},
-  "h1_vL":{"x":110,"y":385},
-  "h1_c1":{"x":233,"y":385},
-  "h1_c2":{"x":370,"y":385},
-  "h1_c3":{"x":483,"y":385},
-  "h1_c4":{"x":602,"y":385},
-  "h1_c5":{"x":723,"y":385},
-  "h1_vR":{"x":858,"y":385},
-  "top_vL":{"x":110,"y":280},
-  "top_c1":{"x":233,"y":280},
-  "top_c2":{"x":370,"y":280},
-  "top_c3":{"x":483,"y":280},
-  "top_c4":{"x":602,"y":280},
-  "top_c5":{"x":723,"y":280},
-  "top_vR":{"x":858,"y":280}
+  "entrance":{"x":470,"y":1248},
+  "btm_vL":{"x":123.1,"y":1207.0},
+  "btm_c1":{"x":260.8,"y":1207.0},
+  "btm_c2":{"x":414.1,"y":1207.0},
+  "btm_c3":{"x":540.6,"y":1207.0},
+  "btm_c4":{"x":673.8,"y":1207.0},
+  "btm_c5":{"x":809.3,"y":1207.0},
+  "btm_vR":{"x":960.4,"y":1207.0},
+  "h6_vL":{"x":123.1,"y":1079.5},
+  "h6_c1":{"x":260.8,"y":1079.5},
+  "h6_c2":{"x":414.1,"y":1079.5},
+  "h6_c3":{"x":540.6,"y":1079.5},
+  "h6_c4":{"x":673.8,"y":1079.5},
+  "h6_c5":{"x":809.3,"y":1079.5},
+  "h6_vR":{"x":960.4,"y":1079.5},
+  "h5_vL":{"x":123.1,"y":970.7},
+  "h5_c1":{"x":260.8,"y":970.7},
+  "h5_c2":{"x":414.1,"y":970.7},
+  "h5_c3":{"x":540.6,"y":970.7},
+  "h5_c4":{"x":673.8,"y":970.7},
+  "h5_c5":{"x":809.3,"y":970.7},
+  "h5_vR":{"x":960.4,"y":970.7},
+  "h4_vL":{"x":123.1,"y":861.9},
+  "h4_c1":{"x":260.8,"y":861.9},
+  "h4_c2":{"x":414.1,"y":861.9},
+  "h4_c3":{"x":540.6,"y":861.9},
+  "h4_c4":{"x":673.8,"y":861.9},
+  "h4_c5":{"x":809.3,"y":861.9},
+  "h4_vR":{"x":960.4,"y":861.9},
+  "h3_vL":{"x":123.1,"y":754.8},
+  "h3_c1":{"x":260.8,"y":754.8},
+  "h3_c2":{"x":414.1,"y":754.8},
+  "h3_c3":{"x":540.6,"y":754.8},
+  "h3_c4":{"x":673.8,"y":754.8},
+  "h3_c5":{"x":809.3,"y":754.8},
+  "h3_vR":{"x":960.4,"y":754.8},
+  "h2_vL":{"x":123.1,"y":603.5},
+  "h2_c1":{"x":260.8,"y":603.5},
+  "h2_c2":{"x":414.1,"y":603.5},
+  "h2_c3":{"x":540.6,"y":603.5},
+  "h2_c4":{"x":673.8,"y":603.5},
+  "h2_c5":{"x":809.3,"y":603.5},
+  "h2_vR":{"x":960.4,"y":603.5},
+  "h1_vL":{"x":123.1,"y":480.2},
+  "h1_c1":{"x":260.8,"y":480.2},
+  "h1_c2":{"x":414.1,"y":480.2},
+  "h1_c3":{"x":540.6,"y":480.2},
+  "h1_c4":{"x":673.8,"y":480.2},
+  "h1_c5":{"x":809.3,"y":480.2},
+  "h1_vR":{"x":960.4,"y":480.2},
+  "top_vL":{"x":123.1,"y":391.0},
+  "top_c1":{"x":260.8,"y":391.0},
+  "top_c2":{"x":414.1,"y":391.0},
+  "top_c3":{"x":540.6,"y":391.0},
+  "top_c4":{"x":673.8,"y":391.0},
+  "top_c5":{"x":809.3,"y":391.0},
+  "top_vR":{"x":960.4,"y":391.0}
 };
+/* Keep the route graph on the walkways of the current 985 x 1280 stylized map.
+   The previous graph used the old floor-plan scale and sent the vehicle through
+   booth rows. */
+(function(){
+  var xs={vL:100,c1:260,c2:400,c3:550,c4:730,c5:880,vR:950};
+  var ys={btm:1160,h6:945,h5:800,h4:660,h3:540,h2:385,h1:340,top:330};
+  Object.keys(ys).forEach(function(row){
+    Object.keys(xs).forEach(function(col){
+      var key=row+"_"+col;
+      if(N[key]){N[key].x=xs[col];N[key].y=ys[row];}
+    });
+  });
+  N.entrance={x:470,y:1248};
+})();
 var EDGES=[
   ["entrance","btm_c2"],
   ["btm_vL","btm_c1"],["btm_c1","btm_c2"],["btm_c2","btm_c3"],["btm_c3","btm_c4"],["btm_c4","btm_c5"],["btm_c5","btm_vR"],
@@ -643,28 +871,26 @@ var BNODE={
   "1152":"h2_c1",
   "1131":"h2_c1",
   "1124":"h2_c2",
-  "1103":"h2_c2",
-  "1102":"h2_c3",
+  "1104":"h2_c2",
+  "1101":"h2_c3",
   "1081":"h2_c4",
   "1074":"h2_c4",
   "1053":"h2_c5",
   "1052":"h2_c5",
-  "1104":"h2_c2",
-  "1101":"h2_c3",
   "1027B":"h2_vL",
   "1158":"h2_vL",
   "1151":"h2_c1",
   "1132":"h2_c1",
   "1123":"h2_c2",
+  "1105":"h3_c2",
+  "1100":"h3_c3",
   "1082":"h2_c4",
   "1073":"h2_c4",
   "1054":"h2_c5",
   "1051":"h2_c5",
-  "1105":"h3_c2",
-  "1100":"h3_c3",
-  "1028":"h3_vL",
   "1106":"h3_c2",
   "1099":"h3_c3",
+  "1028":"h3_vL",
   "1159":"h3_vL",
   "1150":"h3_c1",
   "1133":"h3_c1",
@@ -778,6 +1004,13 @@ var BNODE={
   "1003":"btm_c5",
   "1004":"btm_c5"
 };
+BNODE["selangor-mbpj"]="h2_c2";
+BNODE["selangor-mps"]="h2_c3";
+BNODE["selangor-mpaj"]="h2_c2";
+BNODE["selangor-mpkj"]="h2_c3";
+BNODE["selangor-mbdk"]="h2_c2";
+BNODE["selangor-mpsp"]="h2_c3";
+BNODE["selangor-expo"]="h2_c3";
 var ADJ={};
 function buildAdj(){Object.keys(N).forEach(function(k){ADJ[k]=[];});EDGES.forEach(function(e){var a=e[0],b=e[1];if(!ADJ[a]||!ADJ[b])return;if(ADJ[a].indexOf(b)===-1)ADJ[a].push(b);if(ADJ[b].indexOf(a)===-1)ADJ[b].push(a);});}
 function dijkstra(start,end){if(start===end)return[start];if(!ADJ[start]||!ADJ[end])return[];var dist={},prev={},open=Object.keys(N);open.forEach(function(k){dist[k]=Infinity;prev[k]=null;});dist[start]=0;while(open.length){open.sort(function(a,b){return dist[a]-dist[b];});var cur=open.shift();if(cur===end)break;if(dist[cur]===Infinity)break;(ADJ[cur]||[]).forEach(function(nb){var pa=N[cur],pb=N[nb];if(!pa||!pb)return;var d=Math.sqrt(Math.pow(pb.x-pa.x,2)+Math.pow(pb.y-pa.y,2));var alt=dist[cur]+d;if(alt<dist[nb]){dist[nb]=alt;prev[nb]=cur;}});}var path=[],step=end;while(step){path.unshift(step);step=prev[step];if(path.length>200)break;}return(path[0]===start)?path:[];}
@@ -869,22 +1102,214 @@ function animateVehicle(points,done){
   motionFrame=requestAnimationFrame(frame);
 }
 /* @section: booth-details-flow */
+var BOOTH_INFO={};
+function registerBooths(numbers,company,category,group,options){
+  (numbers||[]).forEach(function(num){
+    var hideNumber=options&&Object.prototype.hasOwnProperty.call(options,"hideNumber")
+      ?!!options.hideNumber
+      :true;
+    BOOTH_INFO[String(num)]={
+      company:company,
+      category:category||"",
+      group:group||company,
+      hideNumber:hideNumber,
+      sector:(options&&options.sector)||"MYARTTE 2026 Exhibitor",
+      keywords:(options&&options.keywords)||company.toLowerCase()
+    };
+  });
+}
+/* Authoritative exhibitor list supplied by the event team. Named booths show
+   the company/pavilion name in the visitor UI; only explicitly unnamed booths
+   retain their PDF booth number as the visitor-facing reference. */
+registerBooths(["1001","1002"],"QLUX GROUP","Premium","QLUX GROUP");
+registerBooths(["1003"],"DYNATEST","Premium","DYNATEST");
+registerBooths(["1004"],"NL SCIENTIFIC","Premium","NL SCIENTIFIC");
+registerBooths(["1005"],"TRINICON","Premium","TRINICON");
+registerBooths(["1006"],"EM PERKASA","Premium","EM PERKASA");
+registerBooths(["1008","1009"],"CALTA INC - JAPAN","Premium","CALTA INC - JAPAN");
+registerBooths(["1010","1011"],"APAD","Premium","APAD");
+registerBooths(["1012"],"No company label shown","Standard","No company label shown",{hideNumber:false,keywords:"booth 1012 no company label"});
+registerBooths(["1013"],"No company label shown","Standard","No company label shown",{hideNumber:false,keywords:"booth 1013 no company label"});
+registerBooths(["pocket-talk"],"Pocket Talk","Visitor Area","Pocket Talk",{hideNumber:true,sector:"Visitor Area",keywords:"pocket talk"});
+registerBooths(["business-lounge"],"Business Lounge / Press Conference Area","Visitor Area","Business Lounge / Press Conference Area",{hideNumber:true,sector:"Visitor Area",keywords:"business lounge press conference area"});
+registerBooths(["speaker-lounge"],"Speaker Lounge","Visitor Area","Speaker Lounge",{hideNumber:true,sector:"Visitor Area",keywords:"speaker lounge"});
+
+registerBooths(["1028","1029"],"IKLANEKA","Premium","IKLANEKA");
+registerBooths(["1030","1031"],"DANA SAFE","Premium","DANA SAFE");
+registerBooths(["1032","1033"],"KOSON TECH","Premium","KOSON TECH");
+registerBooths(["1034","1035"],"INTERTRAFFIC","Premium","INTERTRAFFIC");
+registerBooths(["1036","1037"],"AEONIC","Premium","AEONIC");
+registerBooths(["1038"],"INFOTREE","Premium","INFOTREE");
+registerBooths(["1039"],"HOFFMAN","Premium","HOFFMAN");
+registerBooths(["1040","1041"],"GEVEKO MARKINGS","Premium","GEVEKO MARKINGS");
+
+registerBooths(["1042","1043","1044","1061","1062","1063"],"MINISTRY OF WORKS MALAYSIA","Platinum","MINISTRY OF WORKS MALAYSIA");
+registerBooths(["1045","1046","1059","1060"],"JKR SARAWAK","Gold","JKR SARAWAK");
+registerBooths(["1047","1058"],"DUNKIN DONUTS","Silver","DUNKIN DONUTS");
+registerBooths(["1048"],"RECOGINE","Associate","RECOGINE");
+registerBooths(["1049"],"MELBA SWINTEX","Standard","MELBA SWINTEX");
+registerBooths(["1050"],"ARTABERA","Standard","ARTABERA");
+registerBooths(["1051"],"SELIA SELENGGARA","Standard","SELIA SELENGGARA");
+registerBooths(["1052"],"SIGNIFY","Standard","SIGNIFY");
+registerBooths(["1053"],"TURBINE TECHNIQUE","Standard","TURBINE TECHNIQUE");
+registerBooths(["1054"],"AKSB","Standard","AKSB");
+registerBooths(["1055"],"KUMPULAN DAENG NIAGA","Standard","KUMPULAN DAENG NIAGA");
+registerBooths(["1056"],"DOSHIN","Standard","DOSHIN");
+registerBooths(["1057"],"WAY NE HARDWARE","Associate","WAY NE HARDWARE");
+
+registerBooths(["1064","1065","1066","1089","1090","1091"],"JUSTGO","Platinum","JUSTGO");
+registerBooths(["1067","1068","1087","1088"],"IJM","Gold","IJM");
+registerBooths(["1069","1070"],"PERNIAGAAN YIK SING","Associate","PERNIAGAAN YIK SING");
+registerBooths(["1071","1072"],"UDNS CO - CHINA","Standard","UDNS CO - CHINA");
+registerBooths(["1073"],"HANGZHOU JINCHENG - CHINA","Standard","HANGZHOU JINCHENG - CHINA");
+registerBooths(["1074"],"UNIVERSAL PRECAST","Standard","UNIVERSAL PRECAST");
+registerBooths(["1081"],"SDS ASSOCIATES","Standard","SDS ASSOCIATES");
+registerBooths(["1082"],"IMPRESSIVE COMMUNICATIONS","Standard","IMPRESSIVE COMMUNICATIONS");
+registerBooths(["1083"],"YUNNAN LUTHAI - CHINA","Standard","YUNNAN LUTHAI - CHINA");
+registerBooths(["1084"],"JINJIANG LIANXIANG - CHINA","Standard","JINJIANG LIANXIANG - CHINA");
+registerBooths(["1085","1086"],"TERAS TEKNOLOGI","Associate","TERAS TEKNOLOGI");
+
+registerBooths(["1092","1093","1094","1095","1096","1099","1100","1101","1102","1103","1104","1105","1106","1109","1110","1111","1112","1113"],"TOUCH N GO","Gold","TOUCH N GO");
+registerBooths(["1097"],"EASYSIM","Silver","EASYSIM");
+registerBooths(["1098"],"JA CONSULT","Associate","JA CONSULT");
+registerBooths(["1107","1108"],"JKR SELANGOR","Associate","JKR SELANGOR");
+registerBooths(["1114","1115","1116","1139","1140","1141"],"SAMSUNG","Platinum","SAMSUNG");
+registerBooths(["1117","1118","1137","1138"],"AHN VERTEX","Gold","AHN VERTEX");
+registerBooths(["1119","1120"],"KUSEL","Associate","KUSEL");
+registerBooths(["1121"],"ZHEJIANG - CHINA","Standard","ZHEJIANG - CHINA");
+registerBooths(["1122"],"HENAN WINALL - CHINA","Standard","HENAN WINALL - CHINA");
+registerBooths(["1133"],"DIGILE","Standard","DIGILE");
+registerBooths(["1134"],"TONLEX GLASS - CHINA","Standard","TONLEX GLASS - CHINA");
+registerBooths(["1135"],"PROTASCO INDUSTRIES TRADING","Associate","PROTASCO INDUSTRIES TRADING");
+registerBooths(["1136"],"ONE INTNL.","Silver","ONE INTNL.");
+registerBooths(["1142","1143","1144","1165","1166","1167"],"PSKLM","Platinum","PSKLM");
+registerBooths(["1145","1146"],"YINSON","Gold","YINSON");
+registerBooths(["1147"],"VELOCITY ASIA","Silver","VELOCITY ASIA");
+registerBooths(["1148","1161"],"PPK TECHNOLOGIES","Associate","PPK TECHNOLOGIES");
+registerBooths(["1162"],"I ECO LIGHT","Silver","I ECO LIGHT");
+registerBooths(["1163","1164"],"EKALDES","Gold","EKALDES");
+registerBooths(["selangor-mbpj"],"MBPJ","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mbpj"});
+registerBooths(["selangor-mps"],"MPS","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mps"});
+registerBooths(["selangor-mpaj"],"MPAJ","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mpaj"});
+registerBooths(["selangor-mpkj"],"MPKJ","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mpkj"});
+registerBooths(["selangor-mbdk"],"MBDK","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mbdk"});
+registerBooths(["selangor-mpsp"],"MPSP","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion mpsp"});
+registerBooths(["selangor-expo"],"Selangor Expo (UPEN)","Gold","Selangor Pavilion",{hideNumber:true,sector:"Selangor Pavilion",keywords:"selangor pavilion expo upen"});
+
+function boothInfo(num){
+  return BOOTH_INFO[String(num)]||null;
+}
+function boothReference(num){
+  var info=boothInfo(num);
+  if(info&&info.hideNumber)return info.company;
+  return num?"Booth "+num:"—";
+}
+/* Public company summaries. Keep descriptions short and cautious; links are
+   included only where a public company or government page could be matched
+   confidently. Unmatched names remain clearly marked for organiser review. */
+var COMPANY_PROFILES={
+  "No company label shown":{about:"The supplied floor plan does not show a company label for this booth. The booth remains clickable and its exhibitor profile can be completed when the organiser confirms the assignment.",research:"Official company information is not available for this floor-plan entry yet."},
+  "Pocket Talk":{about:"A visitor conversation and engagement area for informal talks, networking and exhibitor interactions.",research:"Venue-area information rather than a company profile."},
+  "Business Lounge / Press Conference Area":{about:"A venue area for business meetings, media activity and press-conference programming during the exhibition.",research:"Venue-area information rather than a company profile."},
+  "Speaker Lounge":{about:"A speaker support and networking area for programme presenters and invited guests.",research:"Venue-area information rather than a company profile."},
+  "QLUX GROUP":{about:"Malaysian LED lighting and smart-lighting provider, including solar LED and street-lighting solutions.",website:"https://qluxgroup.com/",social:[["LinkedIn","https://www.linkedin.com/company/qlux-group-sdn-bhd/"],["Facebook","https://www.facebook.com/QluxGroup/"]]},
+  "DYNATEST":{about:"Global pavement-engineering specialist known for pavement testing equipment, measurement systems, software and technical support.",website:"https://dynatest.com/",social:[["YouTube","https://www.youtube.com/@DynatestAS"],["LinkedIn","https://www.linkedin.com/company/dynatest/"]]},
+  "NL SCIENTIFIC":{about:"Malaysian manufacturer of civil-engineering and construction-material testing equipment for concrete, soil and asphalt applications.",website:"https://nl-test.com/",social:[["Instagram","https://www.instagram.com/nl_scientific/"],["Facebook","https://www.facebook.com/nlscientificinstruments/"]]},
+  "TRINICON":{about:"Malaysian civil-works contractor specialising in road and highway maintenance, bridge-joint and pavement works.",research:"Public company-directory references were used; confirm the exhibitor’s preferred official link before publishing."},
+  "EM PERKASA":{about:"Malaysian contractor associated with road, infrastructure and expressway works, as well as transport and logistics services.",research:"Public registry information was found, but no confidently matched official social profile."},
+  "CALTA INC - JAPAN":{about:"Japanese infrastructure-technology company behind TRANCITY, a digital-twin platform that turns inspection video into 3D infrastructure data.",website:"https://calta.co.jp/",social:[["LinkedIn","https://www.linkedin.com/company/calta-trancity/"]]},
+  "APAD":{about:"Malaysia’s Land Public Transport Agency, responsible for planning, regulating, licensing and enforcing land public transport in Peninsular Malaysia.",website:"https://www.apad.gov.my/"},
+  "IKLANEKA":{about:"The floor-plan name appears to refer to an advertising or media-related business; the exact exhibitor identity requires organiser confirmation.",research:"No unique official company profile could be matched confidently from the supplied name alone."},
+  "DANA SAFE":{about:"Sabah-based traffic-management and road-safety company providing temporary traffic management plans, traffic controllers, work-zone safety and compliance support.",website:"https://danasafe.com/",social:[["Facebook","https://www.facebook.com/61555636202353/"]]},
+  "KOSON TECH":{about:"Technology provider offering practical digital solutions and IT resources, with work spanning IoT, APIs, robotics and business software.",website:"https://kosontechnology.com/",social:[["LinkedIn","https://hk.linkedin.com/company/kosontechnology"],["Facebook","https://www.facebook.com/kosontechnology/"],["Instagram","https://www.instagram.com/kosontechnology/"]]},
+  "INTERTRAFFIC":{about:"Global mobility and traffic-technology platform and event community connecting public and private-sector road, traffic and transport professionals.",website:"https://www.intertraffic.com/",social:[["LinkedIn","https://www.linkedin.com/company/intertraffic-worldwide-events/"],["Instagram","https://www.instagram.com/intertrafficworldwideevents/"]]},
+  "AEONIC":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as AEONIC.",research:"The name is shared by multiple unrelated businesses, so no third-party profile was attached."},
+  "INFOTREE":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as INFOTREE.",research:"The name is shared by multiple unrelated businesses, so no third-party profile was attached."},
+  "HOFFMAN":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as HOFFMAN.",research:"The name is shared by multiple unrelated businesses, so no third-party profile was attached."},
+  "GEVEKO MARKINGS":{about:"International manufacturer of road-marking, safety-marking and decorative surfacing materials for highways and public spaces.",website:"https://www.geveko-markings.com/",social:[["LinkedIn","https://www.linkedin.com/company/geveko-markings/"],["Facebook","https://www.facebook.com/gevekomarkings/"],["YouTube","https://www.youtube.com/c/Geveko-markings"]]},
+  "MINISTRY OF WORKS MALAYSIA":{about:"Malaysia’s federal ministry responsible for national public works, including highways, roads and related infrastructure policy."},
+  "JKR SARAWAK":{about:"Sarawak Public Works Department, responsible for public infrastructure delivery and maintenance across Sarawak.",website:"https://jkr.sarawak.gov.my/"},
+  "DUNKIN DONUTS":{about:"International quick-service restaurant brand known for doughnuts, coffee and baked refreshments.",website:"https://www.dunkindonuts.com/"},
+  "RECOGINE":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as RECOGINE.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "MELBA SWINTEX":{about:"Traffic-management manufacturer specialising in temporary traffic-management and safety products such as cones and barriers.",website:"https://www.melbaswintex.com/",social:[["LinkedIn","https://uk.linkedin.com/company/melba-swintex"]]},
+  "ARTABERA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as ARTABERA.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "SELIA SELENGGARA":{about:"Malaysian engineering and construction group involved in infrastructure and maintenance services.",website:"https://www.seliagroup.com/"},
+  "SIGNIFY":{about:"Global lighting-technology company developing connected lighting, LED systems and smart-lighting solutions.",website:"https://www.signify.com/"},
+  "TURBINE TECHNIQUE":{about:"Malaysian trading and maintenance company supplying turbocharger and turbine parts for power generators and power plants.",website:"https://www.turbine-technique.com/"},
+  "AKSB":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as AKSB.",research:"The abbreviation may refer to multiple organisations; confirm the legal company name before publication."},
+  "KUMPULAN DAENG NIAGA":{about:"Malaysian distributor of Concrete Canvas and related environmentally conscious concrete and infrastructure solutions.",website:"https://daenggroup.com.my/",social:[["LinkedIn","https://www.linkedin.com/company/kumpulan-daeng-niaga-sdn-bhd/"]]},
+  "DOSHIN":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as DOSHIN.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "WAY NE HARDWARE":{about:"Malaysian supplier and manufacturer of hardware, safety tools and road-safety equipment.",website:"https://www.waynehardware.com.my/",social:[["Facebook","https://www.facebook.com/waynehardwaresupply/"]]},
+  "JUSTGO":{about:"Malaysian digital toll and mobility platform offering cashless toll payments, loyalty features and automated e-invoicing.",website:"https://justgo.com.my/",social:[["Facebook","https://www.facebook.com/JustGoMalaysia"],["TikTok","https://www.tiktok.com/@justgomalaysia"]]},
+  "IJM":{about:"Malaysian infrastructure and construction group with businesses spanning construction, property, industry and infrastructure development.",website:"https://www.ijm.com/"},
+  "PERNIAGAAN YIK SING":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as PERNIAGAAN YIK SING.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "UDNS CO - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as UDNS CO – CHINA.",research:"The supplied trade name is not unique enough to attach a third-party profile safely."},
+  "HANGZHOU JINCHENG - CHINA":{about:"Chinese manufacturer and exporter of road-traffic safety products including traffic cones, cable protectors and speed bumps.",website:"https://www.hztraffic.com/"},
+  "UNIVERSAL PRECAST":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as UNIVERSAL PRECAST.",research:"The name is used by multiple precast businesses internationally; confirm the exhibitor’s official profile."},
+  "SDS ASSOCIATES":{about:"Malaysian technology and research-equipment supplier associated with eye-tracking and specialist measurement systems.",website:"https://sdsassociates.com.my/",social:[["LinkedIn","https://www.linkedin.com/company/sds-associates-sdn-bhd/"]]},
+  "IMPRESSIVE COMMUNICATIONS":{about:"Malaysian systems-integration and enterprise-technology company with expertise including enterprise asset management and business software implementation.",website:"https://impressive-communications.com/",social:[["LinkedIn","https://www.linkedin.com/company/impressive-communications-sdn-bhd/"]]},
+  "YUNNAN LUTHAI - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as YUNNAN LUTHAI – CHINA.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "JINJIANG LIANXIANG - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as JINJIANG LIANXIANG – CHINA.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "TERAS TEKNOLOGI":{about:"Malaysian transport-technology and ICT services company, known for electronic tolling and technology services supporting connected journeys.",website:"https://www.teras.com.my/",social:[["LinkedIn","https://www.linkedin.com/company/terasteknologi"],["Instagram","https://www.instagram.com/teras_teknologi/"]]},
+  "TOUCH N GO":{about:"Malaysia’s mobility and payments technology group, with products spanning tolling, RFID, digital payments and the TNG eWallet ecosystem.",website:"https://www.touchngo.com.my/"},
+  "EASYSIM":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as EASYSIM.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "JA CONSULT":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as JA CONSULT.",research:"The name is shared by multiple consultancies; confirm the exhibitor’s official profile."},
+  "JKR SELANGOR":{about:"Selangor Public Works Department, responsible for public-works planning, delivery and maintenance in Selangor.",website:"https://jkr.selangor.gov.my/"},
+  "SAMSUNG":{about:"Global technology company producing consumer electronics, mobile devices, displays, semiconductors and connected-device solutions.",website:"https://www.samsung.com/my/"},
+  "AHN VERTEX":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as AHN VERTEX.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "KUSEL":{about:"Koridor Utiliti Selangor, supporting coordinated utility-corridor planning and underground infrastructure information in Selangor.",website:"https://www.kusel.my/"},
+  "ZHEJIANG - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as ZHEJIANG – CHINA.",research:"The floor-plan label gives a region rather than a unique legal company name."},
+  "HENAN WINALL - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as HENAN WINALL – CHINA.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "DIGILE":{about:"Malaysian technology company represented in the programme in connection with digital business-model and mobility discussions.",research:"Confirm the exhibitor’s preferred official website and social handles."},
+  "TONLEX GLASS - CHINA":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as TONLEX GLASS – CHINA.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "PROTASCO INDUSTRIES TRADING":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as PROTASCO INDUSTRIES TRADING.",research:"Confirm the exhibitor’s legal company name before attaching a social profile."},
+  "ONE INTNL.":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as ONE INTNL.",research:"The abbreviated name is not unique enough to match safely."},
+  "PSKLM":{about:"Persatuan Syarikat Konsesi Lebuhraya Malaysia, the Malaysian highway concessionaires association and an organiser/industry body for the expo.",research:"The association name is clear from the event materials; confirm the preferred official website/social link with the organiser."},
+  "YINSON":{about:"Malaysian energy and infrastructure group with businesses including renewables and green-technology solutions.",website:"https://www.yinson.com/"},
+  "VELOCITY ASIA":{about:"Outdoor-media specialist providing media planning and buying across digital and static outdoor sites in Malaysia.",website:"https://www.velocityasia.com.my/"},
+  "PPK TECHNOLOGIES":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as PPK TECHNOLOGIES.",research:"The abbreviation is used by multiple organisations; confirm the exact exhibitor profile."},
+  "I ECO LIGHT":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as I ECO LIGHT.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "EKALDES":{about:"Company profile pending organiser confirmation; the floor plan identifies the exhibitor as EKALDES.",research:"No confidently matched official company profile was found from the supplied spelling."},
+  "MBPJ":{about:"Petaling Jaya City Council, the local authority serving Petaling Jaya in Selangor.",research:"Council identity is clear; confirm the preferred official link with the Selangor Pavilion team."},
+  "MPS":{about:"Selangor local authority represented in the Selangor Pavilion; confirm the council’s preferred full name and event copy.",research:"The abbreviation MPS can refer to more than one Selangor council."},
+  "MPAJ":{about:"Ampang Jaya Municipal Council, the local authority serving Ampang Jaya in Selangor.",website:"https://www.mpaj.gov.my/"},
+  "MPKJ":{about:"Kajang Municipal Council, the local authority serving Kajang and surrounding areas in Selangor.",website:"https://www.mpkj.gov.my/en"},
+  "MBDK":{about:"Klang Municipal Council, the local authority serving Klang in Selangor.",research:"Council identity is clear; confirm the preferred official link with the Selangor Pavilion team."},
+  "MPSP":{about:"Local authority represented in the Selangor Pavilion; confirm the preferred council name and official link before publication.",research:"The abbreviation MPSP is not unique enough to match safely from the floor plan alone."},
+  "Selangor Expo (UPEN)":{about:"Selangor Expo destination representing UPEN, the Selangor state economic-planning and development function.",research:"UPEN is identified in the floor plan; confirm the current official state portal link with the organiser."}
+};
+function companyProfile(company){
+  return COMPANY_PROFILES[String(company||"").trim()]||null;
+}
 function demoBoothData(num,cat){
   var boothNum=String(num||"");
-  var demoCategory=(cat||"Standard")+" (Demo)";
+  var info=boothInfo(boothNum);
+  var demoCategory=(info&&info.category)||cat||"Standard";
+  var company=(info&&info.company)||("Unconfirmed booth "+boothNum);
+  var sector=(info&&info.sector)||"MYARTTE 2026 Exhibitor";
+  var keywords=(info&&info.keywords)||company.toLowerCase();
   return{
-    company:"MYARTTE Demo Exhibitor "+boothNum,
+    company:company,
     category:demoCategory,
-    description:"This temporary profile demonstrates how exhibitor information will appear for Booth "+boothNum+". The official company overview, products and verified booth category will be added when the confirmed exhibitor list is available."
+    sector:sector,
+    keywords:keywords,
+    group:(info&&info.group)||company,
+    hideNumber:!!(info&&info.hideNumber),
+    description:(companyProfile(company)&&companyProfile(company).about)||(
+      info
+        ?"Floor plan entry for "+company+(info.hideNumber?". This is a named pavilion destination rather than a numbered visitor-facing booth.":" at Booth "+boothNum+".")
+        :"The company label for this booth was not readable in the supplied floor plan."
+    )
   };
 }
 /* @section: visited-booths-rendering */
 function addVisitedBooth(num,el){
   var boothNum=String(num||"");if(!boothNum)return;
-  if(visitedBooths.some(function(item){return item.num===boothNum;}))return;
   var cat=el&&el.getAttribute("data-cat")?el.getAttribute("data-cat"):"Standard";
   var demo=demoBoothData(boothNum,cat);
-  visitedBooths.push({num:boothNum,company:demo.company,category:demo.category,order:visitedBooths.length+1});
+  var key=demo.group||demo.company;
+  if(visitedBooths.some(function(item){return item.key===key;}))return;
+  visitedBooths.push({key:key,num:boothNum,reference:boothReference(boothNum),company:demo.company,category:demo.category,order:visitedBooths.length+1});
   renderVisitedBooths();
 }
 function renderVisitedBooths(){
@@ -899,10 +1324,10 @@ function renderVisitedBooths(){
     var info=document.createElement("div");info.className="visit-info";
     var company=document.createElement("strong");company.textContent=item.company;
     var meta=document.createElement("div");meta.className="visit-meta";
-    var booth=document.createElement("span");booth.textContent="Booth "+item.num;
+    var booth=document.createElement("span");booth.textContent=item.reference;
     var divider=document.createElement("span");divider.textContent="·";
     var category=document.createElement("span");category.textContent=item.category;
-    var demo=document.createElement("span");demo.className="visit-demo";demo.textContent="Demo Exhibitor Data";
+    var demo=document.createElement("span");demo.className="visit-demo";demo.textContent="Floor Plan Entry";
     var check=document.createElement("div");check.className="visit-check";check.setAttribute("aria-label","Visited");check.textContent="✓";
     meta.appendChild(booth);meta.appendChild(divider);meta.appendChild(category);
     info.appendChild(company);info.appendChild(meta);info.appendChild(demo);
@@ -911,15 +1336,107 @@ function renderVisitedBooths(){
 }
 function openVisitedBooths(){renderVisitedBooths();goToScreen("screen-visited");}
 function continueExploring(){goToMap();}
+/* @section: exhibitor-search-flow */
+function activeBoothElement(num){
+  var key=String(num||"");
+  var matches=Array.prototype.filter.call(document.querySelectorAll(".booth"),function(el){
+    return el.getAttribute("data-num")===key&&el.getAttribute("data-hit-disabled")!=="1";
+  });
+  matches.sort(function(a,b){
+    return (b.getAttribute("data-generated")==="1"?1:0)-(a.getAttribute("data-generated")==="1"?1:0);
+  });
+  return matches[0]||null;
+}
+function exhibitorDirectory(){
+  /* Search must be built from the authoritative booth registry, not DOM
+     order. The SVG still contains hidden PDF source hitboxes, while the
+     corrected compact map uses generated active hitboxes. */
+  if(typeof initNamedBoothZones==="function")initNamedBoothZones();
+  var groups={},order=[];
+  Object.keys(BOOTH_INFO).forEach(function(num){
+    var info=boothInfo(num);if(!info)return;
+    var key=info.group||info.company;
+    if(!groups[key]){
+      groups[key]={key:key,company:info.company,category:info.category||"Standard",sector:info.sector||"MYARTTE 2026 Exhibitor",keywords:info.keywords||"",hideNumber:!!info.hideNumber,boothNums:[]};
+      order.push(key);
+    }
+    groups[key].boothNums.push(String(num));
+  });
+  return order.map(function(key){
+    var group=groups[key],num=group.boothNums[0],el=activeBoothElement(num);
+    if(!el){
+      for(var i=0;i<group.boothNums.length;i++){el=activeBoothElement(group.boothNums[i]);if(el){num=group.boothNums[i];break;}}
+    }
+    var boothRef=group.hideNumber?group.company:group.boothNums.map(function(id){return "Booth "+id;}).join(", ");
+    return {el:el,num:num,cat:group.category,company:group.company,sector:group.sector,keywords:group.keywords,boothNums:group.boothNums,hideNumber:group.hideNumber,boothRef:boothRef};
+  }).filter(function(item){return !!item.el;});
+}
+function openExhibitorSearch(){
+  if(isMoving)return;
+  goToScreen("screen-search");
+  var input=document.getElementById("exhibitor-search-input");if(input)input.value="";
+  filterExhibitors("");
+  setTimeout(function(){if(input)input.focus();},180);
+}
+function returnToMapFromSearch(){goToScreen("screen-map");setVehiclePoint(parkedPoint);}
+function filterExhibitors(value){
+  var query=String(value||"").trim().toLowerCase();
+  var numberQuery=query.replace(/^booth\s+/,"");
+  var matches=exhibitorDirectory().map(function(item){
+    var exactNum=item.boothNums.find(function(num){return String(num).toLowerCase()===numberQuery;});
+    var haystack=(item.company+" "+item.boothNums.join(" ")+" "+item.cat+" "+item.sector+" "+item.keywords).toLowerCase();
+    if(query&&haystack.indexOf(query)===-1)return null;
+    var targetNum=exactNum||item.num;
+    var targetEl=activeBoothElement(targetNum)||item.el;
+    return Object.assign({},item,{targetNum:targetNum,targetEl:targetEl});
+  }).filter(function(item){return !!item;}).slice(0,24);
+  renderExhibitorResults(matches);
+}
+function renderExhibitorResults(items){
+  var list=document.getElementById("search-results"),empty=document.getElementById("search-empty"),count=document.getElementById("search-result-count");
+  if(count)count.textContent=items.length+(items.length===1?" result":" results")+(items.length===24?" shown":"");
+  if(empty)empty.style.display=items.length?"none":"block";
+  if(!list)return;list.innerHTML="";
+  items.forEach(function(item){
+    var button=document.createElement("button");button.type="button";button.className="search-result";
+    button.setAttribute("aria-label","Navigate to "+item.company+", "+item.boothRef);
+    var copy=document.createElement("span");copy.className="search-result-copy";
+    var company=document.createElement("strong");company.textContent=item.company;
+    var meta=document.createElement("span");meta.className="search-result-meta";meta.textContent=item.boothRef+" · "+item.sector+" · "+item.cat;
+    var demo=document.createElement("span");demo.className="search-result-demo";demo.textContent="Floor Plan Entry";
+    var go=document.createElement("span");go.className="search-result-go";go.textContent="Navigate →";
+    copy.appendChild(company);copy.appendChild(meta);copy.appendChild(demo);button.appendChild(copy);button.appendChild(go);
+    button.addEventListener("click",function(){navigateFromSearch(item);});list.appendChild(button);
+  });
+}
+function navigateFromSearch(item){
+  if(!item||(!item.targetEl&&!item.el)||isMoving)return;
+  goToScreen("screen-map");
+  setVehiclePoint(parkedPoint);
+  var targetEl=item.targetEl||item.el,targetNum=item.targetNum||item.num;
+  selectBooth(targetEl,targetNum,item.company,item.cat);
+}
 function openBoothDetails(el,num,name,cat){
   if(isMoving)return;
   var bar=document.getElementById("rbar");
   detailsReturnBarVisible=!!(bar&&bar.classList.contains("show"));
   if(bar)bar.classList.remove("show");
-  pendingBooth={el:el,num:num,name:name||"Booth "+num,cat:cat||"Standard"};
+  pendingBooth={el:el,num:num,name:name||boothLabel(el),cat:cat||"Standard"};
   var demo=demoBoothData(num,cat);
   var company=document.getElementById("detail-company"),booth=document.getElementById("detail-booth"),category=document.getElementById("detail-category"),description=document.getElementById("detail-description");
-  if(company)company.textContent=demo.company;if(booth)booth.textContent=num;if(category)category.textContent=demo.category;if(description)description.textContent=demo.description;
+  if(company)company.textContent=demo.company;if(booth)booth.textContent=boothReference(num);if(category)category.textContent=demo.category;if(description)description.textContent=demo.description;
+  var profile=companyProfile(demo.company),links=document.getElementById("detail-links"),researchNote=document.getElementById("detail-research-note");
+  if(links){
+    links.innerHTML="";
+    if(profile&&profile.website){
+      var site=document.createElement("a");site.className="detail-link";site.href=profile.website;site.target="_blank";site.rel="noopener noreferrer";site.textContent="Official website ↗";links.appendChild(site);
+    }
+    (profile&&profile.social||[]).forEach(function(item){
+      var link=document.createElement("a");link.className="detail-link";link.href=item[1];link.target="_blank";link.rel="noopener noreferrer";link.textContent=item[0]+" ↗";links.appendChild(link);
+    });
+    links.style.display=links.children.length?"flex":"none";
+  }
+  if(researchNote)researchNote.textContent=(profile&&profile.research)||"";
   goToScreen("screen-booth-details");
 }
 function backToMapFromDetails(){
@@ -933,7 +1450,159 @@ function navigateFromDetails(){
   goToScreen("screen-map");
   selectBooth(chosen.el,chosen.num,chosen.name,chosen.cat);
 }
-function initBoothClicks(){document.querySelectorAll(".booth").forEach(function(el){if(el.getAttribute("data-click-bound")==="1")return;el.setAttribute("data-click-bound","1");el.style.cursor="pointer";el.addEventListener("click",function(){openBoothDetails(el,el.getAttribute("data-num"),el.getAttribute("data-name")||"Booth "+el.getAttribute("data-num"),el.getAttribute("data-cat"));});});}
+function boothLabel(el){
+  var num=el.getAttribute("data-num")||"";
+  var info=boothInfo(num);
+  return info?info.company:(el.getAttribute("data-name")||("Booth "+num));
+}
+var MAP_BOOTH_ZONES=[];
+function addMapZone(num,company,category,x,y,w,h){
+  MAP_BOOTH_ZONES.push({id:String(num),company:company,category:category,x:x,y:y,w:w||45,h:h||48});
+}
+function addMapGroup(numbers,company,category,x,y,cols,rowHeight,colWidth){
+  var cw=colWidth||45,rh=rowHeight||48;
+  numbers.forEach(function(num,i){
+    var row=Math.floor(i/cols),col=i%cols;
+    addMapZone(num,company,category,x+col*(cw+5),y+row*(rh+5),cw,rh);
+  });
+}
+/* Exact hitboxes aligned to the visible booth squares in
+   assets/myartte-map-final.png (985 x 1280). The booth order follows the
+   supplied MYARTTE floor-plan PDF, including every square in each group. */
+addMapGroup(["1028","1029"],"IKLANEKA","Premium",48,522,1,49,44);
+addMapGroup(["1030","1031"],"DANA SAFE","Premium",48,646,1,49,44);
+addMapGroup(["1032","1033"],"KOSON TECH","Premium",48,772,1,49,44);
+addMapGroup(["1034","1035"],"INTERTRAFFIC","Premium",48,898,1,49,44);
+addMapGroup(["1036","1037"],"AEONIC","Premium",48,1023,1,49,44);
+addMapGroup(["1038","1039"],"INFOTREE / HOFFMAN","Premium",104,1174,2,53,49);
+addMapGroup(["1040","1041"],"GEVEKO MARKINGS","Premium",255,1174,2,53,49);
+
+addMapGroup(["1133","1122","1134","1121"],"DIGILE / HENAN WINALL / TONLEX GLASS / ZHEJIANG","Standard",286,568,2,49,45);
+addMapGroup(["1161","1148","1162","1147"],"PPK TECHNOLOGIES / ECO LIGHT / VELOCITY ASIA","Associate",140,687,2,55,49);
+addMapGroup(["1135","1120","1136","1119"],"PROTASCO INDUSTRIES TRADING / KUSEL / ONE INTNL.","Associate",281,687,2,55,49);
+addMapGroup(["1163","1146","1164","1145"],"EKALDES / YINSON","Gold",142,831,2,55,49);
+addMapGroup(["1137","1118","1138","1117"],"AHN VERTEX","Gold",286,831,2,55,49);
+addMapGroup(["1165","1144","1166","1143","1167","1142"],"PSKLM","Platinum",142,973,2,55,49);
+addMapGroup(["1139","1116","1140","1115","1141","1114"],"SAMSUNG","Platinum",286,973,2,55,49);
+addMapGroup(["1107","1098","1108","1097"],"JKR SELANGOR / JA CONSULT / EASYSIM","Associate",428,664,2,55,49);
+addMapGroup(["1109","1096","1110","1095"],"TOUCH N GO","Gold",428,814,2,55,49);
+addMapGroup(["1111","1094","1112","1093","1113","1092"],"TOUCH N GO","Platinum",428,973,2,55,49);
+/* The current PDF also contains the additional Touch N Go squares 1099–1106.
+   They are retained as individual hit areas in the compact stylized map. */
+addMapGroup(["1099","1100","1101","1102"],"TOUCH N GO","Gold",428,738,2,48,49);
+addMapGroup(["1103","1104","1105","1106"],"TOUCH N GO","Gold",428,922,2,48,49);
+
+addMapGroup(["1081","1074","1082","1073"],"SDS ASSOCIATES / UNIVERSAL PRECAST / IMPRESSIVE COMMUNICATIONS / HANGZHOU JINCHENG - CHINA","Standard",614,422,2,49,45);
+addMapGroup(["1053","1052","1054","1051"],"TURBINE TECHNIQUE / SIGNIFY / AKSB / SELIA SELENGGARA","Standard",751,422,2,49,45);
+addMapGroup(["1083","1072","1084","1071"],"YUNNAN LUTHAI - CHINA / UDNS CO - CHINA / JINJIANG LIANXIANG - CHINA","Standard",614,553,2,49,45);
+addMapGroup(["1055","1050","1056","1049"],"KUMPULAN DAENG NIAGA / ARTABERA / DOSHIN / MELBA SWINTEX","Standard",752,557,2,50,45);
+addMapGroup(["1085","1070","1086","1069"],"TERAS TEKNOLOGI / PERNIAGAAN YIK SING","Associate",614,689,2,55,49);
+addMapGroup(["1057","1048","1058","1047"],"WAY NE HARDWARE / RECOGINE / DUNKIN DONUTS","Associate",754,689,2,55,49);
+addMapGroup(["1087","1068","1088","1067"],"IJM","Gold",614,831,2,55,49);
+addMapGroup(["1059","1046","1060","1045"],"JKR SARAWAK","Gold",754,831,2,55,49);
+addMapGroup(["1089","1066","1090","1065","1091","1064"],"JustGo","Platinum",614,973,2,55,49);
+addMapGroup(["1061","1044","1062","1043","1063","1042"],"MINISTRY OF WORKS MALAYSIA","Platinum",754,973,2,55,49);
+
+addMapGroup(["1011","1010"],"APAD","Premium",899,689,1,54,44);
+addMapGroup(["1009","1008"],"CALTA INC - JAPAN","Premium",899,831,1,54,44);
+addMapGroup(["1006","1005"],"EM PERKASA / TRINICON","Premium",899,990,1,54,44);
+addMapGroup(["1013","1012"],"No company label shown","Standard",899,553,1,48,44);
+addMapGroup(["1001","1002"],"QLUX GROUP","Premium",636,1174,2,53,49);
+addMapGroup(["1003","1004"],"DYNATEST / NL SCIENTIFIC","Premium",788,1174,2,53,49);
+var NAMED_AREA_ZONES=[
+  {id:"pocket-talk",category:"Visitor Area",x:104,y:568,w:98,h:101},
+  {id:"business-lounge",category:"Visitor Area",x:104,y:352,w:104,h:190},
+  {id:"speaker-lounge",category:"Visitor Area",x:190,y:492,w:110,h:59}
+];
+var SELANGOR_ZONE_LAYOUT=[
+  {id:"selangor-mbpj",x:427,y:405,w:45,h:44},
+  {id:"selangor-mps",x:476,y:405,w:45,h:44},
+  {id:"selangor-mpaj",x:427,y:454,w:45,h:44},
+  {id:"selangor-mpkj",x:476,y:454,w:45,h:44},
+  {id:"selangor-mbdk",x:427,y:503,w:45,h:44},
+  {id:"selangor-mpsp",x:476,y:503,w:45,h:44},
+  {id:"selangor-expo",x:427,y:553,w:94,h:49}
+];
+function initNamedBoothZones(){
+  var svg=document.getElementById("map-svg");if(!svg)return;
+  var generatedIds={};
+  MAP_BOOTH_ZONES.concat(NAMED_AREA_ZONES,SELANGOR_ZONE_LAYOUT).forEach(function(zone){generatedIds[String(zone.id)]=true;});
+  document.querySelectorAll(".booth:not([data-generated='1'])").forEach(function(el){
+    var num=el.getAttribute("data-num")||"";
+    if(generatedIds[num]){
+      el.setAttribute("data-hit-disabled","1");
+      el.style.pointerEvents="none";
+      return;
+    }
+    if(num&&!boothInfo(num)){
+      var cat=el.getAttribute("data-cat")||"Standard";
+      registerBooths([num],"Booth "+num,cat,"Booth "+num,{hideNumber:false,sector:"Unassigned floor plan booth",keywords:"booth "+num});
+    }
+  });
+  var zones=MAP_BOOTH_ZONES.concat(NAMED_AREA_ZONES,SELANGOR_ZONE_LAYOUT);
+  zones.forEach(function(zone){
+    if(svg.querySelector('[data-generated="1"][data-num="'+zone.id+'"]'))return;
+    var el=document.createElementNS("http://www.w3.org/2000/svg","rect");
+    el.setAttribute("class","booth");
+    el.setAttribute("data-generated","1");
+    el.setAttribute("data-num",zone.id);
+    el.setAttribute("data-cat",zone.category||"Standard");
+    el.setAttribute("data-name",(boothInfo(zone.id)&&boothInfo(zone.id).company)||zone.company);
+    el.setAttribute("data-status","named_floorplan");
+    el.setAttribute("x",zone.x);el.setAttribute("y",zone.y);
+    el.setAttribute("width",zone.w);el.setAttribute("height",zone.h);
+    el.setAttribute("rx","3");el.setAttribute("fill","rgba(253,224,100,0.4)");
+    el.setAttribute("stroke","#f59e0b");el.setAttribute("stroke-width","1");
+    el.setAttribute("opacity","0.01");
+    svg.insertBefore(el,svg.querySelector("#route-layer"));
+  });
+}
+function activateBoothHit(el){
+  if(!el||isMoving)return;
+  openBoothDetails(el,el.getAttribute("data-num"),boothLabel(el),el.getAttribute("data-cat"));
+}
+function boothAtMapPoint(svgX,svgY){
+  var best=null,bestDistance=Infinity;
+  document.querySelectorAll(".booth").forEach(function(el){
+    if(el.getAttribute("data-hit-disabled")==="1")return;
+    if(!boothInfo(el.getAttribute("data-num")))return;
+    var box;
+    try{box=el.getBBox();}catch(e){return;}
+    var dx=svgX<box.x?box.x-svgX:(svgX>box.x+box.width?svgX-(box.x+box.width):0);
+    var dy=svgY<box.y?box.y-svgY:(svgY>box.y+box.height?svgY-(box.y+box.height):0);
+    var distance=Math.hypot(dx,dy);
+    if(distance<bestDistance){bestDistance=distance;best=el;}
+  });
+  return bestDistance<=46?best:null;
+}
+function initBoothClicks(){
+  initNamedBoothZones();
+  document.querySelectorAll(".booth").forEach(function(el){
+    if(el.getAttribute("data-click-bound")==="1")return;
+    el.setAttribute("data-click-bound","1");
+    el.style.cursor="pointer";
+    el.style.pointerEvents="all";
+    el.setAttribute("role","button");
+    el.setAttribute("tabindex","0");
+    el.setAttribute("aria-label","Open "+boothLabel(el));
+    el.addEventListener("click",function(){activateBoothHit(el);});
+    el.addEventListener("keydown",function(event){
+      if(event.key==="Enter"||event.key===" "){event.preventDefault();activateBoothHit(el);}
+    });
+  });
+  var svg=document.getElementById("map-svg");
+  if(svg&&svg.getAttribute("data-fallback-bound")!=="1"){
+    svg.setAttribute("data-fallback-bound","1");
+    svg.addEventListener("click",function(event){
+      if(event.target&&event.target.closest&&event.target.closest(".booth"))return;
+      var ctm=svg.getScreenCTM();if(!ctm)return;
+      var point=svg.createSVGPoint();point.x=event.clientX;point.y=event.clientY;
+      var local=point.matrixTransform(ctm.inverse());
+      var el=boothAtMapPoint(local.x,local.y);
+      if(el)activateBoothHit(el);
+    });
+  }
+}
 function clearHighlights(){document.querySelectorAll(".booth-hl").forEach(function(el){el.classList.remove("booth-hl");if(!el.classList.contains("booth-visited")){el.setAttribute("opacity","0.01");el.setAttribute("stroke-width","1");}});}
 function setReachedButton(visible){var btn=document.getElementById("btn-reached");if(btn)btn.style.display=visible?"block":"none";}
 /* @section: landmark-navigation */
@@ -960,12 +1629,27 @@ function selectBooth(el,num,name,cat){
   if(isMoving)return;if(Object.keys(ADJ).length===0)buildAdj();clearHighlights();
   curDestinationType="booth";curDestinationLabel=name;setReachedButton(true);
   el.setAttribute("opacity","0.65");el.setAttribute("stroke","#00d5ff");el.setAttribute("stroke-width","5");el.classList.add("booth-hl");
-  curEl=el;curNum=num;curDestNode=BNODE[num]||"btm_c2";curRoute=dijkstra(parkedNode,curDestNode);
+  curEl=el;curNum=num;
+  curDestNode=el.getAttribute("data-generated")==="1"
+    ?(nearestWalkwayNode(el)||"btm_c2")
+    :(BNODE[num]||nearestWalkwayNode(el)||"btm_c2");
+  curRoute=dijkstra(parkedNode,curDestNode);
   curConnector=boothConnector(el,curDestNode);curEndPoint=curConnector[curConnector.length-1]||N[curDestNode];
   if(!curRoute.length){clearRoute();var err=document.getElementById("rbar-sub");if(err)err.textContent="A connected walkway route could not be calculated. Please choose another booth.";return;}
   curPathPoints=buildTravelPoints(curRoute,curConnector);drawRoute(curPathPoints);
   var t=document.getElementById("rbar-title"),s=document.getElementById("rbar-sub"),bar=document.getElementById("rbar");
   if(t)t.textContent="Route to "+name;if(s)s.textContent=cat+" · Walk the glowing path, then tap Reached Destination.";if(bar)bar.classList.add("show");
+}
+function nearestWalkwayNode(el){
+  if(!el)return"btm_c2";
+  var x=parseFloat(el.getAttribute("x"))+parseFloat(el.getAttribute("width"))/2;
+  var y=parseFloat(el.getAttribute("y"))+parseFloat(el.getAttribute("height"))/2;
+  var best="btm_c2",distance=Infinity;
+  Object.keys(N).forEach(function(key){
+    var p=N[key],d=Math.hypot(p.x-x,p.y-y);
+    if(d<distance){distance=d;best=key;}
+  });
+  return best;
 }
 function cancelRoute(){if(isMoving)return;document.getElementById("rbar").classList.remove("show");clearRoute();clearHighlights();setReachedButton(true);curRoute=[];curPathPoints=[];curConnector=[];curNum="";curEl=null;curEndPoint=null;curDestNode="";curDestinationType="booth";curDestinationLabel="";}
 function reachedDest(){
@@ -990,6 +1674,18 @@ function reachedDest(){
   });
 }
 function goToScreen(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");});var t=document.getElementById(id);if(t){t.classList.add("active");t.scrollTop=0;}}
+/* @section: promotional-video-switching */
+function selectPromoVideo(btn){
+  if(!btn)return;
+  var id=btn.getAttribute("data-id"),title=btn.getAttribute("data-title")||"MYARTTE Promotional Video";
+  if(!id)return;
+  var frame=document.getElementById("promo-video-frame"),label=document.getElementById("promo-video-title"),open=document.getElementById("promo-video-open");
+  document.querySelectorAll(".media-clip").forEach(function(item){item.classList.remove("active");});
+  btn.classList.add("active");
+  if(frame){frame.src="https://drive.google.com/file/d/"+id+"/preview";frame.title="MYARTTE promotional video: "+title;}
+  if(label)label.textContent=title;
+  if(open)open.href="https://drive.google.com/file/d/"+id+"/view?usp=sharing";
+}
 /* @section: conference-day-switching */
 function showConferenceDay(btn,id){
   document.querySelectorAll(".conference-tab").forEach(function(tab){tab.classList.remove("active");tab.setAttribute("aria-selected","false");});
@@ -998,7 +1694,7 @@ function showConferenceDay(btn,id){
   var day=document.getElementById(id);if(day)day.classList.add("active");
 }
 function selVehicle(btn,em){vehicleEmoji=em;document.querySelectorAll(".vo").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");var p=document.getElementById("prev-ico");if(p)p.textContent=em;}
-function goToMap(){var mi=document.getElementById("mv-icon");var ve=document.getElementById("vehicle-emoji");if(mi)mi.textContent=vehicleEmoji;if(ve)ve.textContent=vehicleEmoji;goToScreen("screen-map");setTimeout(function(){buildAdj();initBoothClicks();setVehiclePoint(parkedPoint);},200);}
+function goToMap(){var mi=document.getElementById("mv-icon");var ve=document.getElementById("vehicle-emoji");if(mi)mi.textContent=vehicleEmoji;if(ve)ve.textContent=vehicleEmoji;goToScreen("screen-map");showMapGuide();setTimeout(function(){buildAdj();initBoothClicks();setVehiclePoint(parkedPoint);},200);}
 </script>
 </body>
 </html>
